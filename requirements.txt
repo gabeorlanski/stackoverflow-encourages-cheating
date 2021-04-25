@@ -1,0 +1,12 @@
+transformers
+datasets
+ml-collections
+sentencepiece
+sacrebleu
+unidecode
+rouge_score
+astor
+tqdm
+plac
+torch
+beautifulsoup4

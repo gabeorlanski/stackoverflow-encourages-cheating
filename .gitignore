@@ -122,3 +122,32 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore PyCharm Files
+.idea/
+
+data/conala-corpus/
+
+scratch/
+data/preprocessed/
+
+release_venv/
+data/stackoverflow_questions/
+
+experiments/
+
+data/so_questions.json
+
+data/backup_so_questions.json
+/data/so_questions_raw.json
+/data/so_questions_raw_api.jsonl
+/data/so_questions.jsonl
+
+data/backup_so_questions.jsonl
+
+
+data/so_questions_raw.jsonl
+
+data/parsed_so.json
+
+*.zip
