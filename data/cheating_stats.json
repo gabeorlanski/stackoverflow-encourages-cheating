@@ -1,0 +1,110 @@
+{
+ "base:+Canonic": {
+  "BLEU": 0.001098181401409031,
+  "BLEU-Bigram-Precision": 25.51446251259174,
+  "BLEU-Trigram-Precision": 15.191443187102774,
+  "BLEU-Unigram-Precision": 66.56371693299316,
+  "ROUGE-2": 1.5449332099330568,
+  "ROUGE-L": 5.873453825245819,
+  "Sacre-Bigram-Precision": 26.706886403766923,
+  "Sacre-Trigram-Precision": 16.59256906954589,
+  "Sacre-Unigram-Precision": 64.23087469152728,
+  "SacreBLEU": 0.0006252416325332795
+ },
+ "base:Baseline": {
+  "BLEU": 0.001578933844819995,
+  "BLEU-Bigram-Precision": 23.101135897084987,
+  "BLEU-Trigram-Precision": 12.924071082390952,
+  "BLEU-Unigram-Precision": 64.77898782831518,
+  "ROUGE-2": 1.591400357622709,
+  "ROUGE-L": 6.075408921017892,
+  "Sacre-Bigram-Precision": 24.629418472063854,
+  "Sacre-Trigram-Precision": 14.528996624731512,
+  "Sacre-Unigram-Precision": 62.53659834974714,
+  "SacreBLEU": 0.0007800168753108293
+ },
+ "body:Baseline": {
+  "BLEU": 0.004079362173732161,
+  "BLEU-Bigram-Precision": 44.439956919763056,
+  "BLEU-Trigram-Precision": 36.32034632034632,
+  "BLEU-Unigram-Precision": 74.47640676255362,
+  "ROUGE-2": 4.277970939455455,
+  "ROUGE-L": 8.532605859965942,
+  "Sacre-Bigram-Precision": 47.70551801801802,
+  "Sacre-Trigram-Precision": 39.887980623675446,
+  "Sacre-Unigram-Precision": 73.15180215732703,
+  "SacreBLEU": 0.0019377882000229016
+ },
+ "mined:+Body": {
+  "BLEU": 0.008660818924065868,
+  "BLEU-Bigram-Precision": 44.73094170403588,
+  "BLEU-Trigram-Precision": 38.034528552456834,
+  "BLEU-Unigram-Precision": 73.63359136758152,
+  "ROUGE-2": 4.596316525192977,
+  "ROUGE-L": 8.633131622333371,
+  "Sacre-Bigram-Precision": 48.03447825519133,
+  "Sacre-Trigram-Precision": 41.41639893839922,
+  "Sacre-Unigram-Precision": 72.37277743715512,
+  "SacreBLEU": 0.004212529508343977
+ },
+ "mined:+Body, +Canonic": {
+  "BLEU": 0.004368068096847837,
+  "BLEU-Bigram-Precision": 44.88621151271754,
+  "BLEU-Trigram-Precision": 37.1342512908778,
+  "BLEU-Unigram-Precision": 74.34738955823293,
+  "ROUGE-2": 4.1820589188269075,
+  "ROUGE-L": 8.299839301806605,
+  "Sacre-Bigram-Precision": 47.575216375875804,
+  "Sacre-Trigram-Precision": 40.00884825247014,
+  "Sacre-Unigram-Precision": 72.94586601517294,
+  "SacreBLEU": 0.002488498535832205
+ },
+ "mined:+Body, -Code": {
+  "BLEU": 0.00315120708503353,
+  "BLEU-Bigram-Precision": 25.96949327817994,
+  "BLEU-Trigram-Precision": 15.653495440729484,
+  "BLEU-Unigram-Precision": 65.61816856934661,
+  "ROUGE-2": 2.12758162634708,
+  "ROUGE-L": 6.722250543206931,
+  "Sacre-Bigram-Precision": 27.86062906724512,
+  "Sacre-Trigram-Precision": 17.432393137539982,
+  "Sacre-Unigram-Precision": 63.95732791465583,
+  "SacreBLEU": 0.0015068462673490804
+ },
+ "mined:+Body, -NL": {
+  "BLEU": 0.009236107117111307,
+  "BLEU-Bigram-Precision": 44.0251572327044,
+  "BLEU-Trigram-Precision": 36.736302719747734,
+  "BLEU-Unigram-Precision": 73.04519577088416,
+  "ROUGE-2": 4.396843807806647,
+  "ROUGE-L": 8.328353357145032,
+  "Sacre-Bigram-Precision": 46.75108723458685,
+  "Sacre-Trigram-Precision": 39.60382513661202,
+  "Sacre-Unigram-Precision": 71.54882154882155,
+  "SacreBLEU": 0.004971766138815778
+ },
+ "mined:Baseline": {
+  "BLEU": 0.0029109977204566885,
+  "BLEU-Bigram-Precision": 23.61971104231166,
+  "BLEU-Trigram-Precision": 14.01985111662531,
+  "BLEU-Unigram-Precision": 63.85454545454545,
+  "ROUGE-2": 1.7209808253623984,
+  "ROUGE-L": 6.383111659711073,
+  "Sacre-Bigram-Precision": 25.10787486515642,
+  "Sacre-Trigram-Precision": 15.524718126626192,
+  "Sacre-Unigram-Precision": 62.004043467273185,
+  "SacreBLEU": 0.0014315661395221226
+ },
+ "truth": {
+  "BLEU": 0.023150928955374617,
+  "BLEU-Bigram-Precision": 33.117709437963946,
+  "BLEU-Trigram-Precision": 23.678907299596954,
+  "BLEU-Unigram-Precision": 67.0024174053183,
+  "ROUGE-2": 3.2249767622667402,
+  "ROUGE-L": 8.142794262718985,
+  "Sacre-Bigram-Precision": 34.85146352118829,
+  "Sacre-Trigram-Precision": 25.467775467775468,
+  "Sacre-Unigram-Precision": 65.81727781230578,
+  "SacreBLEU": 0.014377300970235644
+ }
+}

@@ -1,0 +1,668 @@
+
+
+
+==================================================
+
+Question: 18524642
+------------------------INPUTS------------------------
+Tags: list
+Intent: reverse the list that contains 1 to 10
+Body: <p> I need to convert a list of lists to a list of integers.
+<p> from: 
+<code_block> L1 = [[1, 2, 3, 4], [3, 7, 1, 7], [0, 5, 6, 7], [9, 4, 5, 6]]
+
+<p> to:  
+<code_block> L2 = [1234, 3717, 0567, 9456]
+
+<p> How can I make python recognize an integer starting with 0? Like the case <code> L2[2]
+<p> The other question is, how can I check if items in a list are ordered?
+<code_block> A = [1, 2, 6, 9] ---->True
+
+<p> Other than this:  
+<code_block> A == sorted(A)
+
+<p> You guys are FAST. Thanks!
+
+------------------------OUTPUTS------------------------
+                Expected: "[''.join(str(d) for d in x) for x in L]"
+          answer_no_body: '[int(x) for x in L]'
+    base_body_no_special: '[sorted(L1, key=lambda x: x[1]) for x in L2]'
+       base_body_special: '[i for i, j in zip(L1, L2)]'
+       body_intent_canon: '[int(x) for x in L]'
+            cg_bart_base: '[int(x) for x in L]'
+              tags_after: '[int(x) for x in L1]'
+      BEST - tags_before: '[int(x) for x in L]'
+            tags_no_body: '[int(x) for x in L]'
+
+
+
+==================================================
+
+Question: 16296643
+------------------------INPUTS------------------------
+Tags: list, tuples
+Intent: Convert tuple `t` to list
+Body: <p> I'm currently working on a map editor for a game in pygame, using tile maps.
+The level is built up out of blocks in the following structure (though much larger):
+<code_block> level1 = (
+         (1,1,1,1,1,1)
+         (1,0,0,0,0,1)
+         (1,0,0,0,0,1)
+         (1,0,0,0,0,1)
+         (1,0,0,0,0,1)
+         (1,1,1,1,1,1))
+
+<p> where "1" is a block that's a wall and "0" is a block that's empty air.
+<p> The following code is basically the one handling the change of block type:
+<code_block> clicked = pygame.mouse.get_pressed()
+if clicked[0] == 1:
+    currLevel[((mousey+cameraY)/60)][((mousex+cameraX)/60)] = 1
+
+<p> But since the level is stored in a tuple, I'm unable to change the values of the different blocks. How do I go about changing the different values in the level in an easy manner?
+
+------------------------OUTPUTS------------------------
+                Expected: 'list(t)'
+          answer_no_body: 't = [t for t in zip(t, t)]'
+    base_body_no_special: 'currLevel[level1, level2, level3]'
+       base_body_special: 't = map(int, t)'
+       body_intent_canon: 'currLevel[t] = 1'
+            cg_bart_base: '[x for x in t]'
+              tags_after: 't = list(itertools.chain())'
+      BEST - tags_before: 't = [t[0] for t in zip(t, t)]'
+            tags_no_body: '[t for t in zip(t, t)]'
+
+
+
+==================================================
+
+Question: 28742436
+------------------------INPUTS------------------------
+Tags: arrays, numpy, max
+Intent: create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]`
+Body: <p> I want to combine two numpy arrays to produce an array with the largest values from each array.
+<code_block> import numpy as np
+
+a  = np.array([[ 0.,  0.,  0.5],
+               [ 0.1,  0.5,  0.5],
+               [ 0.1,  0.,  0.]])
+
+b  = np.array([[ 0.,  0.,  0.0],
+               [ 0.5,  0.1,  0.5],
+               [ 0.5,  0.1,  0.]])
+
+<p> I would like to produce
+<code_block> array([[ 0.,  0.,  0.5],
+       [ 0.5,  0.5,  0.5],
+       [ 0.5,  0.1,  0.]])
+
+<p> I know you can do
+<code_block> a += b
+
+<p> which results in
+<code_block> array([[ 0. ,  0. ,  0.5],
+       [ 0.6,  0.6,  1. ],
+       [ 0.6,  0.1,  0. ]])
+
+<p> This is clearly not what I'm after. It seems like such an easy problem and I assume it most probably is.
+
+------------------------OUTPUTS------------------------
+                Expected: 'np.maximum([2, 3, 4], [1, 5, 2])'
+          answer_no_body: 'numpy.max([2, 3, 4], [1, 5, 2])'
+    base_body_no_special: 'a += np.array([0, 1, 0, 0], axis=1)'
+       base_body_special: 'np. array ( [ 2, 3, 4 ], np. max ( [ 1, 5, 2 ] ) '
+       body_intent_canon: 'np.array([([2, 3, 4], [[1, 5, 2]])], axis=1)'
+            cg_bart_base: 'np. array ( max ( np. arange ( [ str_0 ], np. str_1 ] ), axis = 1 ) '
+              tags_after: 'np. array ( [ 2, 3, 4 ], np. max ( [ 1, 5, 2 ] ) '
+      BEST - tags_before: 'np.array([2, 3, 4], np.max([1, 5, 2])'
+            tags_no_body: 'np.max([2, 3, 4], [1, 5, 2])'
+
+
+
+==================================================
+
+Question: 1807026
+------------------------INPUTS------------------------
+Tags: arrays, list, initialization
+Intent: initialize a list `lst` of 100 objects Object()
+Body: <p> I'm a  looking to initialize an array/list of objects that are not empty -- the class constructor generates data. In C++ and Java I would do something like this:
+<code_block> Object lst = new Object[100];
+
+<p> I've dug around, but is there a Pythonic way to get this done?
+<p> This doesn't work like I thought it would (I get 100 references to the same object):
+<code_block> lst = [Object()]*100
+
+<p> But this seems to work in the way I want:
+<code_block> lst = [Object() for i in range(100)]
+
+<p> List comprehension seems (intellectually) like "a lot" of work for something that's so simple in Java.
+
+------------------------OUTPUTS------------------------
+                Expected: 'lst = [Object() for i in range(100)]'
+          answer_no_body: 'lst = [x for x in object]'
+    base_body_no_special: 'lst = [Object() for i in range(100)]'
+       base_body_special: 'lst = [Object for i in range(100)]'
+       body_intent_canon: 'lst = [i for i in range(100)]'
+            cg_bart_base: 'lst = [x for x in Object if x == 100]'
+              tags_after: 'lst = [Object() for object in range(100)]'
+      BEST - tags_before: 'lst = [Object() for i in range(100)]'
+            tags_no_body: 'lst = [i for i in range(100)]'
+
+
+
+==================================================
+
+Question: 1807026
+------------------------INPUTS------------------------
+Tags: arrays, list, initialization
+Intent: create list `lst` containing 100 instances of object `Object`
+Body: <p> I'm a  looking to initialize an array/list of objects that are not empty -- the class constructor generates data. In C++ and Java I would do something like this:
+<code_block> Object lst = new Object[100];
+
+<p> I've dug around, but is there a Pythonic way to get this done?
+<p> This doesn't work like I thought it would (I get 100 references to the same object):
+<code_block> lst = [Object()]*100
+
+<p> But this seems to work in the way I want:
+<code_block> lst = [Object() for i in range(100)]
+
+<p> List comprehension seems (intellectually) like "a lot" of work for something that's so simple in Java.
+
+------------------------OUTPUTS------------------------
+                Expected: 'lst = [Object() for _ in range(100)]'
+          answer_no_body: 'lst = [i for i in range(100)]'
+    base_body_no_special: 'lst = [Object() for i in range(100)]'
+       base_body_special: 'lst = [Object() for i in range(100)]'
+       body_intent_canon: 'lst = [i for i in range(100)]'
+            cg_bart_base: 'lst = [i for i in range(100)]'
+              tags_after: 'lst = [Object() for i in range(100)]'
+      BEST - tags_before: 'lst = [Object() for i in range(100)]'
+            tags_no_body: 'lst = [i for i in range(100)]'
+
+
+
+==================================================
+
+Question: 2011048
+------------------------INPUTS------------------------
+Tags: size, character
+Intent: Get the characters count in a file `filepath`
+Body: <p> I have a python code which reads many files.
+but some files are extremely large due to which i have errors coming in other codes.
+i want a way in which i can check for the character count of the files so that i avoid reading those extremely large files.
+Thanks.
+
+------------------------OUTPUTS------------------------
+                Expected: 'os.stat(filepath).st_size'
+          answer_no_body: "with open('filepath') as f:\n    f.count()"
+    base_body_no_special: "print(open('myfile.txt').read())"
+       base_body_special: 'print(os.path.getccount(filepath))'
+       body_intent_canon: "re.findall('\\n', filepath)"
+            cg_bart_base: 'print(os.path.count(filepath))'
+              tags_after: 'print(os.path.count(filepath))'
+      BEST - tags_before: 'print(os.path.count(filepath))'
+            tags_no_body: 'print(os.path.count(filepath))'
+
+
+
+==================================================
+
+Question: 20180210
+------------------------INPUTS------------------------
+Tags: numpy, matrix
+Intent: Create new matrix object  by concatenating data from matrix A and matrix B
+Body: <p> new to Python, struggling in numpy, hope someone can help me, thank you!
+<code_block> from numpy  import *   
+A = matrix('1.0 2.0; 3.0 4.0')    
+B = matrix('5.0 6.0')
+C = matrix('1.0 2.0; 3.0 4.0; 5.0 6.0')
+print "A=",A
+print "B=",B
+print "C=",C
+
+<p> results:
+<code_block> A= [[ 1.  2.]
+   [ 3.  4.]]
+B= [[ 5.  6.]]
+C= [[ 1.  2.]
+   [ 3.  4.]
+   [ 5.  6.]]
+
+<p> Question: how to use A and B to generate C, like in matlab <code> C=[A;B] <p> ?
+
+------------------------OUTPUTS------------------------
+                Expected: 'np.concatenate((A, B))'
+          answer_no_body: 'numpy.concat([a, b])'
+    base_body_no_special: 'a = [ np. arange ( a ), b ) [ 0 ] '
+       base_body_special: '[matrix(a) for a, b in zip(A, B)]'
+       body_intent_canon: 'np.concatenate(a, b)'
+            cg_bart_base: 'np.concatenate([a, b])'
+              tags_after: 'np.concatenate(A, B)'
+      BEST - tags_before: 'C = np.concat([A; B])'
+            tags_no_body: 'np.concatenate(a, b)'
+
+
+
+==================================================
+
+Question: 20180210
+------------------------INPUTS------------------------
+Tags: numpy, matrix
+Intent: concat two matrices `A` and `B` in numpy
+Body: <p> new to Python, struggling in numpy, hope someone can help me, thank you!
+<code_block> from numpy  import *   
+A = matrix('1.0 2.0; 3.0 4.0')    
+B = matrix('5.0 6.0')
+C = matrix('1.0 2.0; 3.0 4.0; 5.0 6.0')
+print "A=",A
+print "B=",B
+print "C=",C
+
+<p> results:
+<code_block> A= [[ 1.  2.]
+   [ 3.  4.]]
+B= [[ 5.  6.]]
+C= [[ 1.  2.]
+   [ 3.  4.]
+   [ 5.  6.]]
+
+<p> Question: how to use A and B to generate C, like in matlab <code> C=[A;B] <p> ?
+
+------------------------OUTPUTS------------------------
+                Expected: 'np.vstack((A, B))'
+          answer_no_body: 'numpy.concat([a, b])'
+    base_body_no_special: 'a = [ np. arange ( a ), b ) [ 0 ] '
+       base_body_special: 'np.concat(A, B)'
+       body_intent_canon: 'numpy.concat(A, B)'
+            cg_bart_base: 'numpy.concat(A, B)'
+              tags_after: 'numpy.concat(A, B)'
+      BEST - tags_before: 'C = np.concat([A; B])'
+            tags_no_body: 'numpy.concat([a, b])'
+
+
+
+==================================================
+
+Question: 12842997
+------------------------INPUTS------------------------
+Tags: file, directory, copy
+Intent: copy file `srcfile` to directory `dstdir`
+Body: <p> First thing I have to mention here, I'm new to python.
+<p> Now I have a file located in:
+<code_block> a/long/long/path/to/file.py
+
+<p> I want to copy to my home directory with a new folder created:
+<code_block> /home/myhome/new_folder
+
+<p> My expected result is:
+<code_block> /home/myhome/new_folder/a/long/long/path/to/file.py
+
+<p> Is there any existing library to do that? If no, how can I achieve that?
+
+------------------------OUTPUTS------------------------
+                Expected: 'shutil.copy(srcfile, dstdir)'
+          answer_no_body: 'os.path.dirname(srcfile)'
+    base_body_no_special: "os.path.append('/path/to/file.py')"
+       base_body_special: 'os.path.dirname(srcfile)'
+       body_intent_canon: 'os.copy(srcfile, dstdir)'
+            cg_bart_base: 'os.copy(srcfile, dstdir)'
+              tags_after: 'os.path.dirname(srcfile)'
+      BEST - tags_before: 'os.path.dirname(srcfile, dstdir)'
+            tags_no_body: 'os.copy(srcfile, dstdir)'
+
+
+
+==================================================
+
+Question: 38152389
+------------------------INPUTS------------------------
+Tags: pandas, numpy, dataframe
+Intent: combine values from column 'b' and column 'a' of dataframe `df`  into column 'c' of datafram `df`
+Body: <p> I'm looking for a method that behaves similarly to coalesce in T-SQL. I have 2 columns (column A and B) that are sparsely populated in a pandas dataframe. I'd like to create a new column using the following rules:
+
+<li> If the value in column A <em> is not null <li> , use that value for the new column C
+<li> If the value in column A <em> is null <li> , use the value in column B for the new column C
+
+<p> Like I mentioned, this can be accomplished in MS SQL Server via the coalesce function. I haven't found a good pythonic method for this; does one exist?
+
+------------------------OUTPUTS------------------------
+                Expected: "df['c'] = np.where(df['a'].isnull, df['b'], df['a'])"
+          answer_no_body: "df['b', 'a'] = df['c']"
+    base_body_no_special: "df['a'] = df['b']"
+       base_body_special: "df. merge ( [ 'B', 'A' ], 'C' ] ) "
+       body_intent_canon: "df['b'] = ['df']"
+            cg_bart_base: "df['b'] = df.apply(lambda c: a[b])"
+              tags_after: "df['C'] = df['A']"
+      BEST - tags_before: "df['C'] = df['A']"
+            tags_no_body: "df['b'] = df['A'] + df['C']"
+
+
+
+==================================================
+
+Question: 17021863
+------------------------INPUTS------------------------
+Tags: file, testing
+Intent: Put the curser at beginning of the file
+Body: <p> I have a script that reads a file and then completes tests based on that file however I am running into a problem because the file reloads after one hour and I cannot get the script to re-read the file after or at that point in time.
+<p> So:
+
+<li> GETS NEW FILE TO READ
+<li> Reads file
+<li> performs tests on file
+<li> GET NEW FILE TO READ (with same name - but that can change if it is part of a solution)
+<li> Reads new file
+<li> perform same tests on new file
+
+<p> Can anyone suggest a way to get Python to re-read the file?
+
+------------------------OUTPUTS------------------------
+                Expected: 'file.seek(0)'
+          answer_no_body: "with open('\\n') as curser:\n    pass"
+    base_body_no_special: "re.read('filename.txt', shell=True)"
+       base_body_special: "re.read('\\\\d+', curser)"
+       body_intent_canon: "os.path.startswith('\\n')"
+            cg_bart_base: "os.path.startswith('\\n')"
+              tags_after: 'print(os.path.getcwd())'
+      BEST - tags_before: "os.system('GET NEW FILE TO READ')"
+            tags_no_body: 'curser.startswith(0)'
+
+
+
+==================================================
+
+Question: 11574195
+------------------------INPUTS------------------------
+Tags: list, join, merge
+Intent: merge list `['it']` and list `['was']` and list `['annoying']` into one list
+Body: 
+<strong> Possible Duplicate:
+<a> Making a flat list out of list of lists in Python
+<a> Join a list of lists together into one list in Python
+
+
+<p> I have many lists which looks like 
+<code_block> ['it']
+['was']
+['annoying']
+
+<p> I want the above to look like 
+<code_block> ['it', 'was', 'annoying']
+
+<p> How do I achieve that?
+
+------------------------OUTPUTS------------------------
+                Expected: "['it'] + ['was'] + ['annoying']"
+          answer_no_body: "[(['it'] and list `['was']], ['annoying']])"
+    base_body_no_special: "list(itertools.chain(['it', 'was']))"
+       base_body_special: "[ ( [ 'it' ], [ 'was' ] ) for ( 'annoying', [ ] ) ] "
+       body_intent_canon: '[ str_0 ] for str_1 in [ str_2 ] '
+            cg_bart_base: "[[['it']] for ['was'] in zip(['annoying'])]"
+              tags_after: "list ( merge ( [ 'it', [ 'was' ], list = [ 'annoying' ] ) ) "
+      BEST - tags_before: "list(zip(*['it']), ['was'] and list `['annoying']))"
+            tags_no_body: "list(['it', 'was'] and list(['annoying']))"
+
+
+
+==================================================
+
+Question: 17315881
+------------------------INPUTS------------------------
+Tags: pandas
+Intent: check if a pandas dataframe `df`'s index is sorted
+Body: <p> I have a vanilla pandas dataframe with an index. I need to check if the index is sorted. Preferably without sorting it again.
+<p> e.g. I can test an index to see if it is unique by index.is_unique() is there a similar way for testing sorted?
+
+------------------------OUTPUTS------------------------
+                Expected: 'all(df.index[:-1] <= df.index[1:])'
+          answer_no_body: 'df.index.sort(key=lambda x: x[1])'
+    base_body_no_special: 'df.is_unique()'
+       base_body_special: 'df.is_sorted()'
+       body_intent_canon: 'df.is_selected()'
+            cg_bart_base: 'df.index.sorted()'
+              tags_after: 'df.is_selected()'
+      BEST - tags_before: 'df.sort(key=lambda index: index.is_unique())'
+            tags_no_body: 'df.sort(key=lambda x: x[1])'
+
+
+
+==================================================
+
+Question: 574236
+------------------------INPUTS------------------------
+Tags: macos, filesystems, hard-drive
+Intent: determine number of files on a drive with python
+Body: <p> I have been trying to figure out how to retrieve (quickly) the number of files on a given HFS+ drive with python.
+<p> I have been playing with os.statvfs and such, but can't quite get anything (that seems helpful to me).
+<p> Any ideas?
+<strong> Edit: <p>  Let me be a bit more specific. =]
+<p> I am writing a timemachine-like wrapper around rsync for various reasons, and would like a very fast estimate (does not have to be perfect) of the number of files on the drive rsync is going to scan. This way I can watch the progress from rsync (if you call it like <code> rsync -ax --progress <p> , or with the <code> -P <p>  option) as it builds its initial file list, and report a percentage and/or ETA back to the user.
+<p> This is completely separate from the actual backup, which is no problem tracking progress. But with the drives I am working on with several million files, it means the user is watching a counter of the number of files go up with no upper bound for a few minutes.
+<p> I have tried playing with os.statvfs with exactly the method described in one of the answers so far, but the results do not make sense to me.
+<code_block> <console_in> import os
+<console_in> os.statvfs('/').f_files - os.statvfs('/').f_ffree
+<console_out> 64171205L
+
+<p> The more portable way gives me around 1.1 million on this machine, which is the same as every other indicator I have seen on this machine, including rsync running its preparations:
+<code_block> <console_in> sum(len(filenames) for path, dirnames, filenames in os.walk("/"))
+<console_out> 1084224
+
+<p> Note that the first method is instantaneous, while the second one made me come back 15 minutes later to update because it took just that long to run.
+<p> Does anyone know of a similar way to get this number, or what is wrong with how I am treating/interpreting the os.statvfs numbers?
+
+------------------------OUTPUTS------------------------
+                Expected: "os.statvfs('/').f_files - os.statvfs('/').f_ffree"
+          answer_no_body: "with open('\\n') as f:\n    pass"
+    base_body_no_special: 'sum(len(filenames))'
+       base_body_special: "os.statvfs('/').sum(filenames)"
+       body_intent_canon: "os.statvfs('/').sum(filenames)"
+            cg_bart_base: "os.path.isfile('file')"
+              tags_after: "os.statvfs('/', file_count=1)"
+      BEST - tags_before: "os.statvfs('/').count()"
+            tags_no_body: 'os.path.realpath(lambda x: x[1])'
+
+
+
+==================================================
+
+Question: 6378889
+------------------------INPUTS------------------------
+Tags: string, list, int
+Intent: convert string `user_input` into a list of integers `user_list`
+Body: <p> In my python Script I have:
+<code_block> user = nuke.getInput("Frames Turned On")
+userLst = [user]
+print userLst
+
+<p> Result: 
+<code_block> ['12,33,223']
+
+<p> I was wondering How I would remove the <code> ' <p>  in the list, or somehow convert it into int?
+
+------------------------OUTPUTS------------------------
+                Expected: "user_list = [int(number) for number in user_input.split(',')]"
+          answer_no_body: 'user_input = [int(x) for x in user_list]'
+    base_body_no_special: "nuke.getInput('Frames Turned On')"
+       base_body_special: "user_list = nuke.getInput('Frames Turned On')"
+       body_intent_canon: 'user_list = [int(x) for x in user_input]'
+            cg_bart_base: 'user_list = [int(i) for i in user_input]'
+              tags_after: "nuke.getInput('Frames Turned On')"
+      BEST - tags_before: 'user_list = [int(x) for x in user_list]'
+            tags_no_body: 'user_input = [int(x) for x in user_list]'
+
+
+
+==================================================
+
+Question: 5212870
+------------------------INPUTS------------------------
+Tags: sorting
+Intent: Sorting a Python list by two criteria
+Body: <p> I have the following list created from a sorted csv
+<code_block> list1 = sorted(csv1, key=operator.itemgetter(1))
+
+<p> I would actually like to sort the list by two criteria: first by the value in field 1 and then by the value in field 2. How do I do this?
+
+------------------------OUTPUTS------------------------
+                Expected: 'sorted(list, key=lambda x: (x[0], -x[1]))'
+          answer_no_body: 'sorted(list(itertools.items()), key=lambda x: x[1])'
+    base_body_no_special: 'sorted(list1, key=operator.itemgetter(1))'
+       base_body_special: 'sorted(list1, key=operator.itemgetter(1))'
+       body_intent_canon: 'sorted(csv1, key=operator.itemgetter(1), reverse=True)'
+            cg_bart_base: 'sorted(list, key=lambda x: x[1], reverse=True)'
+              tags_after: 'sorted(csv1, key=operator.itemgetter(1))'
+      BEST - tags_before: 'sorted(csv1, key=operator.itemgetter(1))'
+            tags_no_body: 'sorted(list, key=lambda x: x[1])'
+
+
+
+==================================================
+
+Question: 5183533
+------------------------INPUTS------------------------
+Tags: list, matrix, numpy
+Intent: Convert the first row of numpy matrix `a` to a list
+Body: <p> I using the dot() function from numpy to multiply a matrix of 3x3 with a numpy.array of 1x3. The output is for example this:
+<p> [[ 0.16666667  0.66666667  0.16666667]]
+<p> which is of type:
+<code_block> <class 'numpy.matrixlib.defmatrix.matrix'>
+
+<p> how can I convert this to a list. Because I know the result will always be a matrix of 1x3 so it should be coverted to a list because I need to be able to loop through it later for calculation the pearson distance of two of those lists.
+<strong> So to summarize: how can I make a list from this matrix?
+
+------------------------OUTPUTS------------------------
+                Expected: 'numpy.array(a)[0].tolist()'
+          answer_no_body: 'a[:] = [a[0]'
+    base_body_no_special: 'list(numpy.matrixlib.defmatrix.matrix())'
+       base_body_special: '[row[0] for row in a]'
+       body_intent_canon: 'list(a.reshape(axis=1))'
+            cg_bart_base: '[x[0] for x in a]'
+              tags_after: '[np.matrixlib.defmatrix.matrix(a)]'
+      BEST - tags_before: 'list(numpy.matrixlib.defmatrix.reshape(a))'
+            tags_no_body: '[a[0] for i in a]'
+
+
+
+==================================================
+
+Question: 5183533
+------------------------INPUTS------------------------
+Tags: list, matrix, numpy
+Intent: Convert array `a` into a list
+Body: <p> I using the dot() function from numpy to multiply a matrix of 3x3 with a numpy.array of 1x3. The output is for example this:
+<p> [[ 0.16666667  0.66666667  0.16666667]]
+<p> which is of type:
+<code_block> <class 'numpy.matrixlib.defmatrix.matrix'>
+
+<p> how can I convert this to a list. Because I know the result will always be a matrix of 1x3 so it should be coverted to a list because I need to be able to loop through it later for calculation the pearson distance of two of those lists.
+<strong> So to summarize: how can I make a list from this matrix?
+
+------------------------OUTPUTS------------------------
+                Expected: 'numpy.array(a).reshape(-1).tolist()'
+          answer_no_body: 'a = [a[::(-1)]'
+    base_body_no_special: 'list(numpy.matrixlib.defmatrix.matrix())'
+       base_body_special: 'list(numpy.matrixlib.defmatrix.matrix(a))'
+       body_intent_canon: '[np.matrixlib.defmatrix.matrix(a)]'
+            cg_bart_base: '[(x, y) for x in a]'
+              tags_after: '[np.matrixlib.defmatrix.matrix(a)]'
+      BEST - tags_before: 'list(numpy.matrixlib.defmatrix.array(a))'
+            tags_no_body: 'a = [i[i] for i in a]'
+
+
+
+==================================================
+
+Question: 1143379
+------------------------INPUTS------------------------
+Tags: list
+Intent: remove duplicate elements from list 'L'
+Body: <p> Can anyone suggest a good solution to remove duplicates from nested lists if wanting to evaluate duplicates based on first element of each nested list?
+<p> The main list looks like this:
+<code_block> L = [['14', '65', 76], ['2', '5', 6], ['7', '12', 33], ['14', '22', 46]]
+
+<p> If there is another list with the same element at first position <code> [k][0] <p>  that had already occurred, then I'd like to remove that list and get this result:
+<code_block> L = [['14', '65', 76], ['2', '5', 6], ['7', '12', 33]]
+
+<p> Can you suggest an algorithm to achieve this goal?
+
+------------------------OUTPUTS------------------------
+                Expected: 'list(dict((x[0], x) for x in L).values())'
+          answer_no_body: '[x for x in L if x not in x]'
+    base_body_no_special: '[x[0] for x in L]'
+       base_body_special: '[x[0] for x in L]'
+       body_intent_canon: '[x[0] for x in L]'
+            cg_bart_base: '[item for item in L if item in item]'
+              tags_after: '[x[0] for x in L]'
+      BEST - tags_before: '[x[0] for x in L]'
+            tags_no_body: '[x for x in L if x not in x]'
+
+
+
+==================================================
+
+Question: 7373219
+------------------------INPUTS------------------------
+Tags: 
+Intent: get attribute 'attr' from object `obj`
+Body: <p> I vaguely remember learning about some sort of built-in function that would do the equivalent of
+<code_block> f = lambda x: x.attr
+
+<p> Am I just imagining this or does such a thing exist? 
+
+------------------------OUTPUTS------------------------
+                Expected: "getattr(obj, 'attr')"
+          answer_no_body: "obj['attr'] = obj[attr]"
+    base_body_no_special: "f = lambda x: x.attr('attr')"
+       base_body_special: "f = obj.getattr('attr')"
+       body_intent_canon: "obj.attribute('attr')"
+            cg_bart_base: "obj.attribute('attr')"
+              tags_after: "f = obj.getattr('attr')"
+      BEST - tags_before: "obj = obj.getattr('attr')"
+            tags_no_body: "obj['attr'] = obj.attr"
+
+
+
+==================================================
+
+Question: 1303243
+------------------------INPUTS------------------------
+Tags: string, types, compatibility
+Intent: check if object `obj` is a string
+Body: <p> How can I check if a Python object is a string (either regular or Unicode)?
+
+------------------------OUTPUTS------------------------
+                Expected: 'isinstance(obj, str)'
+          answer_no_body: 'if obj.isinstance(obj):\n    pass'
+    base_body_no_special: '"""""".join(a)'
+       base_body_special: 'print(obj.isString())'
+       body_intent_canon: 'obj.isdigit()'
+            cg_bart_base: 'isinstance(obj)'
+              tags_after: 'print(obj.isdigit())'
+      BEST - tags_before: 'print(obj.__str__())'
+            tags_no_body: 'print(obj.__str__())'
+
+
+
+==================================================
+
+Question: 5558418
+------------------------INPUTS------------------------
+Tags: list, dictionary
+Intent: list of dicts to/from dict of lists
+Body: <p> I am looking to change back and forth between a dictionary of lists (all of the same length):
+<code_block> DL = {'a': [0, 1], 'b': [2, 3]}
+
+<p> and a list of dictionaries:
+<code_block> LD = [{'a': 0, 'b': 2}, {'a': 1, 'b': 3}]
+
+<p> I am looking for the cleanest way to switch between the two forms.
+
+------------------------OUTPUTS------------------------
+                Expected: 'print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))'
+          answer_no_body: '[d for d in list(ld.items()]'
+    base_body_no_special: "[d['a'] for d in DL]"
+       base_body_special: '[dict(x) for x in zip(DL, LD)]'
+       body_intent_canon: '[dict(d, key) for d in LD]'
+            cg_bart_base: '[dict(i) for i in LD]'
+              tags_after: "[d['a'] for d in zip(DL, DL)]"
+      BEST - tags_before: '[d for d, d in zip(DL, LD)]'
+            tags_no_body: 'dict((k, v) for k, v in list(ld.items()))'

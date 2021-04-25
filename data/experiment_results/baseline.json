@@ -1,0 +1,5224 @@
+{
+ "parameters": {
+  "name": "",
+  "model_name": "bartBase",
+  "max_input_len": 128,
+  "max_target_len": 128,
+  "use_title_over_intent": false,
+  "tags_before_intent": false,
+  "remove_code_blocks": false,
+  "remove_inline_code": false,
+  "use_body": false,
+  "use_only_code": false,
+  "disable_body_in_test": false
+ },
+ "train_state": {
+  "best_metric": 1.4366035461425781,
+  "best_model_checkpoint": "./experiments/checkpoint-1340",
+  "epoch": 10.0,
+  "global_step": 1340,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+   {
+    "epoch": 1.0,
+    "learning_rate": 4.947871666974437e-05,
+    "loss": 3.3991,
+    "step": 134
+   },
+   {
+    "epoch": 1.0,
+    "eval_loss": 2.1490585803985596,
+    "eval_runtime": 0.6872,
+    "eval_samples_per_second": 346.319,
+    "step": 134
+   },
+   {
+    "epoch": 2.0,
+    "learning_rate": 4.655873270728973e-05,
+    "loss": 2.2458,
+    "step": 268
+   },
+   {
+    "epoch": 2.0,
+    "eval_loss": 1.8241971731185913,
+    "eval_runtime": 0.6406,
+    "eval_samples_per_second": 371.554,
+    "step": 268
+   },
+   {
+    "epoch": 3.0,
+    "learning_rate": 4.136315079151446e-05,
+    "loss": 1.8152,
+    "step": 402
+   },
+   {
+    "epoch": 3.0,
+    "eval_loss": 1.7021958827972412,
+    "eval_runtime": 0.6755,
+    "eval_samples_per_second": 352.351,
+    "step": 402
+   },
+   {
+    "epoch": 4.0,
+    "learning_rate": 3.444038235895212e-05,
+    "loss": 1.5475,
+    "step": 536
+   },
+   {
+    "epoch": 4.0,
+    "eval_loss": 1.5683852434158325,
+    "eval_runtime": 0.6744,
+    "eval_samples_per_second": 352.919,
+    "step": 536
+   },
+   {
+    "epoch": 5.0,
+    "learning_rate": 2.6521149288775348e-05,
+    "loss": 1.3416,
+    "step": 670
+   },
+   {
+    "epoch": 5.0,
+    "eval_loss": 1.4908510446548462,
+    "eval_runtime": 0.7062,
+    "eval_samples_per_second": 337.013,
+    "step": 670
+   },
+   {
+    "epoch": 6.0,
+    "learning_rate": 1.8441353709882027e-05,
+    "loss": 1.1872,
+    "step": 804
+   },
+   {
+    "epoch": 6.0,
+    "eval_loss": 1.4405730962753296,
+    "eval_runtime": 0.6885,
+    "eval_samples_per_second": 345.688,
+    "step": 804
+   },
+   {
+    "epoch": 7.0,
+    "learning_rate": 1.1053845672978567e-05,
+    "loss": 1.0693,
+    "step": 938
+   },
+   {
+    "epoch": 7.0,
+    "eval_loss": 1.4532577991485596,
+    "eval_runtime": 0.6673,
+    "eval_samples_per_second": 356.635,
+    "step": 938
+   },
+   {
+    "epoch": 8.0,
+    "learning_rate": 5.138401911566265e-06,
+    "loss": 0.9963,
+    "step": 1072
+   },
+   {
+    "epoch": 8.0,
+    "eval_loss": 1.439616322517395,
+    "eval_runtime": 0.6913,
+    "eval_samples_per_second": 344.262,
+    "step": 1072
+   },
+   {
+    "epoch": 9.0,
+    "learning_rate": 1.3194177414189907e-06,
+    "loss": 0.9499,
+    "step": 1206
+   },
+   {
+    "epoch": 9.0,
+    "eval_loss": 1.4412882328033447,
+    "eval_runtime": 0.6998,
+    "eval_samples_per_second": 340.097,
+    "step": 1206
+   },
+   {
+    "epoch": 10.0,
+    "learning_rate": 0.0,
+    "loss": 0.9315,
+    "step": 1340
+   },
+   {
+    "epoch": 10.0,
+    "eval_loss": 1.4366035461425781,
+    "eval_runtime": 0.6918,
+    "eval_samples_per_second": 344.023,
+    "step": 1340
+   },
+   {
+    "epoch": 10.0,
+    "step": 1340,
+    "total_flos": 373758251212800.0,
+    "train_runtime": 391.6071,
+    "train_samples_per_second": 3.422
+   }
+  ],
+  "max_steps": 1340,
+  "num_train_epochs": 10,
+  "total_flos": 373758251212800.0,
+  "trial_name": null,
+  "trial_params": null
+ },
+ "val": {
+  "val_BLEU": 35.42288368005428,
+  "val_SacreBLEU": 35.03541895592715,
+  "val_BLEU-Unigram-Precision": 70.44191585075417,
+  "val_Sacre-Unigram-Precision": 68.72064106106659,
+  "val_ROUGE-2": 31.228633280041763,
+  "val_ROUGE-L": 51.156860641365,
+  "val_BLEU-Bigram-Precision": 49.082180175091786,
+  "val_Sacre-Bigram-Precision": 47.05708370304644,
+  "val_BLEU-Trigram-Precision": 35.815924916742354,
+  "val_Sacre-Trigram-Precision": 36.71651288577792
+ },
+ "test": {
+  "test_BLEU": 27.19770777858221,
+  "test_SacreBLEU": 26.743254564864802,
+  "test_BLEU-Unigram-Precision": 67.56756756756756,
+  "test_Sacre-Unigram-Precision": 65.60054907343857,
+  "test_ROUGE-2": 24.435368235053893,
+  "test_ROUGE-L": 45.67888281507312,
+  "test_BLEU-Bigram-Precision": 43.96612561750177,
+  "test_Sacre-Bigram-Precision": 41.96020633750921,
+  "test_BLEU-Trigram-Precision": 29.90129081245254,
+  "test_Sacre-Trigram-Precision": 30.898965791567225,
+  "test_cheat_BLEU": {
+   "mean": -0.35883810099787333,
+   "var": 1.7239950320687094,
+   "std": 1.3130099131646757
+  },
+  "test_cheat_SacreBLEU": {
+   "mean": -0.29950065851428065,
+   "var": 1.3514410243955555,
+   "std": 1.1625149566330557
+  },
+  "test_cheat_BLEU-Unigram-Precision": {
+   "mean": -1.3406462654265676,
+   "var": 204.62863761596586,
+   "std": 14.304846647761236
+  },
+  "test_cheat_Sacre-Unigram-Precision": {
+   "mean": -2.5194714942499212,
+   "var": 234.6556484576732,
+   "std": 15.318474090380974
+  },
+  "test_cheat_ROUGE-2": {
+   "mean": -1.5629470572235755,
+   "var": 12.80410521747452,
+   "std": 3.578282439589491
+  },
+  "test_cheat_ROUGE-L": {
+   "mean": -2.0325952284897872,
+   "var": 23.937683795638435,
+   "std": 4.892615230695996
+  },
+  "test_cheat_BLEU-Bigram-Precision": {
+   "mean": -6.407575891432351,
+   "var": 354.7475548951902,
+   "std": 18.834743292521676
+  },
+  "test_cheat_Sacre-Bigram-Precision": {
+   "mean": -7.328074622601309,
+   "var": 456.7015201086756,
+   "std": 21.37057603595831
+  },
+  "test_cheat_BLEU-Trigram-Precision": {
+   "mean": -6.649091948084413,
+   "var": 403.949811755516,
+   "std": 20.098502724220925
+  },
+  "test_cheat_Sacre-Trigram-Precision": {
+   "mean": -7.661170418822099,
+   "var": 497.9059515860451,
+   "std": 22.31380629982355
+  }
+ },
+ "preds": [
+  [
+   "15080500.0",
+   "os.kill(os.getpid(), signal.SIGUSR1)",
+   [
+    "sys.communicate('signal.sigusr1')",
+    "sys.system('signal.sigusr1')",
+    "sys.exit('signal.sigusr1')",
+    "sys.communicate('signal.Sigusr1')"
+   ]
+  ],
+  [
+   "3283984.1",
+   "bytes.fromhex('4a4b4c').decode('utf-8')",
+   [
+    "print('4a4b4c'.decode('hex')",
+    "hex(4a4b4c).decode('utf8')",
+    "print('4a4b4c'.encode('utf8')",
+    "hex(4a4b4c)"
+   ]
+  ],
+  [
+   "3844801.2",
+   "all(x == myList[0] for x in myList)",
+   [
+    "all(i == j for i in mylist)",
+    "all(i == j for i in myList)",
+    "all(i == j for i, j in mylist)",
+    "all(i == j for i, j in myList)"
+   ]
+  ],
+  [
+   "4302166.3",
+   "print('%*s : %*s' % (20, 'Python', 20, 'Very Good'))",
+   [
+    "\"\"\"{0:.2f}\"\"\".format(python, `:','very good')",
+    "\"\"\"{0:.2f}\"\"\".format(python, `:','very good'))",
+    "\"\"\"{0:.2f}\"\"\".format(python, ':', 'very good')",
+    "\"\"\"{0:.2f}\"\"\".format(python, `:','very good'])"
+   ]
+  ],
+  [
+   "7555335.4",
+   "d.decode('cp1251').encode('utf8')",
+   [
+    "\"\"\"cp-1251\"\"\".encode('utf8')",
+    "'cp-1251'.encode('utf8'))",
+    "\"\"\"cp-1251\"\"\".decode('utf8')",
+    "'cp-1251', 'utf8')"
+   ]
+  ],
+  [
+   "2544710.5",
+   "res = {k: v for k, v in list(kwargs.items()) if v is not None}",
+   [
+    "dict((k, v) for k, v in list(kwargs.items()))",
+    "{k: v for k, v in list(kwargs.values())}",
+    "{k: v for k, v in list(kwargs.items())}",
+    "{k: v for k, v in kargs}"
+   ]
+  ],
+  [
+   "2544710.6",
+   "res = dict((k, v) for k, v in kwargs.items() if v is not None)",
+   [
+    "dict((k, v) for k, v in list(kwargs.items()))",
+    "{k: v for k, v in list(kwargs.values())}",
+    "{k: v for k, v in list(kwargs.items())}",
+    "{k: v for k, v in kargs}"
+   ]
+  ],
+  [
+   "14971373.7",
+   "subprocess.check_output('ps -ef | grep something | wc -l', shell=True)",
+   [
+    "sys.system('ps -ef | grep something | wc -l')",
+    "sys.exit(ps -ef | grep something | wc -l)",
+    "sys.exit('ps -ef | grep something | wc -l')",
+    "ps.communicate('ps -ef | grep something | wc -l')"
+   ]
+  ],
+  [
+   "6726636.8",
+   "\"\"\"\"\"\".join(['a', 'b', 'c'])",
+   [
+    "list(['a', 'b', 'c']))",
+    "\"\"\"\"\"\".join(['a', 'b', 'c']))",
+    "list(['a', 'b', 'c'])",
+    "list(['A', 'B', 'C']))"
+   ]
+  ],
+  [
+   "18079563.9",
+   "pd.Series(list(set(s1).intersection(set(s2))))",
+   [
+    "print(s1.intersection(s2.index(1))",
+    "s1.intersection(s2.index)",
+    "s1.intersection(s2.index(1))",
+    "print(s1.intersection(s2.index(0))"
+   ]
+  ],
+  [
+   "8315209.10",
+   "client.send('HTTP/1.0 200 OK\\r\\n')",
+   [
+    "client.send(' headers', headers=False)",
+    "client.send('headers', headers=False)",
+    "client.send(' headers', headers={'status': 1})",
+    "client.send(' headers', headers={'id': 'id': ''})"
+   ]
+  ],
+  [
+   "26153795.11",
+   "then = datetime.datetime.strptime(when, '%Y-%m-%d').date()",
+   [
+    "datetime.strptime('today', '%Y-%m-%d %H:%M')",
+    "datetime.strptime('today', '%Y-%m-%d %H:%Y')",
+    "datetime.strptime('today', 'when')",
+    "datetime.strptime('today', '%B %Y')"
+   ]
+  ],
+  [
+   "172439.12",
+   "inputString.split('\\n')",
+   [
+    "\"\"\"{0:.2f}\"\"\".format(inputstring)",
+    "\"\"\"{0:.2f}\"\"\".format(inputString)",
+    "\"\"\"{0:.2f}\"\"\".format(inputstring))",
+    "\"\"\"{0:.2f}\"\"\".format(inputString))"
+   ]
+  ],
+  [
+   "172439.13",
+   "' a \\n b \\r\\n c '.split('\\n')",
+   [
+    "re.split('\\n', 'a \\n b \\r\\n c')",
+    "re.split('\\n', 'A \\n b \\r\\n c')",
+    "re.split('\\n', 'A \\n B \\r\\n c')",
+    "re.split('\\n', '\\n')"
+   ]
+  ],
+  [
+   "13954222.14",
+   "\"\"\":\"\"\".join(str(x) for x in b)",
+   [
+    "[(x + y) for x, y in zip(b, b)]",
+    "b = [(i + j) for i, j in zip(b, b)]",
+    "[(x + y) for x in b if y.split(':\"]",
+    "[(x + y) for x in b if y.split(':\"]]"
+   ]
+  ],
+  [
+   "5123839.15",
+   "Entry.objects.filter()[:1].get()",
+   [
+    "Entry.objects.get_first()",
+    "Entry.objects.filter(1)",
+    "Entry.objects.filter(__name__)",
+    "Entry.objects.filter(1).first()"
+   ]
+  ],
+  [
+   "13567345.16",
+   "a.sum(axis=1)",
+   [
+    "sum(np.sum(2, 3))",
+    "sum(np.sum(1, 2))",
+    "sum(np.sum(numpy.array([0, 1], axis=1))",
+    "sum(np.sum(numpy.array([1, 2], axis=1))"
+   ]
+  ],
+  [
+   "29784889.17",
+   "warnings.simplefilter('always')",
+   [
+    "if not always:\n    pass",
+    "os.environ['always'].disable()",
+    "if (not always):\n    pass\nexcept ValueError('always')",
+    "if (not always):\n    pass\nexcept ValueError('always')\nelse:\n  pass"
+   ]
+  ],
+  [
+   "13550423.18",
+   "print(' '.join(map(str, l)))",
+   [
+    "[x for x in L if x.strip()]",
+    "[item for item in L if item[' '] == '')",
+    "[x for x in L if x.split(' ', ')",
+    "[item for item in L if item[' '] == '')]"
+   ]
+  ],
+  [
+   "25651990.19",
+   "subprocess.call(['python.exe', 'hello.py', 'htmlfilename.htm'])",
+   [
+    "os.system('hello.py', 'htmlfilename.htm')",
+    "os.system('hello.py', 'htmlfilename.htm').exit()",
+    "os.system('hello.py', 'htmlfilename.htm').exec()",
+    "os.system('hello.py', shell=True)"
+   ]
+  ],
+  [
+   "698223.20",
+   "time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')",
+   [
+    "time.strftime('%s' % milliseconds)",
+    "time.strftime('%B')",
+    "time.strftime('%Y-%m-%d' % milliseconds)",
+    "time.strftime('%B %d %Y')"
+   ]
+  ],
+  [
+   "6633523.21",
+   "my_float = float(my_string.replace(',', ''))",
+   [
+    "my_string = float(my_float)",
+    "my_string.split('\\n')[0]",
+    "my_string.split('\\n')",
+    "my_string.split(',', 1)[0]"
+   ]
+  ],
+  [
+   "6633523.22",
+   "float('123,456.908'.replace(',', ''))",
+   [
+    "\"\"\"123,456.908\"\"\".split()",
+    "\"\"\"123,456.908\"\"\".format(float(','))",
+    "\"\"\"123,456.908\"\"\".format(',', ''))",
+    "\"\"\"123,456.908\"\"\".format(','))"
+   ]
+  ],
+  [
+   "3108285.23",
+   "sys.path.append('/path/to/whatever')",
+   [
+    "os.path.realpath(__file__)",
+    "os.path.realpath(__file__))",
+    "os.path.dirname(path)",
+    "os.path.dirname(__file__)"
+   ]
+  ],
+  [
+   "2195340.24",
+   "re.split('(\\\\W+)', 'Words, words, words.')",
+   [
+    "re.split('Words, words, words.')",
+    "re.split('words, words, words.')",
+    "re.split('\\\\w+)', 'Words, words, words.'",
+    "re.split('\\\\w+)', 'words, words, words.'"
+   ]
+  ],
+  [
+   "17977584.25",
+   "file = open('Output.txt', 'a')",
+   [
+    "open('output.txt', shell=True)",
+    "open('output.txt', 'shutdown')",
+    "print(open('output.txt', 'r').close()",
+    "print(open('output.txt', 'r', filename)"
+   ]
+  ],
+  [
+   "22676.26",
+   "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')",
+   [
+    "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3')",
+    "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3').save()",
+    "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', sep='mp3')",
+    "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', filename\n    =filename)"
+   ]
+  ],
+  [
+   "22676.28",
+   "response = urllib.request.urlopen('http://www.example.com/')\nhtml = response.read()",
+   [
+    "download('http://www.example.com/', shell=True)",
+    "download('http://www.example.com/')",
+    "open('http://www.example.com/', '', shell=True)",
+    "open('http://www.example.com/', 'rb')"
+   ]
+  ],
+  [
+   "22676.29",
+   "r = requests.get(url)",
+   [
+    "urllib.request.urlretrieve(url)",
+    "url = wget.download(url)",
+    "urllib.request.urlopen(url)",
+    "urllib.request.urlopen('url')"
+   ]
+  ],
+  [
+   "15405636.31",
+   "parser.add_argument('--version', action='version', version='%(prog)s 2.0')",
+   [
+    "parser.add_argument('--version', '%(prog)s 2.0')",
+    "parser.add_argument('--version', '%(prog)s 2.0')",
+    "parser.add_argument('--version', '%(prog)s 2.0'",
+    "parser.add_argument('--version')"
+   ]
+  ],
+  [
+   "17665809.32",
+   "{i: d[i] for i in d if i != 'c'}",
+   [
+    "d = d.remove('c')",
+    "d = {'c': d.lower()}",
+    "d = list(d.keys())",
+    "d = {'c': d.lower()})"
+   ]
+  ],
+  [
+   "41861705.33",
+   "pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))",
+   [
+    "pd.merge(split_df, csv_df)",
+    "pd.merge(['key'], 'csv_df'], inplace=True)",
+    "pd.merge(split_df,csv_df) & rename_columns(['key'], '_left'])",
+    "pd.merge(['key'], 'csv_df', 'key'])"
+   ]
+  ],
+  [
+   "10697757.34",
+   "s.split(' ', 4)",
+   [
+    "s = s.split(4)",
+    "s.split(4, 4)",
+    "s = s.split(4, 4)",
+    "s = s.split(4)[0]"
+   ]
+  ],
+  [
+   "5404068.35",
+   "input('Enter your input:')",
+   [
+    "input = input.read_key('input')",
+    "input = input.read().read()",
+    "input = input.read_key('input', 0)",
+    "input = input.read().read().write()"
+   ]
+  ],
+  [
+   "16344756.36",
+   "app.run(debug=True)",
+   [
+    "app.debug().disable_mode()",
+    "app.debug().disable_debug()",
+    "app.disabledebug(app.DEBUG)",
+    "app.debug().disable_mode(app)"
+   ]
+  ],
+  [
+   "40133826.37",
+   "pickle.dump(mylist, open('save.txt', 'wb'))",
+   [
+    "mylist.save('save.txt')",
+    "save.txt = os.save(mylist)",
+    "save.txt = os.save(mylist)\nexcept:\n    pass",
+    "mylist.save('save.txt', 'rb')"
+   ]
+  ],
+  [
+   "4490961.38",
+   "scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)",
+   [
+    "p = p.multiply(t)",
+    "p = np.multiply(p, t)",
+    "p = p.multiply(t, t)",
+    "p = p.multiply(t, 3)"
+   ]
+  ],
+  [
+   "2173087.39",
+   "numpy.zeros((3, 3, 3))",
+   [
+    "np.zeros((3, 3, 3))",
+    "np.zeroes(3, 3, 3)",
+    "np.array([(3, 3, 3))",
+    "np.array([(3, 3, 3)])"
+   ]
+  ],
+  [
+   "6266727.40",
+   "\"\"\" \"\"\".join(content.split(' ')[:-1])",
+   [
+    "content = re.sub('[-1]', '', content)",
+    "content.split()[-1]",
+    "content = re.sub('[^a-z]', '', content)",
+    "content.decode('last word')"
+   ]
+  ],
+  [
+   "30385151.41",
+   "x = np.asarray(x).reshape(1, -1)[(0), :]",
+   [
+    "np.arange(x, 2)",
+    "np.array([x[0]])",
+    "np.arange(x, 1)",
+    "np.arange(x).reshape(x)"
+   ]
+  ],
+  [
+   "15856127.42",
+   "sum(sum(i) if isinstance(i, list) else i for i in L)",
+   [
+    "sum(l) for l in l)",
+    "sum(l) for l in L)",
+    "sum(l) for l in zip(*l)]",
+    "sum(l) for l in zip(*l)"
+   ]
+  ],
+  [
+   "1592158.43",
+   "struct.unpack('!f', '470FC614'.decode('hex'))[0]",
+   [
+    "float('470fc614', 16)",
+    "int('470fc614', 16)",
+    "float('470fc614', 16))",
+    "struct.unpack('470fc614')"
+   ]
+  ],
+  [
+   "5010536.44",
+   "my_dict.update((x, y * 2) for x, y in list(my_dict.items()))",
+   [
+    "[k for k, v in list(my_dict.items() if v > 2]",
+    "[k for k, v in my_dict.items() if v[2] == 2]",
+    "max(my_dict.keys())",
+    "max(my_dict.keys() - 2)"
+   ]
+  ],
+  [
+   "13745648.45",
+   "subprocess.call('sleep.sh', shell=True)",
+   [
+    "os.system('sleep.sh')",
+    "sys.exit('sleep.sh')",
+    "subprocess.call('sleep.sh')",
+    "os.system('sleep.sh', shell=True"
+   ]
+  ],
+  [
+   "44778.46",
+   "\"\"\",\"\"\".join(l)",
+   [
+    "[x for x in L if x.split(',')]",
+    "[x for x in L if x.split(',')]",
+    "[x for x in L if x.isdigit()]",
+    "[x for x in L if x.isdigit() else ',')"
+   ]
+  ],
+  [
+   "44778.47",
+   "myList = ','.join(map(str, myList))",
+   [
+    "re.sub('[^a-zA-Z]', mylist)",
+    "re.sub('[^a-zA-Z]', myList)",
+    "\"\"\"\"\"\".join(mylist[::-1])",
+    "\"\"\"\"\"\".join(mylist)"
+   ]
+  ],
+  [
+   "7286365.48",
+   "list(reversed(list(range(10))))",
+   [
+    "[x for x in range(10)]",
+    "[i for i in range(10)]",
+    "[list(range(10)) for _ in range(10)]",
+    "[x for x in range(1, 10)]"
+   ]
+  ],
+  [
+   "18454570.49",
+   "print('lamp, bag, mirror'.replace('bag,', ''))",
+   [
+    "\"\"\"\"\"\".join('lamp, bag, mirror')",
+    "\"\"\"\"\"\".join('lamp, bag, mirror', 'bag')",
+    "\"\"\"Lamp, Bag, Mirror\"\"\"",
+    "\"\"\"\"\"\".join('lamp, bag, mirror'))"
+   ]
+  ],
+  [
+   "4357787.50",
+   "\"\"\".\"\"\".join(s.split('.')[::-1])",
+   [
+    "re.sub('(.)', s)",
+    "re.sub('\\\\d+', s)",
+    "re.sub('(.*?)', s)",
+    "re.sub('\\\\d+', s)[:-1]"
+   ]
+  ],
+  [
+   "21787496.51",
+   "datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')",
+   [
+    "time.strftime('%Y-%m-%d %H:%M:%S.%f')",
+    "print('%Y-%m-%d %H:%M:%S.%f')",
+    "time.strftime('%Y-%m-%d %H:%M:%S.%F')",
+    "print('%Y-%m-%d %H:%M:%S.%f').strftime('%B')"
+   ]
+  ],
+  [
+   "21787496.52",
+   "time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))",
+   [
+    "time.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')",
+    "datetime.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')",
+    "datetime.time.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')",
+    "datetime.strptime('1236472051807', '%Y-%m-%d %H:%M:%S').strftime('%Y')"
+   ]
+  ],
+  [
+   "20573459.53",
+   "(datetime.datetime.now() - datetime.timedelta(days=7)).date()",
+   [
+    "today = datetime.datetime.now().date()",
+    "today = datetime.datetime.now().timedelta(days=7)",
+    "today = datetime.datetime.now().strftime('%Y-%m-%d')",
+    "today = datetime.datetime.now().timedelta(7)"
+   ]
+  ],
+  [
+   "15352457.54",
+   "print(sum(row[column] for row in data))",
+   [
+    "data[x[0] for x in data]",
+    "data[x[0] for x in columns]",
+    "data[x[0] for x in column]",
+    "data[x[0] for x in zip(data)]"
+   ]
+  ],
+  [
+   "15352457.55",
+   "[sum(row[i] for row in array) for i in range(len(array[0]))]",
+   [
+    "sum([x[0] for x in array]",
+    "sum([x for x in sorted(array)]",
+    "sum([x[0] for x inarray]",
+    "sum([x[0] for x in array])"
+   ]
+  ],
+  [
+   "23164058.56",
+   "base64.b64encode(bytes('your string', 'utf-8'))",
+   [
+    "struct.encode('your string', 16)",
+    "struct.encode('your string')",
+    "struct.encode('your string', 'rb')",
+    "bin(struct.encode('your string')"
+   ]
+  ],
+  [
+   "11533274.57",
+   "dict((k, [d[k] for d in dicts]) for k in dicts[0])",
+   [
+    "dict((k, v) for k, v in dicts.items() if v)",
+    "dict((k, v) for k, v in dicts.items())",
+    "dict((k, v) for k, v in list(dicts.items()))",
+    "dict((k, v) for k, v in dicts.items() if k != 0)"
+   ]
+  ],
+  [
+   "11533274.58",
+   "{k: [d[k] for d in dicts] for k in dicts[0]}",
+   [
+    "dict((k, v) for k, v in dicts.items() if v != k)",
+    "dict((k, v) for k, v in dicts.items() if k != k)",
+    "dict((k, v) for k, v in dicts.items())",
+    "dict((k, v) for k, v in dicts.items() if k!= k))"
+   ]
+  ],
+  [
+   "14026704.59",
+   "request.args['myParam']",
+   [
+    "self.url.get('r', 1)[0]",
+    "self.url.get('r')",
+    "self.url.get('%s')",
+    "self.url.get('r', self.args())"
+   ]
+  ],
+  [
+   "11236006.60",
+   "[k for k, v in list(Counter(mylist).items()) if v > 1]",
+   [
+    "for (key, value) in mylist):\n    pass",
+    "for (key, value) in myList):\n    pass",
+    "for i in mylist:\n    pass",
+    "for i in myList:\n    pass"
+   ]
+  ],
+  [
+   "2354166.61",
+   "sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))",
+   [
+    "os.path.insert(__file__)",
+    "os.chdir('__file__')",
+    "os.path.insert(__file__))",
+    "__file__ = os.path.insert(file__)"
+   ]
+  ],
+  [
+   "2354166.62",
+   "sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))",
+   [
+    "subdir = os.path.modify_path(subdir)",
+    "subdir = subdir.path(__file__)",
+    "subdir = subdir.path()",
+    "subdir = os.path.modify_path('subdir')"
+   ]
+  ],
+  [
+   "20211942.63",
+   "db.execute(\"INSERT INTO present VALUES('test2',?, 10)\", (None,))",
+   [
+    "cursor.execute('INSERT INTO table VALUES (%s)', None)",
+    "cursor.execute('INSERT INTO table VALUES (%s)', 'None')",
+    "sqlite3.insert('none')",
+    "sqlite3.insert('None')"
+   ]
+  ],
+  [
+   "406121.64",
+   "[image for menuitem in list_of_menuitems for image in menuitem]",
+   [
+    "list_of_menuitems = []",
+    "[list_of_menuitems]",
+    "list_of_menuitems[::-1]",
+    "list_of_menuitems[::-1]"
+   ]
+  ],
+  [
+   "4741537.65",
+   "a.extend(b)",
+   [
+    "a = [b[i] for i in a]",
+    "a = [b[i:] for i in a]",
+    "a = [b[i] for i in range(10)]",
+    "a = [b[i:] for i in range(10)]"
+   ]
+  ],
+  [
+   "4741537.66",
+   "a.extend(list(b))",
+   [
+    "list(itertools.product([i for i in range(0, len(a)))",
+    "list(itertools.product([i for i in range(0, len(i), len(j)))",
+    "list(itertools.product([i for i in range(0, len(a), b)) for b in set(a)]",
+    "list(itertools.product([i for i in range(0, len(a), b)) for b in set))"
+   ]
+  ],
+  [
+   "31247198.67",
+   "np.savetxt('c:\\\\data\\\\np.txt', df.values, fmt='%d')",
+   [
+    "df.write('np.txt', header=False)",
+    "df.write('np.txt', header=True)",
+    "df.write('np.txt')",
+    "df.write('np.txt', delimiter=',')"
+   ]
+  ],
+  [
+   "31247198.68",
+   "df.to_csv('c:\\\\data\\\\pandas.txt', header=None, index=None, sep=' ', mode='a')",
+   [
+    "df.write('C:\\\\data\\\\pandas.txt')",
+    "df.write('c:\\\\data\\\\pandas.txt')",
+    "df.write('C:\\\\data\\\\pandas.txt', header=False)",
+    "df.write('C:\\\\data\\\\pandas.txt', header=True)"
+   ]
+  ],
+  [
+   "15851568.69",
+   "print(x.rpartition('-')[0])",
+   [
+    "x = re.split('-')",
+    "x.split('-')[-]",
+    "x = re.split('-', x)",
+    "x = re.split('-')[-]"
+   ]
+  ],
+  [
+   "15851568.70",
+   "print(x.rsplit('-', 1)[0])",
+   [
+    "\"\"\"\"\"\".join(re.sub('-'))",
+    "\"\"\"\"\"\".join(re.sub('-', '-')",
+    "re.findall('\\\\d+', '-')",
+    "re.findall('\\\\d+', '-')"
+   ]
+  ],
+  [
+   "17438096.71",
+   "ftp.storlines('STOR' + filename, open(filename, 'r'))",
+   [
+    "ftp.uploadFile(filename)",
+    "ftp.uploadFile(file)",
+    "ftp.uploadFile(file.size)",
+    "upload_file = ftp.open()"
+   ]
+  ],
+  [
+   "15049182.72",
+   "browser.execute_script(\"document.getElementById('XYZ').value+='1'\")",
+   [
+    "driver.find_element_by_id('xyz')",
+    "driver.find_element_by_id('xyz'))",
+    "driver.find_element_by_id('xyz', 1)",
+    "driver.find_element_by_id('xyz').show()"
+   ]
+  ],
+  [
+   "28742436.73",
+   "np.maximum([2, 3, 4], [1, 5, 2])",
+   [
+    "np.array([2, 3, 4], [2, 5, 2])",
+    "np.array([2, 3, 4], [1, 5, 2])",
+    "np.array([2, 3, 4], np.max([1, 5, 2])",
+    "np.array([2, 3, 4], [2, 5, 2]]"
+   ]
+  ],
+  [
+   "34280147.74",
+   "print(l[3:] + l[:3])",
+   [
+    "print(l[0] + 3)",
+    "print(l[0] + 3]",
+    "print(l[0:3] + 3)",
+    "print([l[0] for l in l]"
+   ]
+  ],
+  [
+   "11801309.75",
+   "for fn in os.listdir('.'):\n    if os.path.isfile(fn):\n        pass",
+   [
+    "os.path.join(open('.'))",
+    "os.path.join(open('.', '.'))",
+    "os.path.join(open('.')",
+    "os.path.join(open('.', '.')))"
+   ]
+  ],
+  [
+   "11801309.76",
+   "for root, dirs, filenames in os.walk(source):\n    for f in filenames:\n        pass",
+   [
+    "print(os.path.join(source))",
+    "os.path.join(source)",
+    "print(os.path.join(source) for line in os.split())",
+    "print(os.path.join(source)"
+   ]
+  ],
+  [
+   "4172131.77",
+   "[int(1000 * random.random()) for i in range(10000)]",
+   [
+    "random.sample(list(range(10)), 16)",
+    "random.sample(list(range(0, len(int, x)))",
+    "random.choice(list(range(0, len(int, x)))",
+    "random.sample(list(range(0, len(int, 16)))"
+   ]
+  ],
+  [
+   "6677332.78",
+   "datetime.datetime.now().strftime('%H:%M:%S.%f')",
+   [
+    "min(os.getmtime(0, %f))",
+    "print(strftime('%f') + %f)",
+    "print(strftime('%f') + %f",
+    "print(strftime('%f')"
+   ]
+  ],
+  [
+   "852055.79",
+   "db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())",
+   [
+    "google.engine.execute('SELECT * FROM schedule WHERE station = $1', 'foo.key()')",
+    "google.app.execute('SELECT * FROM schedule WHERE station = $1', 'foo.key()')",
+    "google.engine.execute('select * from schedule where station = $1', 'foo.key()')",
+    "google.engine.execute('select * from schedule where station = $1')"
+   ]
+  ],
+  [
+   "15325182.80",
+   "df.b.str.contains('^f')",
+   [
+    "df = pandas.filter(re.search('f')",
+    "df = pandas.filter(re.search('f', 'rb')",
+    "df = pandas.filter(re.search('f', 'f')",
+    "df = pd.filter(re.search('f', 'rb')"
+   ]
+  ],
+  [
+   "583557.81",
+   "print('\\n'.join('\\t'.join(str(col) for col in row) for row in tab))",
+   [
+    "print(' '.join(item[0] for item in tab))",
+    "print(' '.join(item[0] for item in tab)",
+    "print('\\n'.join(item[0] for item in tab))",
+    "print('\\n'.join(item[0] for item in tab)"
+   ]
+  ],
+  [
+   "38535931.82",
+   "df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()",
+   [
+    "df.apply(lambda x: x[1], axis=1)",
+    "df.groupby(df.columns, axis=1)",
+    "df.apply(lambda x: x[1])",
+    "df.groupby(df.columns, axis=1).size()"
+   ]
+  ],
+  [
+   "13945749.83",
+   "\"\"\"({:d} goals, ${:d})\"\"\".format(self.goals, self.penalties)",
+   [
+    "\"\"\"{}\"\"\".format(self.goals, self.penalties)",
+    "\"\"\"\"\"\".join(self.goals, self.penalties))",
+    "\"\"\"\"\"\".join('self.goals', 'self.penalties')",
+    "\"\"\"{}\"\"\".format(self.goals, self.penalties))"
+   ]
+  ],
+  [
+   "13945749.84",
+   "\"\"\"({} goals, ${})\"\"\".format(self.goals, self.penalties)",
+   [
+    "print('({} goals, ${})\"",
+    "\"\"\"({} goals, ${})\"",
+    "\"\"\"{} goals, ${}\"\"\".format(goals, penalties))",
+    "\"\"\"{} goals, ${}\"\"\".format(goals, penalties)"
+   ]
+  ],
+  [
+   "13945749.85",
+   "\"\"\"({0.goals} goals, ${0.penalties})\"\"\".format(self)",
+   [
+    "print('({0.goals} goals, ${0.penalties})\"",
+    "\"\"\"{0.goals} goals, ${0.penalties})\"",
+    "\"\"\"{0.goals} goals, ${0.penalties}\"\"\".format(',')",
+    "\"\"\"{0.goals} goals, ${0.penalties}\"\"\".format(map(lambda x: x))"
+   ]
+  ],
+  [
+   "18524642.86",
+   "[int(''.join(str(d) for d in x)) for x in L]",
+   [
+    "[int(x) for x in l]",
+    "[int(x) for x in L]",
+    "[int(x) for x in zip(L, L)]",
+    "[int(x) for x in zip(l, l)]"
+   ]
+  ],
+  [
+   "18524642.87",
+   "[''.join(str(d) for d in x) for x in L]",
+   [
+    "[int(x) for x in L]",
+    "[int(x) for x in l]",
+    "[int(x) for x in L if x.isdigit()]",
+    "[int(x) for x in L if x[0] == 0]"
+   ]
+  ],
+  [
+   "18524642.88",
+   "L = [int(''.join([str(y) for y in x])) for x in L]",
+   [
+    "[int(x) for x in L]",
+    "[int(x) for x in l]",
+    "map(int, x) for x in L)",
+    "map(int, x) for x in L.split()"
+   ]
+  ],
+  [
+   "7138686.89",
+   "myfile.write('\\n'.join(lines))",
+   [
+    "myfile.write('\\n')",
+    "myfile.write('\\n', lines)",
+    "myfile.write('\\n', line)",
+    "myfile.write(lines, '\\n')"
+   ]
+  ],
+  [
+   "1866343.90",
+   "[x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]",
+   [
+    "[x[0] for x in n]",
+    "[x[i] for i in range(n)]",
+    "[x[0] for x in a if x != 'n']",
+    "[x[0] for x in a if x != n]"
+   ]
+  ],
+  [
+   "17238587.91",
+   "text = re.sub('\\\\b(\\\\w+)( \\\\1\\\\b)+', '\\\\1', text)",
+   [
+    "re.sub('\\\\w+', text)",
+    "re.sub('\\\\w+', '', text)",
+    "re.sub('\\\\w+', '\\\\1', text)",
+    "re.sub('\\\\w+', '\\\\w', text)"
+   ]
+  ],
+  [
+   "26053849.92",
+   "df.astype(bool).sum(axis=1)",
+   [
+    "df['nonzero'] = df['zero'].sum()",
+    "df['nonzero'] = df['zero']",
+    "df['nonzero'] = df['zero'].sum().count()",
+    "df.groupby(df.values())"
+   ]
+  ],
+  [
+   "15534223.93",
+   "re.search('(?<!Distillr)\\\\\\\\AcroTray\\\\.exe', 'C:\\\\SomeDir\\\\AcroTray.exe')",
+   [
+    "re.findall('(?<!distillr)\\\\\\\\acrotray\\\\.exe', 'C:\\\\Somedir\\\\acroTRAY.exe')",
+    "re.findall('(?<!distillr)\\\\\\\\acrotray\\\\.exe', 'C:\\\\Somedir\\\\acroTray.exe')",
+    "re.search('(?<!distillr)\\\\\\\\acrotray\\\\.exe', 'C:\\\\Somedir\\\\acroTRAY.exe')",
+    "re.findall('(?<!distillr)\\\\\\\\acrotray\\\\.exe', 'c:\\\\Somedir\\\\acroTRAY.exe')"
+   ]
+  ],
+  [
+   "5453026.94",
+   "\"\"\"QH QD JC KD JS\"\"\".split()",
+   [
+    "list('qh qd jc kd js')",
+    "[j.strip('qh qd jc kd js') for i in range(0, len(j), 16)]",
+    "[j.strip('qh qd jc kd js') for j in range(0, len(j), 16)]",
+    "list('qh qd jc kd js', 'rb')"
+   ]
+  ],
+  [
+   "18168684.95",
+   "print(re.search('>.*<', line).group(0))",
+   [
+    "print(re.search('>.*<', line))",
+    "re.search('>.*<', line)",
+    "print(re.search('>.*<')",
+    "print(re.search('>.*<', line)"
+   ]
+  ],
+  [
+   "4914277.96",
+   "open(filename, 'w').close()",
+   [
+    "open('filename', 'rb', filename)",
+    "f = open('filename', 'w').close()",
+    "f = open('filename', 'f', filename)",
+    "f = open('filename', 'w').read()"
+   ]
+  ],
+  [
+   "19068269.97",
+   "datetime.datetime.strptime(string_date, '%Y-%m-%d %H:%M:%S.%f')",
+   [
+    "datetime.strptime('%Y-%m-%d %H:%M:%S.%f')",
+    "datetime.strptime('%Y-%m-%d %H:%M:%S.%F')",
+    "datetime.strptime('%Y-%m-%d %H:%M:%S.%f'))",
+    "datetime.strptime('%Y-%m-%d %H:%M:%S.%f' + datetime.timedelta(1, 2, 3))"
+   ]
+  ],
+  [
+   "20683167.98",
+   "[index for index, item in enumerate(thelist) if item[0] == '332']",
+   [
+    "[x[0] for x in thelist if x[1] == 332]",
+    "[x for x in thelist if x[0] == 332]",
+    "[x[0] for x in thelist if x[0]) ==332]",
+    "[x[0] for x in thelist if x[1]) ==332]"
+   ]
+  ],
+  [
+   "30693804.99",
+   "re.sub('[^\\\\sa-zA-Z0-9]', '', text).lower().strip()",
+   [
+    "re.sub('[^a-zA-Z]', '', text)",
+    "re.sub('\\\\d+', '', text)",
+    "re.sub('[^a-zA-Z]', '', text)",
+    "re.sub('[^a-zA-Z]', text)"
+   ]
+  ],
+  [
+   "30693804.100",
+   "re.sub('(?!\\\\s)[\\\\W_]', '', text).lower().strip()",
+   [
+    "re.sub('[^a-zA-Z]', '', text)",
+    "re.sub('[^a-zA-Z]', '', text)",
+    "re.sub('\\\\w+', '', text)",
+    "re.sub('[^a-zA-Z]', text)"
+   ]
+  ],
+  [
+   "17138464.101",
+   "plt.plot(x, y, label='H\u2082O')",
+   [
+    "plt.subscript('h20', '2')",
+    "plt.subscript('H20', '2')",
+    "plt.subscript('h20', '2', x, y)",
+    "plt.subscript('h20', '2', 'h20')"
+   ]
+  ],
+  [
+   "17138464.102",
+   "plt.plot(x, y, label='$H_2O$')",
+   [
+    "plt.subscript('h20', '2')",
+    "plt.subscript('H20', '2')",
+    "plt.subscript('h20', '2', x, y)",
+    "plt.subscript('h20', '2', 'h20')"
+   ]
+  ],
+  [
+   "9138112.103",
+   "[x for x in mylist if len(x) == 3]",
+   [
+    "myList.loop(lambda x: len(x[1]))",
+    "myList.loop(lambda x: len(x[0]))",
+    "myList.loop(lambda x: len(x[1])",
+    "myList.loop(lambda x: x[1])"
+   ]
+  ],
+  [
+   "1807026.104",
+   "lst = [Object() for _ in range(100)]",
+   [
+    "lst = [i for i in range(100)]",
+    "lst = [x for x in lst]",
+    "lst = [x[0] for x in lst]",
+    "lst.initialize(100)"
+   ]
+  ],
+  [
+   "1807026.105",
+   "lst = [Object() for i in range(100)]",
+   [
+    "lst = [x for x in object]",
+    "lst = [x[0] for x in object]",
+    "lst = [i for i in range(100)]",
+    "lst = [x for x in object if x != 100]"
+   ]
+  ],
+  [
+   "19664253.106",
+   "self.driver.find_element_by_css_selector('.someclass a').get_attribute('href')",
+   [
+    "Child.find_element_by_css_name('someclass')",
+    "Child.find_element_by_css('someclass')",
+    "Child.find_element_by_css_id('someclass')",
+    "Child.find_element_by_css_selector('someclass')"
+   ]
+  ],
+  [
+   "13793321.107",
+   "df1.merge(df2, on='Date_Time')",
+   [
+    "pd.merge(df1, df2, inplace=True)",
+    "pd.merge(df1, df2, how='date_time')",
+    "pd.merge(df1, df2, how='date_time'])",
+    "pd.merge(df1, df2, on=['date_time'])"
+   ]
+  ],
+  [
+   "3367288.108",
+   "'first string is: %s, second one is: %s' % (str1, 'geo.tif')",
+   [
+    "str1 = str1.split('%s')",
+    "\"\"\"\"\"\".join('%s', str1)",
+    "str1 = '%s', str1)",
+    "str1 = str1.split('\\n')"
+   ]
+  ],
+  [
+   "3475251.109",
+   "[x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')]",
+   [
+    "\"\"\"{0:.2f}\"\"\".format(',', '')",
+    "\"\"\"{0:.2f}\"\"\".format(',')",
+    "\"\"\"{0:.2f}\"\"\".format(re.split('\\n')",
+    "\"\"\"{0:.2f}\"\"\".format(re.split('\\n', '\\n')"
+   ]
+  ],
+  [
+   "273192.110",
+   "if not os.path.exists(directory):\n    os.makedirs(directory)",
+   [
+    "os.path.isfile(directory)",
+    "os.path.exists(directory)",
+    "os.path.isfile(directory, '/'))",
+    "os.path.isfile(directory, '/w')"
+   ]
+  ],
+  [
+   "273192.111",
+   "try:\n    os.makedirs(path)\nexcept OSError:\n    if not os.path.isdir(path):\n        raise",
+   [
+    "os.path.exists(path)",
+    "os.path.exists('path')",
+    "print(os.path.exists(path))",
+    "print(os.path.exists())[0]"
+   ]
+  ],
+  [
+   "273192.112",
+   "distutils.dir_util.mkpath(path)",
+   [
+    "os.path.exists(path)",
+    "os.path.exists('path')",
+    "print(os.path.exists(path))",
+    "print(os.path.exists())[0]"
+   ]
+  ],
+  [
+   "273192.113",
+   "try:\n    os.makedirs(path)\nexcept OSError as exception:\n    if exception.errno != errno.EEXIST:\n        raise",
+   [
+    "os.path.exists(path)",
+    "os.path.exists('path')",
+    "print(os.path.exists(path))",
+    "print(os.path.exists())[0]"
+   ]
+  ],
+  [
+   "18785032.114",
+   "re.sub('\\\\bH3\\\\b', 'H1', text)",
+   [
+    "re.sub('\\\\d+', 'h3', text)",
+    "re.sub('\\\\d+', 'H3', text)",
+    "text = re.sub('\\\\d+', 'h3', text)",
+    "text = re.sub('\\\\d+', 'h3', h1)"
+   ]
+  ],
+  [
+   "1450897.115",
+   "re.sub('\\\\D', '', 'aas30dsa20')",
+   [
+    "\"\"\"aas30dsA20\"\"\".replace('', '')",
+    "\"\"\"aas30dsA20\"\"\".replace(' ', '')",
+    "\"\"\"Aas30dsA20\"\"\".replace('', '')",
+    "\"\"\"\"\"\".join('aas30dsA20', '')"
+   ]
+  ],
+  [
+   "1450897.116",
+   "\"\"\"\"\"\".join([x for x in 'aas30dsa20' if x.isdigit()])",
+   [
+    "\"\"\"{0:.2f}\"\"\".format(aas30dsa20)",
+    "\"\"\"{0:.2f}\"\"\".format(aas30dsa20))",
+    "\"\"\"\"\"\".join(lambda x: int(x.split('aas30dsa20')))",
+    "\"\"\"\"\"\".join(lambda x: int(x.split('Aas30dsA20')))"
+   ]
+  ],
+  [
+   "14435268.117",
+   "print(soup.find('name').string)",
+   [
+    "soup.find_elements_by_xpath(\"name')",
+    "soup.find_all('name')",
+    "soup.find_elements_by_xpath('name')",
+    "soup.find_elements_by_id('name')"
+   ]
+  ],
+  [
+   "4928274.118",
+   "records = dict((record['_id'], record) for record in cursor)",
+   [
+    "cursor.dict((k, v) for k, v in list(records.items()))",
+    "cursor.dict([k, v) for k, v in list(records.items()])",
+    "cursor.dict([k, v) for k, v in records.items()]",
+    "cursor.dict([k, v) for k, v in list(records.items()]"
+   ]
+  ],
+  [
+   "20180210.119",
+   "np.concatenate((A, B))",
+   [
+    "np.matrix(a, b)",
+    "np.concat([a, b])",
+    "numpy.concat([a, b])",
+    "np.concat([a, b], axis=1)"
+   ]
+  ],
+  [
+   "20180210.120",
+   "np.vstack((A, B))",
+   [
+    "numpy.concat([a, b])",
+    "numpy.concat([a, b], axis=1)",
+    "numpy.concat([a, b], axis=0)",
+    "np.concat([a, b])"
+   ]
+  ],
+  [
+   "2011048.121",
+   "os.stat(filepath).st_size",
+   [
+    "print(os.path.getcount(filepath))",
+    "print(os.path.realpath(filepath))",
+    "print(os.path.getcwd(filepath))",
+    "print(os.path.getctime(filepath))"
+   ]
+  ],
+  [
+   "2600191.122",
+   "l.count('a')",
+   [
+    "sum(len(x) for x in L)",
+    "sum(len(l)) for l in l)",
+    "sum(len(x) for x in l)",
+    "[x for x in L if x == 'a']"
+   ]
+  ],
+  [
+   "2600191.123",
+   "Counter(l)",
+   [
+    "sum(len(x) for x in L)",
+    "count(x for x in L)",
+    "sum(x for x in L)",
+    "sum(len(x) for x in l)"
+   ]
+  ],
+  [
+   "2600191.124",
+   "[[x, l.count(x)] for x in set(l)]",
+   [
+    "sum(len(x) for x in L)",
+    "count(x for x in L)",
+    "sum(x for x in L)",
+    "sum(len(x) for x in l)"
+   ]
+  ],
+  [
+   "2600191.125",
+   "dict((x, l.count(x)) for x in set(l))",
+   [
+    "sum(len(x) for x in L)",
+    "count(x for x in L)",
+    "sum(x for x in L)",
+    "sum(len(x) for x in l)"
+   ]
+  ],
+  [
+   "2600191.126",
+   "l.count('b')",
+   [
+    "[x for x in L if 'b' in x]",
+    "sum(len(l)) for l in l)",
+    "[x for x in L if x == 'b']",
+    "[x for x in L if x == 'b']"
+   ]
+  ],
+  [
+   "12842997.127",
+   "shutil.copy(srcfile, dstdir)",
+   [
+    "os.copydir(srcfile, dstdir)",
+    "os.copy(srcfile, dstdir)",
+    "os.copydir('srcfile', dstdir)",
+    "os.copydir(srcfile, dstdir)"
+   ]
+  ],
+  [
+   "1555968.128",
+   "max(k for k, v in x.items() if v != 0)",
+   [
+    "max(x, key=lambda x: x[0])",
+    "max(x, key=lambda x: x[1])",
+    "max(x, key=lambda x: x[0]",
+    "max(x, key=lambda x: x[0] == 0)"
+   ]
+  ],
+  [
+   "1555968.129",
+   "(k for k, v in x.items() if v != 0)",
+   [
+    "max(x, key=lambda x: x[0])",
+    "max(x, key=lambda x: x[0]",
+    "max(x[0] == 0)",
+    "max(x, key=lambda x: (x[0])"
+   ]
+  ],
+  [
+   "1555968.130",
+   "max(k for k, v in x.items() if v != 0)",
+   [
+    "max(x, key=lambda x: nonzero)",
+    "max(x, key=lambda x: x[0])",
+    "max(x, key=lambda x: x[0]",
+    "max(x, key=operator.itemgetter(1))"
+   ]
+  ],
+  [
+   "17021863.131",
+   "file.seek(0)",
+   [
+    "curser.start_new_file()",
+    "curser.startswith(0)",
+    "curser.start_new_file(0)",
+    "curser.start_new_file(filename)"
+   ]
+  ],
+  [
+   "38152389.132",
+   "df['c'] = np.where(df['a'].isnull, df['b'], df['a'])",
+   [
+    "df['b'] = df['A'] + df['C']",
+    "df['b'] = df['a'] + df['c']",
+    "df['b'] = df['a'] + df['C']",
+    "df['b'] = df['A'] + df['C'].dropna()"
+   ]
+  ],
+  [
+   "4175686.133",
+   "del d['ele']",
+   [
+    "d = {'ele': 'ele'}",
+    "d = d.remove('ele')",
+    "d = {'ele': 'ele'}}",
+    "d = {'ele': 'ele'})"
+   ]
+  ],
+  [
+   "5871168.134",
+   "MyModel.objects.update(timestamp=F('timestamp') + timedelta(days=36524.25))",
+   [
+    "myModel.update(timestamp=100, datetime=100)",
+    "myModel.update({timestamp: 100, datetime: 100})",
+    "myModel.update({timestamp: datetime.timestamp + 100}",
+    "myModel.update({timestamp: datetime.timestamp + 100 }"
+   ]
+  ],
+  [
+   "11574195.135",
+   "['it'] + ['was'] + ['annoying']",
+   [
+    "[list(['it', 'was'], ['annoying'] for _ in range(1)]",
+    "[list(['it', 'was'], ['annoying'] for _ in range(10)]",
+    "[list(['it', 'was'], ['annoying']] for _ in range(0)]",
+    "[list(['it', 'was'], ['annoying'] for _ in range(0, 10)]"
+   ]
+  ],
+  [
+   "587647.136",
+   "str(int(x) + 1).zfill(len(x))",
+   [
+    "max(x, zeroes=0)",
+    "max(x, zeroes=1)",
+    "max(x, key=lambda x: x[1])",
+    "max(x, key=lambda x: x[0])"
+   ]
+  ],
+  [
+   "17315881.137",
+   "all(df.index[:-1] <= df.index[1:])",
+   [
+    "df.index.sort(key=lambda x: x[1])",
+    "df.index.sort(key=lambda x: x[0])",
+    "df.sort(key=lambda x: x[1])",
+    "df.index.sort(key=lambda x: x[1], reverse=True)"
+   ]
+  ],
+  [
+   "16296643.138",
+   "list(t)",
+   [
+    "t = t[::-1]",
+    "t = [t[0] for t in t]",
+    "t = [t[0] for t in l]",
+    "t = [t[0] for t in zip(*t)]"
+   ]
+  ],
+  [
+   "16296643.139",
+   "tuple(l)",
+   [
+    "t = tuple([i for i in t])",
+    "t = t[::-1]",
+    "t = tuple(t, t)",
+    "t = tuple([i for i, j in t])"
+   ]
+  ],
+  [
+   "16296643.140",
+   "level1 = map(list, level1)",
+   [
+    "list(level1, key=lambda tup: tup[1])",
+    "list(level1, key=lambda x: x[1])",
+    "list(level1, key1)",
+    "[list(level1) for key in list(level2)]"
+   ]
+  ],
+  [
+   "3880399.141",
+   "pprint.pprint(dataobject, logFile)",
+   [
+    "logfile.send('//logfile')",
+    "logfile = pd.send('dataobject', 'logfile')",
+    "logfile = pd.read_csv('dataobject')",
+    "logfile = pd.send('dataobject')"
+   ]
+  ],
+  [
+   "21800169.142",
+   "df.loc[df['BoolCol']]",
+   [
+    "df['boolcol'].index('index')",
+    "columns = index.index('boolcol')",
+    "columns = index.index('boolcol').index()",
+    "columns = index.index('boolcol').reshape()"
+   ]
+  ],
+  [
+   "21800169.143",
+   "df.iloc[np.flatnonzero(df['BoolCol'])]",
+   [
+    "df[index(df['boolcol'] == True]",
+    "df[index(df['boolcol'].isnull()]",
+    "df.groupby(['boolcol'], axis=1)",
+    "df[index(df['boolcol'].isTrue]"
+   ]
+  ],
+  [
+   "21800169.144",
+   "df[df['BoolCol'] == True].index.tolist()",
+   [
+    "[i for i, v in enumerate(boolcol.values()) if v == True]",
+    "[i for i, j in enumerate(boolcol.values()) if j == True]",
+    "[i for i, v in enumerate(boolcol.values()) if v != True]",
+    "[i for i, j in enumerate(boolcol.values()) if j != True]"
+   ]
+  ],
+  [
+   "21800169.145",
+   "df[df['BoolCol']].index.tolist()",
+   [
+    "df.loc[df['boolcol'] == True]",
+    "df.index(['boolcol'], axis=1)",
+    "df.index(['boolcol'], axis=0)",
+    "df.index(['boolcol'] == True)"
+   ]
+  ],
+  [
+   "299446.146",
+   "os.chdir(owd)",
+   [
+    "os.chdir('owd')",
+    "os.chdir(owd)",
+    "os.chdir('owD')",
+    "os.chdir(owD)"
+   ]
+  ],
+  [
+   "14695134.147",
+   "c.execute(\"INSERT INTO test VALUES (?, 'bar')\", (testfield,))",
+   [
+    "c.execute('INSERT INTO testfield')",
+    "c = db.sqlite(testfield, 'testfield')",
+    "c.execute('INSERT INTO testfield VALUES (%s, %s)')",
+    "c.execute('INSERT INTO testfield VALUES (%s)')"
+   ]
+  ],
+  [
+   "24242433.148",
+   "\"\"\"\\\\x89\\\\n\"\"\".decode('string_escape')",
+   [
+    "\"\"\"\\\\x89\\\\n\"\"\".decode('normal')",
+    "\"\"\"\\\\x89\\\\n\"\"\".decode('normal')",
+    "\"\"\"\"\"\".join('\\\\x89\\\\n')",
+    "\"\"\"\"\"\".join('\\\\x89\\\\n', 'normal')"
+   ]
+  ],
+  [
+   "24242433.149",
+   "raw_string.decode('string_escape')",
+   [
+    "\"\"\"\"\"\".join(raw_string.split())",
+    "raw_string = ''.join(normal_string)",
+    "\"\"\"\"\"\".join(raw_string.split(',', ''))",
+    "raw_string = ''.join(normal_string.split())"
+   ]
+  ],
+  [
+   "24242433.150",
+   "raw_byte_string.decode('unicode_escape')",
+   [
+    "\"\"\"raw_byte_string\"\"\".split()",
+    "print(raw_byte_string.split())",
+    "\"\"\"\"\"\".join(raw_byte_string.split())",
+    "\"\"\"\"\"\".join(raw_byte_string)"
+   ]
+  ],
+  [
+   "22882922.151",
+   "[m.group(0) for m in re.finditer('(\\\\d)\\\\1*', s)]",
+   [
+    "re.split('\\\\d+', s)",
+    "re.split('\\\\w+', s)",
+    "re.split('\\\\d+', '', s)",
+    "re.split('\\\\d+', s)[0]"
+   ]
+  ],
+  [
+   "4143502.152",
+   "plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')",
+   [
+    "np.random.randn(100)",
+    "plt.plot(np.random.randn(100))",
+    "plt.plot(np.random.randn(100) - color=None)",
+    "plt.plot(np.random.randn(100) - mask=None)"
+   ]
+  ],
+  [
+   "4143502.153",
+   "plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')",
+   [
+    "plt.scatter(background=False)",
+    "plt.scatter(background=False)",
+    "plt.scatter(map(int, circle))",
+    "plt.scatter(map(int, x)"
+   ]
+  ],
+  [
+   "32063985.154",
+   "soup.find('div', id='main-content').decompose()",
+   [
+    "soup.findAll(id=main - content)",
+    "beautifulSoup.div(id=main - content)",
+    "soup.findAll(div.id, id=main - content)",
+    " BeautifulSoup.div(main-content)"
+   ]
+  ],
+  [
+   "27975069.155",
+   "df[df['ids'].str.contains('ball')]",
+   [
+    "ids.filter(key=lambda x: x[1])",
+    "ids.filter(key=lambda x: x['ball'])",
+    "ids.filter(key=lambda x: x['ball'], reverse=True)",
+    "ids.filter(key=lambda x: x['ball']))"
+   ]
+  ],
+  [
+   "20461165.156",
+   "df.reset_index(level=0, inplace=True)",
+   [
+    "df.columns[0:]]",
+    "df.columns = df.index(level 0)",
+    "df.columns[0].index(0)",
+    "df.columns[0].index()"
+   ]
+  ],
+  [
+   "20461165.157",
+   "df['index1'] = df.index",
+   [
+    "df.index1[index1:]",
+    "df[index1:] = df.index1",
+    "df[index1:] = df.index1]",
+    "df[index1:] = df[index2:]"
+   ]
+  ],
+  [
+   "20461165.158",
+   "df.reset_index(level=['tick', 'obs'])",
+   [
+    "df['index'] = df['index'].columns",
+    "df['columns'].index()",
+    "df['index'] = df['index'].str.index()",
+    "df['index'] = df['index'].str.index"
+   ]
+  ],
+  [
+   "4685571.159",
+   "[x[::-1] for x in b]",
+   [
+    "[x[0] for x in b]",
+    "[x for x in b if x != 'b']",
+    "[x for x in b if x != '']",
+    "[x[1] for x in b]"
+   ]
+  ],
+  [
+   "17960441.160",
+   "np.array([zip(x, y) for x, y in zip(a, b)])",
+   [
+    "[x[0] for x in zip(a, b)]",
+    "[x[0] for x in a]",
+    "np.all(a, b)",
+    "[(x + y) for x, y in a, b]"
+   ]
+  ],
+  [
+   "17960441.161",
+   "np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)",
+   [
+    "zip(a, b, c)",
+    "zip(a, b, c, d)",
+    "zip(a, b, c))",
+    "zip(a, b, zip(*A, B))"
+   ]
+  ],
+  [
+   "438684.162",
+   "\"\"\",\"\"\".join([str(i) for i in list_of_ints])",
+   [
+    "\"\"\"\"\"\".join(map(list_of_ints))",
+    "\"\"\"\"\"\".join(list_of_ints)",
+    "\"\"\"\"\"\".join(list_of_ints))",
+    "\"\"\"\"\"\".join(str(list_of_ints))"
+   ]
+  ],
+  [
+   "8519922.163",
+   "requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))",
+   [
+    "r = requests.post(data, verify=False)",
+    "r = requests.post(data, verify=True)",
+    "r = requests.post('data', 'password'))",
+    "r = requests.post('data', 'password')"
+   ]
+  ],
+  [
+   "26443308.164",
+   "\"\"\"abcd}def}\"\"\".rfind('}')",
+   [
+    "re.findall('{}', 'abcd}def}\"",
+    "re.findall('([a-z])', 'abcd}def}\"",
+    "re.findall('{}', 'abcd}def}')",
+    "re.findall('{}'.format('abcd}def}\""
+   ]
+  ],
+  [
+   "22365172.165",
+   "print([item for item in [1, 2, 3]])",
+   [
+    "for i in [1, 2, 3])",
+    "for i in [1, 2, 3]]",
+    "for i in [1, 2, 3]",
+    "for i in [1, 2, 3]):\n    pass"
+   ]
+  ],
+  [
+   "12300912.166",
+   "[(x['x'], x['y']) for x in d]",
+   [
+    "[(k, v) for k, v in d.items() if 'x' in k]",
+    "[(k, v) for k, v in d.items() if 'X' in k]",
+    "[(k, v) for k, v in d.items() if v != 'x' for k in d]",
+    "[(k, v) for k, v in d.items() if v != 'X' for k in d]"
+   ]
+  ],
+  [
+   "678236.167",
+   "print(os.path.splitext(os.path.basename('hemanth.txt'))[0])",
+   [
+    "open('hemanth.txt', filename)",
+    "open('hemanth.txt', 'r').close()",
+    "f = open('hemanth.txt', filename)",
+    "print(open('hemanth.txt', 'rb').read())"
+   ]
+  ],
+  [
+   "2597166.168",
+   "dict(x[i:i + 2] for i in range(0, len(x), 2))",
+   [
+    "dict((k, v) for k, v in x.items())",
+    "dict((k, v) for k, v in x.items() if v != 2)",
+    "dict((k, v) for k, v in x.items() if v == 2)",
+    "dict((k, v) for k, v in x.items() if k != 2)"
+   ]
+  ],
+  [
+   "7895449.169",
+   "values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])",
+   [
+    "[['a', 'b', 'c', ['d', 'e', 'f'], ['g', 'h', 'i']]]",
+    "[['a', 'b', 'c', ['d', 'e', 'f'], ['g', 'h', 'i']]",
+    "[['a', 'b', 'c', ['d', 'e', 'f'], ['g', 'h', 'I']]]",
+    "[['a', 'b', 'c', ['d', 'e', 'f'], ['g', 'h', 'I']]"
+   ]
+  ],
+  [
+   "31617845.170",
+   "df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]",
+   [
+    "df.loc[df['closing_price'] == 100]",
+    "df.loc[df['closing_price'] == 1]",
+    "df.loc[df['closing_price'] == [(0, 1)]",
+    "df.loc[df['closing_price'].loc[::-1]"
+   ]
+  ],
+  [
+   "25698710.171",
+   "df.replace({'\\n': '<br>'}, regex=True)",
+   [
+    "df.replace('\\n', '<br>')",
+    "df = df.replace('\\n', '<br>')",
+    "df.replace('\\n', '<br>', '\\n')",
+    "df.replace('\\n', <br>)"
+   ]
+  ],
+  [
+   "25698710.172",
+   "df.replace({'\\n': '<br>'}, regex=True)",
+   [
+    "df.replace('\\n', '<br>')",
+    "df.replace('<br>', '\\n')",
+    "df.replace('\\n', '<br>', text)",
+    "df.replace('\\n', '<br>', 1)"
+   ]
+  ],
+  [
+   "41923858.173",
+   "[(x + y) for x, y in zip(word, word[1:])]",
+   [
+    "[word[i:i + 2] for i in range(2)]",
+    "[word[i:i + 2] for i in word]",
+    "[word[i:i + 2] for i in range(10)]",
+    "[word[2:] for word in word]"
+   ]
+  ],
+  [
+   "41923858.174",
+   "list(map(lambda x, y: x + y, word[:-1], word[1:]))",
+   [
+    "[k for k, v in word.items()]",
+    "[k for k, v in word.split(',')]",
+    "[k for k, v in word.items() if v]",
+    "[k for k, v in word.split()]"
+   ]
+  ],
+  [
+   "9760588.175",
+   "print(re.findall('(https?://[^\\\\s]+)', myString))",
+   [
+    "urllib.parse.quote(myString)",
+    "urllib.parse.unquote(myString)",
+    "urllib.parse.quote(myString))",
+    "urllib.parse.quote(mystring)"
+   ]
+  ],
+  [
+   "9760588.176",
+   "print(re.search('(?P<url>https?://[^\\\\s]+)', myString).group('url'))",
+   [
+    "urllib.parse.quote(myString)",
+    "urllib.parse.unquote(myString)",
+    "urllib.parse.quote(myString))",
+    "urllib.parse.quote(mystring)"
+   ]
+  ],
+  [
+   "5843518.177",
+   "re.sub('[^A-Za-z0-9]+', '', mystring)",
+   [
+    "re.sub('[^a-zA-Z]', myString)",
+    "re.sub('[^a-zA-Z]', mystring)",
+    "re.sub('\\\\w+', myString)",
+    "re.sub('\\\\w+', mystring)"
+   ]
+  ],
+  [
+   "36674519.178",
+   "pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)",
+   [
+    "datetimeindex.date_range('2016-01-01', 13)",
+    "datetimeindex.datetime.strptime('2016-01-01', 13)",
+    "datetimeindex.date_range('2016-01-01', '%Y-%m-%d')",
+    "datetimeindex.date_range('2016-01-01', '%Y-%m-%d'])"
+   ]
+  ],
+  [
+   "508657.179",
+   "matrix = [[a, b], [c, d], [e, f]]",
+   [
+    "matrix.shape(3, 2)",
+    "matrix = np.array([np.arange(3), np.reshape(2), axis=1)",
+    "matrix = np.array([np.arange(3), np.reshape(2), axis=1)]",
+    "matrix = np.array([np.arange(3), np.reshape(2), axis=0)"
+   ]
+  ],
+  [
+   "1007481.180",
+   "mystring.replace(' ', '_')",
+   [
+    "re.sub('[^a-zA-Z]', '\\\\1', '', re.sub')",
+    "re.sub('[^a-zA-Z]', '\\\\1', '', re.sub)",
+    "re.sub('[^a-zA-Z]', '\\\\1', '', re.S)",
+    "re.sub('[^a-zA-Z]', '\\\\1', re.sub)"
+   ]
+  ],
+  [
+   "51520.181",
+   "os.path.abspath('mydir/myfile.txt')",
+   [
+    "os.path.abspath('mydir/myfile.txt')",
+    "os.path.realpath('mydir/myfile.txt')",
+    "os.path.isfile('mydir/myfile.txt')",
+    "os.path.abspath('mydir/myfile.txt', 'rb')"
+   ]
+  ],
+  [
+   "1249786.182",
+   "\"\"\" \"\"\".join(my_string.split())",
+   [
+    "my_string.split('\\n')",
+    "my_string.split(',')",
+    "my_string.split('\\r\\n')",
+    "my_string.split('\\r')"
+   ]
+  ],
+  [
+   "4444923.183",
+   "os.path.splitext(filename)[0]",
+   [
+    "os.path.isfile(filename)",
+    "open('filename', 'w').close()",
+    "print(open('filename', 'w').close()",
+    "print(open('filename', 'r', filename))"
+   ]
+  ],
+  [
+   "13728486.184",
+   "[sum(l[:i]) for i, _ in enumerate(l)]",
+   [
+    "[sum(i) for i in L]",
+    "[sum(i) for i in zip(L, L)]",
+    "[sum(i) for i in l]",
+    "[sum(i) for i in zip(l, l)]"
+   ]
+  ],
+  [
+   "9743134.185",
+   "\"\"\"Docs/src/Scripts/temp\"\"\".replace('/', '/\\x00/').split('\\x00')",
+   [
+    "results = re.split('/', 'docs/src/scripts/temp')",
+    "results = re.split('/', 'Doc/src/scripts/temp')",
+    "result = result.split('/', '/')",
+    "results = re.split('/', '/')"
+   ]
+  ],
+  [
+   "20546419.186",
+   "np.random.shuffle(np.transpose(r))",
+   [
+    "np.shuffle(r, axis=0)",
+    "np.shuffle(r, axis=1)",
+    "np.shuffle(np.arange(r, axis=0)",
+    "np.shuffle(r, axis=1).shape"
+   ]
+  ],
+  [
+   "32675861.187",
+   "df['D'] = df['B']",
+   [
+    "df['b'] = df['d']",
+    "df['b'] = df['d'].dropna()",
+    "df['B'] = df['D']",
+    "df['b'] = df['d'] + df['b'].reshape"
+   ]
+  ],
+  [
+   "14227561.188",
+   "list(data['A']['B'].values())[0]['maindata'][0]['Info']",
+   [
+    "print([k for k, v in data.items() if 'b' not in k])",
+    "print([k for k, v in data.items() if 'b' in k])",
+    "print([k for k, v in data.items() if 'b' not in b])",
+    "data['b'].encode('utf-8')"
+   ]
+  ],
+  [
+   "14858916.189",
+   "all(predicate(x) for x in string)",
+   [
+    "print('predicate'.join(string))",
+    "print(('predicate', string))",
+    "print(string.__dict__).isinstance(predicate)",
+    "print(string.__dict__).isinstance('predicate')"
+   ]
+  ],
+  [
+   "574236.190",
+   "os.statvfs('/').f_files - os.statvfs('/').f_ffree",
+   [
+    "print(os.path.getmtime(filename))",
+    "print(os.path.getmtime(filename) for filename in files)",
+    "print(os.path.getmtime(filename) / '%s'))",
+    "print(os.path.getmtime(filename) / '%s')"
+   ]
+  ],
+  [
+   "7011291.191",
+   "cursor.fetchone()[0]",
+   [
+    "result = sqlite.query(lambda x: x[1])",
+    "db.query(lambda x: x[1])",
+    "cursor.execute('INSERT INTO table VALUES (%s), %s, %s)',\n    'SELECTION FROM TABLE(SELECTION, VALUES)')",
+    "cursor.execute('INSERT INTO table VALUES (%s), %s, %s)', 'SELECTION FROM TABLE(SELECTION, VALUES)"
+   ]
+  ],
+  [
+   "6378889.192",
+   "user_list = [int(number) for number in user_input.split(',')]",
+   [
+    "user_input = [int(x) for x in user_list]",
+    "user_input = [int(x) for x inuser_list]",
+    "user_input = [i for i in user_list]",
+    "user_list = [int(x) for x in user_input]"
+   ]
+  ],
+  [
+   "6378889.193",
+   "[int(s) for s in user.split(',')]",
+   [
+    "[int(x) for x in user.split(',')]",
+    "[int(s) for s in user.split(',')]",
+    "[int(x) for x in User.split(',')]",
+    "[int(s) for s in User.split(',')]"
+   ]
+  ],
+  [
+   "5212870.194",
+   "sorted(list, key=lambda x: (x[0], -x[1]))",
+   [
+    "sorted(list(itertools.chain.from_iterable(1)))",
+    "sorted(list(itertools.chain.from_iterable(2)))",
+    "sorted(list(range(10)), key=lambda x: x[1])",
+    "sorted(list, key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "403421.195",
+   "ut.sort(key=cmpfun, reverse=True)",
+   [
+    "ut.sort(key=lambda x: x[1])",
+    "ut.sort(key=lambda x: x.cmpfun[1], reverse=True)",
+    "sorted(ut, key=lambda x: x[1])",
+    "ut.sort(key=lambda x: cmpfun[x: x[1])"
+   ]
+  ],
+  [
+   "403421.196",
+   "ut.sort(key=lambda x: x.count, reverse=True)",
+   [
+    "ut = [x for x in enumerate(ut.count()])",
+    "ut = [x for x in range(10)]",
+    "ut = [x for x in range(0, len(ut), reverse=True])",
+    "ut = [x for x in range(0, len(ut), 1)]"
+   ]
+  ],
+  [
+   "403421.197",
+   "ut.sort(key=lambda x: x.count, reverse=True)",
+   [
+    "sorted(ut, key=lambda x: x[1])",
+    "sorted(ut, key=lambda k: k.count)",
+    "sorted(ut, key=lambda tup: tup[1])",
+    "sorted(ut, key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "19601086.198",
+   "driver.find_element_by_partial_link_text('Send').click()",
+   [
+    "driver.find_element_by_css_selector('send')",
+    "driver.find_element_by_css_selector('send').click()",
+    "driver.find_element_by_xpath('send')",
+    "driver.find_element_by_css_selector('send', href=True)"
+   ]
+  ],
+  [
+   "19601086.199",
+   "driver.findElement(By.linkText('Send InMail')).click()",
+   [
+    "driver.find_element_by_css_selector('send inmail')",
+    "driver.find_element_by_css_selector('send inmail').click()",
+    "driver.find_element_by_css_selector('send_inmail')",
+    "driver.find_element_by_css_selector('send_inmail').click()"
+   ]
+  ],
+  [
+   "19601086.200",
+   "driver.find_element_by_link_text('Send InMail').click()",
+   [
+    "driver.find_element_by_css_selector('send inmail').click()",
+    "driver.find_element_by_css_selector('send inmail')",
+    "driver.find_element_by_xpath('send inmail')",
+    "driver.find_element_by_xpath('send inmail').click()"
+   ]
+  ],
+  [
+   "3944876.201",
+   "'ME' + str(i)",
+   [
+    "\"\"\"\"\"\".join(str(i)) for i in'me'",
+    "\"\"\"\"\"\".join(str(i))",
+    "\"\"\"\"\"\".join(str(i) for i in'me'])",
+    "\"\"\"\"\"\".join(str(i) for i in'me'))"
+   ]
+  ],
+  [
+   "40903174.202",
+   "df.sort_values(['System_num', 'Dis'])",
+   [
+    "pd.concat([df.groupby(df.index)], axis=1)",
+    "pd.concat([df.groupby(df.index)], axis=0)",
+    "pd.concat([df.groupby(df.count(), df.index)], axis=1)",
+    "pd.concat([df.groupby(df.count(), df.index)], axis=0)"
+   ]
+  ],
+  [
+   "4454298.203",
+   "open('outfile', 'w').write('#test firstline\\n' + open('infile').read())",
+   [
+    "os.system('#test firstline\\n')",
+    "os.path.isfile('#test firstline\\n')",
+    "os.system('#test firstline\\n', 'outfile')",
+    "os.path.isfile('#test firstline\\n', infile)"
+   ]
+  ],
+  [
+   "19729928.204",
+   "l.sort(key=lambda t: len(t[1]), reverse=True)",
+   [
+    "sorted(l, key=lambda x: x[1])",
+    "sorted(L, key=lambda x: x[1])",
+    "l.sort(key=lambda x: x[1])",
+    "sorted(l, key=lambda x: x[1]))"
+   ]
+  ],
+  [
+   "31371879.205",
+   "re.findall('\\\\b(\\\\w+)d\\\\b', s)",
+   [
+    "s = s.split('d')",
+    "s = s.split('D')",
+    "s = s.split(',', 'd')",
+    "s = s.split('d')[-1]"
+   ]
+  ],
+  [
+   "9012008.206",
+   "bool(re.search('ba[rzd]', 'foobarrrr'))",
+   [
+    "return False if (foobarrrr.is not regex(ba[rzd]):\n    pass",
+    "return False if (foobarrrr not in re.findall('ba[rzd]')",
+    "return False if (notfoobarrrr in re.findall('ba[rzd]')",
+    "return False if (foobarrrr in re.findall('ba[rzd]')"
+   ]
+  ],
+  [
+   "7961363.207",
+   "list(set(t))",
+   [
+    "[x for x in list(t)]",
+    "[x for x in t if x != 0]",
+    "[x for x in set(t)]",
+    "[x for x in t if x[1] == 0]"
+   ]
+  ],
+  [
+   "7961363.208",
+   "list(set(source_list))",
+   [
+    "[x for x in source_list if x is not duplicates]",
+    "[x for x in source_list if x not in x]",
+    "[x for x in source_list if not x in x]",
+    "[x for x in source_list if x is not duplicated]"
+   ]
+  ],
+  [
+   "7961363.209",
+   "list(OrderedDict.fromkeys('abracadabra'))",
+   [
+    "del my_list(abracadabra)",
+    "[x for x in abracadabra]",
+    "[x for x in abracadabra if x not in x]",
+    "[x for x in abracadabra if x != 1]"
+   ]
+  ],
+  [
+   "5183533.210",
+   "numpy.array(a).reshape(-1).tolist()",
+   [
+    "list(itertools.chain.from_iterable(a))",
+    "list(itertools.chain.from_iterable(a)))",
+    "[list(a) for _ in range(10)]",
+    "[list(a) for a in zip(a)]"
+   ]
+  ],
+  [
+   "5183533.211",
+   "numpy.array(a)[0].tolist()",
+   [
+    "[a[0] for a in zip(*a)]",
+    "[a[0] for i in a]",
+    "[a[0] for a in zip(a)]",
+    "[a[0] for a in a]"
+   ]
+  ],
+  [
+   "5999747.212",
+   "print(soup.find(text='Address:').findNext('td').contents[0])",
+   [
+    "soup.find_element_by_xpath('//a[address:])')",
+    "soup.find_elements_by_xpath('//a[address:])')",
+    "soup.find_element_by_xpath('//a[address:])//b[name]')",
+    "soup.find_element_by_xpath('//a[address:])//b[0]')"
+   ]
+  ],
+  [
+   "4284648.213",
+   "\"\"\" \"\"\".join([('%d@%d' % t) for t in l])",
+   [
+    "\"\"\"\"\"\".join(map(int, x) for x in L)",
+    "\"\"\"\"\"\".join(map(int, x) for x in L))",
+    "\"\"\".join(map(int, x) for x in L)",
+    "\"\"\"\"\"\".join(map(int, x) for x in l)"
+   ]
+  ],
+  [
+   "4284648.214",
+   "\"\"\" \"\"\".join([('%d@%d' % (t[0], t[1])) for t in l])",
+   [
+    "\"\"\"\"\"\".join(l, '@')",
+    "\"\"\"\"\"\".join(zip(*l))",
+    "\"\"\"\"\"\".join(l, '')",
+    "\"\"\"\"\"\".join(l, '@'))"
+   ]
+  ],
+  [
+   "26809954.215",
+   "driver.execute_script('return document.documentElement.outerHTML;')",
+   [
+    "driver.find_element_by_css_id('html')",
+    "driver.find_elements_by_css_selector('html')",
+    "driver.find_elements_by_css_selector('html', html)",
+    "driver.find_elements_by_css_selector('html').get_html()"
+   ]
+  ],
+  [
+   "29696641.216",
+   "[i for i in teststr if re.search('\\\\d+[xX]', i)]",
+   [
+    "re.findall('\\\\d+[xx]', teststr)",
+    "re.findall('\\\\d+[xx]', testStr)",
+    "re.match('\\\\d+[xx]', teststr)",
+    "print(re.findall('\\\\d+[xx]', teststr))"
+   ]
+  ],
+  [
+   "15315452.217",
+   "df['A'][(df['B'] > 50) & (df['C'] == 900)]",
+   [
+    "df.loc[df['A'] == 50, df['C'] != 900]",
+    "df.loc[df['A'] == 50, df['C'] > 900]",
+    "df.loc[df['A'].fillna(['B'], 'C'], - equal 900]",
+    "df.loc[df['A'].fillna(['B', 'C'], - equal 900)]"
+   ]
+  ],
+  [
+   "4642501.218",
+   "sorted(o.items())",
+   [
+    "sorted(list(o.items()), key=lambda x: x[1])",
+    "sorted(list(o.items()), key=operator.itemgetter(1))",
+    "sorted(list(o.items()), key=itemgetter(1))",
+    "sorted(list(o.items()), key=lambda x: x[1]))"
+   ]
+  ],
+  [
+   "4642501.219",
+   "sorted(d)",
+   [
+    "sorted(list(d.keys())",
+    "sorted(d, key=lambda x: x[1])",
+    "sorted(d, key=d.get)",
+    "sorted(list(d.items()))"
+   ]
+  ],
+  [
+   "4642501.220",
+   "sorted(d.items())",
+   [
+    "sorted(list(d.items()), key=lambda x: x[1])",
+    "sorted(list(d.items()), key=lambda x: x[1]))",
+    "sorted(list(d.keys())), key=lambda x: x[1])",
+    "sorted(list(d.items()), key=lambda x: x[1])))"
+   ]
+  ],
+  [
+   "642154.221",
+   "int('1')",
+   [
+    "int('1', 1))\nmap(int, re.findall('\\n')",
+    "int('1', 1))\nmap(int, re.split('\\n')",
+    "int('1', 1)\nmap(int, re.findall('\\n')",
+    "int('1', 1))\nmap(int, re.sub('\\n')"
+   ]
+  ],
+  [
+   "642154.222",
+   "int()",
+   [
+    "int(s) for s in re.findall('\\\\d+', 16)",
+    "int(map(int, x))",
+    "int(s) for s in re.findall('\\n')",
+    "int(s) for s in re.findall('\\\\d+', 2)"
+   ]
+  ],
+  [
+   "642154.223",
+   "T2 = [map(int, x) for x in T1]",
+   [
+    "int(map(int(t1))",
+    "map(int(x) for x in t1)",
+    "map(int(x) for x in t1))",
+    "int(map(int, int(t1))"
+   ]
+  ],
+  [
+   "3777301.224",
+   "subprocess.call(['./test.sh'])",
+   [
+    "subprocess.call('./test.sh', shell=True)",
+    "subprocess.call('/test.sh', shell=True)",
+    "subprocess.call('./test.sh')",
+    "subprocess.call(['./test.sh'])"
+   ]
+  ],
+  [
+   "3777301.225",
+   "subprocess.call(['notepad'])",
+   [
+    "subprocess.call('notepad', shell=True)",
+    "subprocess.call(notepad, shell=True)",
+    "subprocess.call(notepad)",
+    "subprocess.call(notepad, shell=True, subprocess.T"
+   ]
+  ],
+  [
+   "7946798.226",
+   "[val for pair in zip(l1, l2) for val in pair]",
+   [
+    "[i for i, j in zip(l1, l2)]",
+    "[(x + y) for x, y in zip(l1, l2)]",
+    "[(x + y) for x in zip(l1, l2)]",
+    "[i for i in zip(l1, l2)]"
+   ]
+  ],
+  [
+   "8908287.227",
+   "encoded = base64.b64encode('data to be encoded')",
+   [
+    "\"\"\"data to be encoded\"\"\".encode('utf-8')",
+    "encode('data to be encoded')",
+    "\"\"\"data to be encoded\"\"\".encode('utf8')",
+    "\"\"\"data to be encoded\"\"\".encode('hex')"
+   ]
+  ],
+  [
+   "8908287.228",
+   "encoded = 'data to be encoded'.encode('ascii')",
+   [
+    "ascii.encode('data to be encoded')",
+    "ascii.encode('utf-8')",
+    "urllib.parse.unquote('data to be encoded')",
+    "ascii.encode('utf-8'))"
+   ]
+  ],
+  [
+   "7856296.229",
+   "lol = list(csv.reader(open('text.txt', 'rb'), delimiter='\\t'))",
+   [
+    "list('text.txt', delimiter=',')",
+    "t = open('text.txt', 'rb').read()",
+    "[t = open('text.txt', 'rb').read()]",
+    "list('text.txt', delimiter=',',')"
+   ]
+  ],
+  [
+   "9035479.230",
+   "getattr(my_object, my_str)",
+   [
+    "my_object.getattr(my_str)",
+    "my_object.attribute(my_str)",
+    "my_object.getattr(my_str, None)",
+    "my_object.getattr(my_str))"
+   ]
+  ],
+  [
+   "5558418.231",
+   "print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))",
+   [
+    "dict((k, v) for k, v in list(ld.items()))",
+    "dict(zip(*ld, key=lambda x: x[1])",
+    "dict((k, v) for k, v in dicts.items() if v)",
+    "[d['ld'] for d in s]"
+   ]
+  ],
+  [
+   "638048.232",
+   "sum([pair[0] for pair in list_of_pairs])",
+   [
+    "sum(x[0] for x in zip(*my_list, my_list))",
+    "sum(x[0] for x in zip(*my_list, my_list[1])",
+    "sum(x[0] for x in zip(*my_list, my_list[1])]",
+    "sum(x[0] for x in zip(*my_list, my_list[1])])"
+   ]
+  ],
+  [
+   "14950260.233",
+   "d = ast.literal_eval(\"{'code1':1,'code2':1}\")",
+   [
+    "dict((k, v) for k, v in u.split('{'code1': 1,'code2': 1})",
+    "dict((k, v) for k, v in u.split('{'code1':1,'code2':1})",
+    "dict((k.decode('code1':1,'code2':1})",
+    "dict((k.decode('code1':1,'code2':1))"
+   ]
+  ],
+  [
+   "11416772.234",
+   "[word for word in mystring.split() if word.startswith('$')]",
+   [
+    "re.findall('\\\\d+$', myString)",
+    "re.findall('\\\\d+$', mystring)",
+    "re.findall('\\\\w+)', mystring)",
+    "re.findall('\\\\w+)', myString)"
+   ]
+  ],
+  [
+   "11331982.235",
+   "text = re.sub('^https?:\\\\/\\\\/.*[\\\\r\\\\n]*', '', text, flags=re.MULTILINE)",
+   [
+    "r = re.sub('[^a-zA-Z]', text)",
+    "r = re.sub('\\\\w+', text)",
+    "r = re.sub('[^a-z]', text)",
+    "r = re.sub('[^a-zA-Z]+', text)"
+   ]
+  ],
+  [
+   "34945274.236",
+   "np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)",
+   [
+    "[x for x in a if x not in [1, 3, 4])",
+    "[x for x in a if x not in [1, 3, 4]]",
+    "np.all(a != [1, 3, 4])",
+    "numpy.replace([1, 3, 4])"
+   ]
+  ],
+  [
+   "15819980.237",
+   "np.mean(a, axis=1)",
+   [
+    "np.mean(a, axis=1)",
+    "np.mean(a, axis=0)",
+    "np.mean(a, axis=1).sum()",
+    "np.mean(a, axis=1).mean(1)"
+   ]
+  ],
+  [
+   "19894365.238",
+   "subprocess.call(['/usr/bin/Rscript', '--vanilla', '/pathto/MyrScript.r'])",
+   [
+    "os.system('/pathTo/myrscript.r')",
+    "os.system('/pathto/myrscript.r')",
+    "subprocess.call('/pathTo/myrscript.r')",
+    "subprocess.call('/pathTo/myrscript.r', shell=True)"
+   ]
+  ],
+  [
+   "19894365.239",
+   "subprocess.call('/usr/bin/Rscript --vanilla /pathto/MyrScript.r', shell=True)",
+   [
+    "os.system('/usr/bin/rscript --vanilla /pathto/myrscript.r')",
+    "r = r.run('/usr/bin/rscript --vanilla /pathto/myrscript.r')",
+    "subprocess.call('/usr/bin/rscript --vanilla /pathto/myrscript.r')",
+    "r = r.run('/usr/bin/rscript --vanilla /pathTO/myrscript.r')"
+   ]
+  ],
+  [
+   "15907200.240",
+   "writer.writeheader()",
+   [
+    "writer.writerow(os.path.realpath(__file__))",
+    "csv = os.path.realpath(__file__)",
+    "writer.writerow(os.path.realpath(__file__)))",
+    "writer.writerow(os.path.realpath(__file__)"
+   ]
+  ],
+  [
+   "33058590.241",
+   "df.fillna(df.mean(axis=1), axis=1)",
+   [
+    "df.fillna(axis=1)",
+    "df.fillna(axis=1, axis=1)",
+    "df.fillna(axis=0, axis=1)",
+    "df.fillna(axis=1).sum()"
+   ]
+  ],
+  [
+   "12400256.242",
+   "time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))",
+   [
+    "struct.unix('1347517370', '%Y-%m-%d %H:%M:%S')",
+    "datetime.strptime('1347517370', '%Y-%m-%d %H:%M:%S')",
+    "struct.unpack('1347517370', '%Y-%m-%d %H:%M:%S')",
+    "struct.unpack('%Y-%m-%d %H:%M:%S')"
+   ]
+  ],
+  [
+   "1269217.243",
+   "super(Derived, cls).do(a)",
+   [
+    "print(super(name, class) for name, class inderived.__class__))",
+    "print(super(name, class) for name, class inderived.__class__)",
+    "print(super(name, class) for name, class in do.__class__))",
+    "print(super(name, class) for name, class in do.__init__)"
+   ]
+  ],
+  [
+   "23359886.244",
+   "a[np.where((a[:, (0)] == 0) * (a[:, (1)] == 1))]",
+   [
+    "numpy.select(a, key=lambda x: x[1]) == 1",
+    "numpy.select(a, key=lambda x: x[1])",
+    "numpy.select(a, key=lambda x: x[1]) == 1)",
+    "numpy.select(a, key=lambda x: x[1])[0]"
+   ]
+  ],
+  [
+   "4383082.245",
+   "re.split(' +', 'hello world sample text')",
+   [
+    "[k for k, v in re.findall('\\\\d+', '', delimiter=',') if v]",
+    "[k for k, v in re.findall('\\\\d+', '', delimiter=',') if v)",
+    "[k for k, v in re.findall('\\\\d+', '', s) if v.split(',')]",
+    "[k for k, v in re.findall('\\\\d+', '', delimiter=',') if v in k]"
+   ]
+  ],
+  [
+   "14637696.246",
+   "len(max(words, key=len))",
+   [
+    "words[len(x) for x in words]",
+    "words[len(len(word))]",
+    "words[len(len(words))]",
+    "words[len(x) for x in word]"
+   ]
+  ],
+  [
+   "3933478.247",
+   "result[0]['from_user']",
+   [
+    "result['from_user'] = result[0]",
+    "result['from_user'].encode('utf-8')",
+    "result['from_user'] = result['key']",
+    "result['from_user'].encode('utf-8'))"
+   ]
+  ],
+  [
+   "39112645.248",
+   "[line.split() for line in open('File.txt')]",
+   [
+    "[x for x in open('file.txt', 'rb').read()]",
+    "[line for line in open('file.txt', 'rb') if 'rb' in line]",
+    "[f for f in open('file.txt', 'rb') if f.close()]",
+    "[f for f in open('file.txt', 'rb') if f.split()]"
+   ]
+  ],
+  [
+   "1031851.249",
+   "res = dict((v, k) for k, v in a.items())",
+   [
+    "dict((k, v) for k, v in a.items())",
+    "dict((k, v) for k, v in a.items()))",
+    "{k: v for k, v in a.items()}",
+    "[key for key, value in a.items() if value == 0]"
+   ]
+  ],
+  [
+   "8577137.250",
+   "new_file = open('path/to/FILE_NAME.ext', 'w')",
+   [
+    "write(path / to / file_name.ext)",
+    "write('path/to/file_name.ext')",
+    "open('path/to/file_name.ext')",
+    "open('path/to/file_name.ext', 'write')"
+   ]
+  ],
+  [
+   "17926273.251",
+   "df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()",
+   [
+    "df.groupby(lambda x: x[1])",
+    "df.groupby(lambda x: x[1], axis=1)",
+    "df.groupby(df.values())",
+    "df.groupby(lambda x: x[1], axis=0)"
+   ]
+  ],
+  [
+   "3735814.252",
+   "any(key.startswith('EMP$$') for key in dict1)",
+   [
+    "any(dict1.isdigit() == 'emp$$')",
+    "any(dict1.startswith('emp$$')",
+    "any(dict1.startswith('emp$$') == 1)",
+    "any(dict1.isdigit() ==emp$$)"
+   ]
+  ],
+  [
+   "3735814.253",
+   "[value for key, value in list(dict1.items()) if key.startswith('EMP$$')]",
+   [
+    "[k for k, v in dict1.items() if 'emp$$' in k]",
+    "[v for v in dict1 if v.startswith('emp$$')]",
+    "[k for k, v in dict1.items() if 'emp$$')",
+    "[k for k, v in dict1.items() if 'emp$$' in k])"
+   ]
+  ],
+  [
+   "26097916.254",
+   "pd.DataFrame({'email': sf.index, 'list': sf.values})",
+   [
+    "df.set_index(['email', 'list'])",
+    "df.to_pd.concat([email, list])",
+    "df.set_index(['email', 'list'], axis=1)",
+    "df.set_index(['email', 'list']).strftime('%s')"
+   ]
+  ],
+  [
+   "4048964.255",
+   "print('\\t'.join(map(str, list)))",
+   [
+    "print(list.split(\\t))",
+    "print('\\t'.join(list))",
+    "print(list.split('\\t')))",
+    "print(list.split(',\\t')"
+   ]
+  ],
+  [
+   "3182716.256",
+   "print('\u00d0\u00bf\u00d1\\x80\u00d0\u00b8'.encode('raw_unicode_escape'))",
+   [
+    "print('\\xd0\\xbf\\xd1\\x80\\xd9\\xb8'.encode('utf8')",
+    "print('\u00d0\u00bf\u00d1\\x80\u00d9\u00b8').encode('utf8')",
+    "print('\u00d0\u00bf\u00d1\\x80\u00d9\u00b8')",
+    "print('\u00d0\u00bf\u00d1\\x80\u00d9\u00b8').decode('utf8')"
+   ]
+  ],
+  [
+   "3182716.257",
+   "\"\"\"Sopet\u00c3\u00b3n\"\"\".encode('latin-1').decode('utf-8')",
+   [
+    "sopet\\xc3\\xb3n.encode('utf-8')",
+    "sopet\\xc3\\xb3n.decode('utf-8')",
+    "sopet\\xc3\\xb3n'.encode('utf-8')",
+    "sopet\\xc3\\xb3n.decode('utf-8').encode('utf8')"
+   ]
+  ],
+  [
+   "1405602.258",
+   "image = image.resize((x, y), Image.ANTIALIAS)",
+   [
+    "image.resized(x, y)",
+    "image.resize(x, y)",
+    "image.reshape(x, y)",
+    "image.resized(x, y, fill=True)"
+   ]
+  ],
+  [
+   "35622945.259",
+   "re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)",
+   [
+    "re.findall('n', s)",
+    "re.findall('\\\\n', s)",
+    "re.findall('(?=n)', s)",
+    "re.findall('(?=n))', s)"
+   ]
+  ],
+  [
+   "5306756.260",
+   "print('{0:.0f}%'.format(1.0 / 3 * 100))",
+   [
+    "float(1 / 3 * 100)",
+    "float(1/3*100))",
+    "float('1/3*100')",
+    "float('1/3*100', 1)"
+   ]
+  ],
+  [
+   "2878084.261",
+   "mylist.sort(key=lambda x: x['title'])",
+   [
+    "mylist.sort(key=lambda x: x[1])",
+    "mylist.sort(key=lambda x: x.title)",
+    "myList.sort(key=lambda x: x[1])",
+    "mylist.sort(key=operator.itemgetter(name))"
+   ]
+  ],
+  [
+   "2878084.262",
+   "l.sort(key=lambda x: x['title'])",
+   [
+    "sorted(l, key=lambda x: dicts['title'])",
+    "sorted(l, key=lambda x: x['title'])",
+    "sorted(l, key=lambda x: x['title']))",
+    "sorted(l, key=lambda x: dicts['title']))"
+   ]
+  ],
+  [
+   "2878084.263",
+   "l.sort(key=lambda x: (x['title'], x['title_url'], x['id']))",
+   [
+    "sorted(list(d.items()), key=lambda x: x['title', 'title_url', 'id'])",
+    "sorted(list(d.items()), key=lambda x: x['title', 'title_url', 'id']))",
+    "sorted(list(d['title', 'title_url', 'id'])",
+    "sorted(list(d.items()), key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "9323159.264",
+   "heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))",
+   [
+    "[i for i, j in zip(l1, l2)]",
+    "[x for x in zip(l1, l2)]",
+    "max(l1, l2)",
+    "max(l1, l2, key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "29877663.265",
+   "soup.find_all('span', {'class': 'starGryB sp'})",
+   [
+    "soup.findAll(text='Stargryb sp')",
+    "soup.findAll(text='stargryb sp')",
+    "soup.findAll(text='Stargryb Sp', style='span')",
+    "soup.findAll(text='Stargryb sp', style='span')"
+   ]
+  ],
+  [
+   "24189150.266",
+   "df.to_sql('test', engine, schema='a_schema')",
+   [
+    "df.to_test('test')",
+    "df.set_index('test')",
+    "df.set_table('test')",
+    "df.to_table('test')"
+   ]
+  ],
+  [
+   "30766151.267",
+   "brackets = re.sub('[^(){}[\\\\]]', '', s)",
+   [
+    "re.sub('\\\\d+', s)",
+    "s = re.sub('\\\\d+', '', s)",
+    "s = re.sub('\\\\d+', s)",
+    "s = re.sub('\\\\d+', '', s)"
+   ]
+  ],
+  [
+   "1143379.268",
+   "list(dict((x[0], x) for x in L).values())",
+   [
+    "[x for x in L if x not in x]",
+    "[x for x in L if x is duplicate]",
+    "[x for x in L if x is not duplicate]",
+    "[x for x in L if x != 'l']"
+   ]
+  ],
+  [
+   "12330522.269",
+   "[line.rstrip('\\n') for line in file]",
+   [
+    "os.path.isfile(file)",
+    "os.path.join(file)",
+    "os.path.join(open('file', 'rb')",
+    "os.path.join(open('file')"
+   ]
+  ],
+  [
+   "364621.270",
+   "[i for i, x in enumerate(testlist) if x == 1]",
+   [
+    "testlist.get_position(1)",
+    "testlist.loc[1:1]",
+    "testlist.get(1, 1)",
+    "testlist.get_position(1)[0]"
+   ]
+  ],
+  [
+   "364621.271",
+   "[i for i, x in enumerate(testlist) if x == 1]",
+   [
+    "testlist.get_position(1)",
+    "testlist.loc[1:1]",
+    "testlist.get(1, 1)",
+    "testlist.get_position(1)[0]"
+   ]
+  ],
+  [
+   "364621.272",
+   "for i in [i for i, x in enumerate(testlist) if x == 1]:\n    pass",
+   [
+    "testlist.get_position(1)",
+    "testlist.loc[1:1]",
+    "testlist.get(1, 1)",
+    "testlist.get_position(1)[0]"
+   ]
+  ],
+  [
+   "364621.273",
+   "for i in (i for i, x in enumerate(testlist) if x == 1):\n    pass",
+   [
+    "testlist.get_position(1)",
+    "testlist.loc[1:1]",
+    "testlist.get(1, 1)",
+    "testlist.get_position(1)[0]"
+   ]
+  ],
+  [
+   "364621.274",
+   "gen = (i for i, x in enumerate(testlist) if x == 1)\nfor i in gen:\n    pass",
+   [
+    "testlist.get_position(1)",
+    "testlist.loc[1:1]",
+    "testlist.get(1, 1)",
+    "testlist.get_position(1)[0]"
+   ]
+  ],
+  [
+   "364621.275",
+   "print(testlist.index(element))",
+   [
+    "print(len(element) for element in testlist)",
+    "print(len(element) for item in testlist)",
+    "len(element) == elem[0]",
+    "print(len(element) for element in testlist))"
+   ]
+  ],
+  [
+   "364621.276",
+   "try:\n    print(testlist.index(element))\nexcept ValueError:\n    pass",
+   [
+    "print(len(element) for element in testlist)",
+    "print(len(element) for item in testlist)",
+    "len(element) == elem[0]",
+    "print(len(element) for element in testlist))"
+   ]
+  ],
+  [
+   "13145368.277",
+   "max(lis, key=lambda item: item[1])[0]",
+   [
+    "[max(x[1] for x inlis]",
+    "[max(x[0] for x inlis]",
+    "max(zip(lis, key=lambda x: x[1])",
+    "[max(x[1] for x inlis)]"
+   ]
+  ],
+  [
+   "13145368.278",
+   "max(lis, key=itemgetter(1))[0]",
+   [
+    "max(len(lis, key=lambda x: x[1])",
+    "max(len(lis, 1))",
+    "max(len(lis) == 1)",
+    "max(zip(lis, 1))"
+   ]
+  ],
+  [
+   "2689189.279",
+   "time.sleep(1)",
+   [
+    "time.sleep(1, 1)",
+    "time.sleep(1) + 1",
+    "time.sleep(1, 2)",
+    "time.sleep(1, 0)"
+   ]
+  ],
+  [
+   "12485244.280",
+   "\"\"\", \"\"\".join('(' + ', '.join(i) + ')' for i in L)",
+   [
+    "\"\"\"\"\"\".join(zip(*l))",
+    "\"\"\"\"\"\".join(map(int, l))",
+    "\"\"\"\"\"\".join(map(l))",
+    "\"\"\"\"\"\".join(map(lambda x: x[1])"
+   ]
+  ],
+  [
+   "755857.281",
+   "b = models.CharField(max_length=7, default='0000000', editable=False)",
+   [
+    "django.setdefault_value(b, '0000000')",
+    "b = {'0000000': '0000000'}",
+    "b = {'0000000': '0000000'})",
+    "django.setdefault('b')"
+   ]
+  ],
+  [
+   "16193578.282",
+   "sorted(list5, lambda x: (degree(x), x))",
+   [
+    "sorted(list5, key=lambda x: x[1])",
+    "sorted(list5, key=lambda x: x[0])",
+    "sorted(list5, key=lambda x: int(x[1])",
+    "sorted(list5, key=lambda x: int(x[1]))"
+   ]
+  ],
+  [
+   "16193578.283",
+   "sorted(list5, key=lambda vertex: (degree(vertex), vertex))",
+   [
+    "sorted(list(range(10)), key=lambda x: x[1])",
+    "sorted(list(range(10)), key=lambda x: x[1]))",
+    "sorted(key=operator.itemgetter(1))",
+    "sorted(key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "16041405.284",
+   "(n for n in [1, 2, 3, 5])",
+   [
+    " generator.from_iterable(key=lambda x: x[1])",
+    " generator.from_iterable(key=lambda x: x[0]))",
+    " generator.from_iterable(key=lambda x: x[0])",
+    " generator.from_iterable(list, zip(*a)))"
+   ]
+  ],
+  [
+   "18837607.285",
+   "newlist = [v for i, v in enumerate(oldlist) if i not in removelist]",
+   [
+    "[x for x in oldlist if x not inremovelist]",
+    "[x for x in oldlist if x is not inremovelist]",
+    "[x for x in oldlist if not x inremovelist]",
+    "[x for x in oldlist if x is not inremovelist)]"
+   ]
+  ],
+  [
+   "4710067.286",
+   "f = open('yourfile.txt', 'w')",
+   [
+    "open('yourfile.txt', 'write')",
+    "open('yourfile.txt', 'shutdown')",
+    "print(open('yourfile.txt', 'write')",
+    "print(open('yourfile.txt','shutdown')"
+   ]
+  ],
+  [
+   "7373219.287",
+   "getattr(obj, 'attr')",
+   [
+    "obj.getattr('attr', 1)",
+    "obj.getattr('attr', obj)",
+    "obj.getattr('attr', obj)",
+    "obj.getattr('attr'()"
+   ]
+  ],
+  [
+   "8171751.288",
+   "from functools import reduce\nreduce(lambda a, b: a + b, (('aa',), ('bb',), ('cc',)))",
+   [
+    "tuple(map(lambda x: (('aa', ('bb',), ('cc',))))",
+    "tuple(map(lambda x: (('aa', ('bb',), ('cc',)))",
+    "tuple(map(lambda x: (('aa',), ('bb',), 'cc',))",
+    "tuple(map(lambda x: (('aa',), ('bb',), 'cc')))"
+   ]
+  ],
+  [
+   "8171751.289",
+   "map(lambda a: a[0], (('aa',), ('bb',), ('cc',)))",
+   [
+    "[(('aa',), ('bb',), 'cc',)) for i in range(1)]",
+    "map(lambda x: (('aa',), ('bb',), 'cc'))",
+    "[(('aa',), ('bb',), 'cc',)) for i in range(10)]",
+    "[(('aa',), ('bb',), 'cc',))]"
+   ]
+  ],
+  [
+   "28986489.290",
+   "df['range'].replace(',', '-', inplace=True)",
+   [
+    "df.dropna(df.columns, axis=1)",
+    "df['columns'].replace('', '', 1)",
+    "df['columns'].replace(' ', '', 1)",
+    "df.dropna(df.columns, axis=1).fillna(1)"
+   ]
+  ],
+  [
+   "19339.291",
+   "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])",
+   [
+    "zip([('A', 1), ('B', 2), ('C', 3), ('D', 4)])",
+    "zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)]",
+    "zip([('A', 1), ('B', 2), ('C', 3), ('D', 4)]",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4)])"
+   ]
+  ],
+  [
+   "19339.292",
+   "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])",
+   [
+    "zip([('A', 1), ('B', 2), ('C', 3), ('D', 4)])",
+    "zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)]",
+    "zip([('A', 1), ('B', 2), ('C', 3), ('D', 4)]",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4)])"
+   ]
+  ],
+  [
+   "19339.293",
+   "result = [a for a, b in original], [b for a, b in original]",
+   [
+    "original.unzip(key=operator.itemgetter(1))",
+    "original = [zip(original) for i in range(0, len(original)]",
+    "original.unzip(key=operator.itemgetter(original))",
+    "original.unzip(key=operator.itemgetter(1)))"
+   ]
+  ],
+  [
+   "19339.294",
+   "result = (a for a, b in original), (b for a, b in original)",
+   [
+    "original = [i for i in range(0, len(original), 1)]",
+    "original = [i for i in range(0, len(original), 2)]",
+    "original = [i for i in range(0, len(original))]",
+    "original = [i for i in original]"
+   ]
+  ],
+  [
+   "19339.295",
+   "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])",
+   [
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5)])",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5)])]",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5), ('M', 6)])])",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5), ('M', 6)])]"
+   ]
+  ],
+  [
+   "19339.296",
+   "map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])",
+   [
+    "zip(*[[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)])",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5)])",
+    "zip(*[[('A', 1), ('B', 2), ('C', 3), ('D', 4), ('E', 5)])]",
+    "zip(*[[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5), ('a', 6), 'a', 7)])"
+   ]
+  ],
+  [
+   "1960516.297",
+   "json.dumps(Decimal('3.9'))",
+   [
+    "json.encode('3.9')",
+    "json.decimal('3.9')",
+    "json.encode('3.9', 'decimal')",
+    "json.encode('3.9').decode('utf8')"
+   ]
+  ],
+  [
+   "1024847.298",
+   "d['mynewkey'] = 'mynewvalue'",
+   [
+    "d = {'mynewkey': d.get('mynewvalue'})",
+    "d = {'mynewkey': d['mynewvalue']}",
+    "d = {'mynewkey': d.get('mynewvalue')}",
+    "d = {'mynewkey': d.get('mynewvalue'}}"
+   ]
+  ],
+  [
+   "1024847.299",
+   "data.update({'a': 1})",
+   [
+    "data.update({'a': 1})",
+    "data = {'a': 1}",
+    "data['a'].update({'a': 1})",
+    "data['a'].update({'key': 1})"
+   ]
+  ],
+  [
+   "1024847.300",
+   "data.update(dict(a=1))",
+   [
+    "data.update({'a': 1})",
+    "data = {'a': 1}",
+    "data['a'].update({'a': 1})",
+    "data['a'].update({'key': 1})"
+   ]
+  ],
+  [
+   "1024847.301",
+   "data.update(a=1)",
+   [
+    "data.update({'a': 1})",
+    "data = {'a': 1}",
+    "data['a'].update({'a': 1})",
+    "data['a'].update({'key': 1})"
+   ]
+  ],
+  [
+   "35837346.302",
+   "max([max(i) for i in matrix])",
+   [
+    "max(matrix, key=lambda x: x[1])",
+    "max(matrix, key=lambda x: x[1]))",
+    "max(matrix, key=lambda t: t[1])",
+    "max(matrix, key=lambda x: (x[1])"
+   ]
+  ],
+  [
+   "20457038.303",
+   "answer = str(round(answer, 2))",
+   [
+    "round(answer.round(2))",
+    "round(answer.round(2), 2)",
+    "round(answer.round(2)",
+    "round(answer.round(2)).2"
+   ]
+  ],
+  [
+   "2890896.304",
+   "ip = re.findall('[0-9]+(?:\\\\.[0-9]+){3}', s)",
+   [
+    "urllib.parse.unquote(id=0, ip=0)",
+    "urllib.parse.unquote(id=0)",
+    "urllib.parse.unquote(id=IP address)",
+    "urllib.parse.unquote(id=IP address))"
+   ]
+  ],
+  [
+   "29836836.305",
+   "df.groupby('A').filter(lambda x: len(x) > 1)",
+   [
+    "df.filter(['a'], axis=1)",
+    "df.groupby(['a'], axis=1)",
+    "df.filter(['a'], axis=0)",
+    "df.filter(['a'], axis=1).sum()"
+   ]
+  ],
+  [
+   "2545397.306",
+   "[x for x in myfile.splitlines() if x != '']",
+   [
+    "myfile.append('\\n'.join(myfile))",
+    "myfile.append('\\n')",
+    "myfile.append('\\n', '\\n')",
+    "myfile.append('\\n'.join(myfile)"
+   ]
+  ],
+  [
+   "2545397.307",
+   "lst = map(int, open('filename.txt').readlines())",
+   [
+    "[int(x) for x in open('filename.txt')]",
+    "[int(x) for x in open('filename.txt'])",
+    "[int(x) for x in lst]",
+    "[int(x) for x in open('filename.txt').read())"
+   ]
+  ],
+  [
+   "35420052.308",
+   "plt.colorbar(mappable=mappable, cax=ax3)",
+   [
+    "plt.set_color_bar('mappable')",
+    "plt.set_color_bar(mappable)",
+    "plt.set_background_color_bar('mappable')",
+    "plt.colorbar(mappable)"
+   ]
+  ],
+  [
+   "29903025.309",
+   "Counter(' '.join(df['text']).split()).most_common(100)",
+   [
+    "df['text'] = df['text'].max(100)",
+    "df['text'] = df['text'].apply(lambda x: len(x[1]))",
+    "df['text'] = df['text'].count()",
+    "df['text'] = df['text'].apply(lambda x: len(x[0]))"
+   ]
+  ],
+  [
+   "16330838.310",
+   "re.findall('(.+?):(.+?)\\\\b?', text)",
+   [
+    "re.split('[^a-zA-Z]', '', shell=True)",
+    "re.split('\\n', '\\n')",
+    "re.split('\\\\d+', '', str)",
+    "re.split('[^a-zA-Z]*', '', shell=True)"
+   ]
+  ],
+  [
+   "7378180.311",
+   "list(itertools.combinations((1, 2, 3), 2))",
+   [
+    "[(1, 2, 3)]",
+    "print([(1, 2, 3))",
+    "[(1, 2, 3) for i in range(1)]",
+    "[(1, 2, 3)) for i in range(1)]"
+   ]
+  ],
+  [
+   "4530069.312",
+   "datetime.now(pytz.utc)",
+   [
+    "datetime.today() - datetime.timedelta(days=1)",
+    "datetime.today() - datetime.utcnow().timedelta()",
+    "today() = datetime.today()",
+    "datetime.today().strftime('%Y-%m-%d')"
+   ]
+  ],
+  [
+   "4842956.313",
+   "list2 = [x for x in list1 if x != []]",
+   [
+    "[x for x in zip(list1, list2)]",
+    "list2 = [x for x in zip(list1)]",
+    "list2 = [x for x in list1]",
+    "[x for x in list2 if x is not in list1]"
+   ]
+  ],
+  [
+   "4842956.314",
+   "list2 = [x for x in list1 if x]",
+   [
+    "list2 = [x for x in zip(list1, list2)]",
+    "list2 = [x for x in zip(list1, list1)]",
+    "list2 = [[x for x in zip(list1, list2)] for i in x]",
+    "list2 = [[x for x in zip(list1, list2)] for i in range(100)]"
+   ]
+  ],
+  [
+   "9262278.315",
+   "return HttpResponse(data, mimetype='application/json')",
+   [
+    "data = json.loads(data)",
+    "data.objects.filter(None)",
+    "data.objects.filter(level=0)",
+    "data.objects.filter(level=1)"
+   ]
+  ],
+  [
+   "17284947.316",
+   "re.findall('(.*?)\\\\[.*?\\\\]', example_str)",
+   [
+    "re.findall('\\\\w+', example_str)",
+    "\"\"\"\"\"\".join(re.findall('\\\\w+', example_str))",
+    "\"\"\"\"\"\".join(re.findall('\\\\w+', example_str)",
+    "re.findall('\\\\w+', example_str, text)"
+   ]
+  ],
+  [
+   "17284947.317",
+   "re.findall('(.*?)(?:\\\\[.*?\\\\]|$)', example_str)",
+   [
+    "re.findall('\\\\w+', example_str)",
+    "re.findall('(\\\\w+)', example_str)",
+    "re.findall('(^\\\\w+)', example_str)",
+    "re.findall('\\\\w+\\\\w+)', example_str)"
+   ]
+  ],
+  [
+   "14182339.318",
+   "re.findall('\\\\(.+?\\\\)|\\\\w', '(zyx)bc')",
+   [
+    "re.findall('\\\\w+', '(zyx)bc')",
+    "re.findall('\\\\w+', '(zyx)bc', '', re.IGNORECASE)",
+    "re.findall('\\\\w+', '', ''.join(re.search('(zyx)bc')",
+    "re.findall('\\\\w+', '(zyx)bc', '', re.search)"
+   ]
+  ],
+  [
+   "14182339.319",
+   "re.findall('\\\\((.*?)\\\\)|(\\\\w)', '(zyx)bc')",
+   [
+    "re.match('\\\\((.*?)\\\\)|(\\\\w)', 'zyx)bc')",
+    "re.match('\\\\((.*?)\\\\)|(\\\\w)', '(zyx)bc')",
+    "re.match('\\\\((.*?)\\\\)|(\\\\w)', (zyx)bc)",
+    "re.match('\\\\((.*?)\\\\)|(\\\\w)'"
+   ]
+  ],
+  [
+   "14182339.320",
+   "re.findall('\\\\(.*?\\\\)|\\\\w', '(zyx)bc')",
+   [
+    "re.findall('(zyx)bc', '|')",
+    "re.findall('(zyx)bc)', '|')",
+    "re.findall('(zyx)bc')",
+    "re.match('(zyx)bc', '|')"
+   ]
+  ],
+  [
+   "7126916.321",
+   "elements = ['%{0}%'.format(element) for element in elements]",
+   [
+    "print('%{0}%')",
+    "print('%{0}%'.join(elements))",
+    "re.findall('%{0}%', lements)",
+    "re.findall('%{0}%')"
+   ]
+  ],
+  [
+   "3595685.322",
+   "subprocess.Popen(['background-process', 'arguments'])",
+   [
+    "background - process.set_argument('Arguments')",
+    "background - process.set_argument('arguments')",
+    "background - process.call('Arguments')",
+    "background - process.set_argument('Arguments')['Arguments']"
+   ]
+  ],
+  [
+   "18453566.323",
+   "[mydict[x] for x in mykeys]",
+   [
+    "[k for k, v in list(mydict.keys()) if v != 'mykeys']",
+    "[value for key, value in list(mydict.keys()) if value != 'mykeys']",
+    "[k for k, v in list(mydict.keys()) if v in mykeys]",
+    "[k for k, v in list(mydict.keys()) if v in k]"
+   ]
+  ],
+  [
+   "12692135.324",
+   "dict([('Name', 'Joe'), ('Age', 22)])",
+   [
+    "dict([('name', 'joe'), ('age', 22)]",
+    "dict((k, v) for k, v in ['name', 'joe'), ('age', 22)]",
+    "dict((k, v) for k, v in ['name', 'joe'), ('age', 22])",
+    "dict([('name', 'joe'), ('age', 22])"
+   ]
+  ],
+  [
+   "14401047.325",
+   "data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)",
+   [
+    "np.arange(data, axis=1)",
+    "np.arange(data, axis=1).sum()",
+    "np.arange(data, axis=0)",
+    "np.mean(np.arange(data, axis=1)"
+   ]
+  ],
+  [
+   "18886596.326",
+   "print(s.encode('unicode-escape').replace('\"', '\\\\\"'))",
+   [
+    "re.sub('\\\\w+', s)",
+    "re.sub('\\\\s+', '', s)",
+    "re.sub('\\\\s+', s)",
+    "re.sub('\\\\s+', '\\\\s', s)"
+   ]
+  ],
+  [
+   "5932059.327",
+   "re.split('(\\\\W+)', s)",
+   [
+    "\"\"\"{0:.2f}\"\"\".format(map(int, x))",
+    "\"\"\"{0:.2f}\"\"\".format(map(int, x) for x in s.split())",
+    "\"\"\"{0:.2f}\"\"\".format(map(int, x) for x in s.split(','))",
+    "\"\"\"{0:.2f}\"\"\".format(map(int, x) for x in s.split(',')"
+   ]
+  ],
+  [
+   "9938130.328",
+   "df.plot(kind='barh', stacked=True)",
+   [
+    "pd.concat([x, y], axis=1)",
+    "pd.concat([x, y], axis=0)",
+    "pd.concat([x, y])",
+    "pd.concat([x, y], axis=0, scatter=True)"
+   ]
+  ],
+  [
+   "35945473.329",
+   "{i[1]: i[0] for i in list(myDictionary.items())}",
+   [
+    "dict((k, v) for k, v in myDictionary.items())",
+    "dict((k, v) for k, v in list(myDictionary.items()))",
+    "dict((k, v) for k, v in myDictionary.items()))",
+    "dict((k, v) for k, v in myDictionary.items() if v)"
+   ]
+  ],
+  [
+   "30729735.330",
+   "[i for i, j in enumerate(myList) if 'how' in j.lower() or 'what' in j.lower()]",
+   [
+    "mylist.index(['how', 'what'], key=lambda x: x[1])",
+    "myList.index(['how', 'what'], key=lambda x: x[1])",
+    "mylist.index(['how', 'what'])",
+    "mylist.index(['how', 'what'], key=lambda x: x[0])"
+   ]
+  ],
+  [
+   "1303243.331",
+   "isinstance(obj, str)",
+   [
+    "if obj == string:\n    pass",
+    "if (obj.isString())):\n    pass",
+    "if obj.isString():\n    pass",
+    "if obj.isdigit():\n    pass"
+   ]
+  ],
+  [
+   "1303243.332",
+   "isinstance(o, str)",
+   [
+    "if not 'o':\n    pass",
+    "if noto:\n    pass",
+    "if (not a string):\n    pass",
+    "if not 'o':\n    pass"
+   ]
+  ],
+  [
+   "1303243.333",
+   "type(o) is str",
+   [
+    "if not 'o':\n    pass",
+    "if noto:\n    pass",
+    "if (not a string):\n    pass",
+    "if not 'o':\n    pass"
+   ]
+  ],
+  [
+   "1303243.334",
+   "isinstance(o, str)",
+   [
+    "if not 'o':\n    pass",
+    "if noto:\n    pass",
+    "if (not a string):\n    pass",
+    "if not 'o':\n    pass"
+   ]
+  ],
+  [
+   "1303243.335",
+   "isinstance(obj_to_test, str)",
+   [
+    "if obj_to_test == string:\n    pass",
+    "if obj_to_test:\n    pass",
+    "print(obj_to_test.is_string())",
+    "if obj_to_test == string:\n    pass"
+   ]
+  ],
+  [
+   "8177079.336",
+   "list2.extend(list1)",
+   [
+    "list2 = [x for x in zip(list1, list2)]",
+    "list2 = [i for i in zip(list1, list2)]",
+    "list2.append(list1, list2)",
+    "list2 = [list1[::-1] for i in range(0, len(list2)]"
+   ]
+  ],
+  [
+   "8177079.337",
+   "list1.extend(mylog)",
+   [
+    "list1 = [item for item in mylog]",
+    "list1 = [i for i in mylog]",
+    "list1 = [i for i in mylog if i != 1]",
+    "list1 = [i for i in mylog if i != 0]"
+   ]
+  ],
+  [
+   "8177079.338",
+   "c.extend(a)",
+   [
+    "c = [a[i] for i in c]",
+    "c = [a[:] for a in c]",
+    "c = [i for i in a if i != c]",
+    "c = [i for i in a]"
+   ]
+  ],
+  [
+   "8177079.339",
+   "for line in mylog:\n    list1.append(line)",
+   [
+    "list1 = [item for item in mylog]",
+    "list1 = [item[0] for item in mylog]",
+    "mylog.append(list1)",
+    "list1 = [item for item in mylog if item != 1]"
+   ]
+  ],
+  [
+   "4126227.340",
+   "b.append((a[0][0], a[0][2]))",
+   [
+    "b = [[0][0][0][2]]",
+    "b = [[0][0][0][2] for i in range(a)]",
+    "b = [x[0] for x in '[0][0] [0][2]]",
+    "b = [i[0][0] [0][2]"
+   ]
+  ],
+  [
+   "34902378.341",
+   "app.config['SECRET_KEY'] = 'Your_secret_string'",
+   [
+    "config.initialize('secret_key')",
+    "requests.get('secret_key')",
+    "requests.get('secret_key', verify_string)",
+    "requests.get('secret_key', auth_string)"
+   ]
+  ],
+  [
+   "22799300.342",
+   "pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)",
+   [
+    "df.groupby(['out-1', 'out-2'])",
+    "df.groupby(['out-1', 'out-2'], axis=1)",
+    "df.groupby(['out-1', 'out-2']).apply(lambda x: x[1])",
+    "df.groupby(['out-1', 'out-2'], axis=0)"
+   ]
+  ],
+  [
+   "1762484.343",
+   "[x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT']",
+   [
+    "[x['msft'] for x instocks_list]",
+    "[i for i, j instocks_list if j =='msft']",
+    "[i for i, j instocks_list if j!='msft']",
+    "stock_list.index('msft')"
+   ]
+  ],
+  [
+   "3464359.344",
+   "ax.set_xticklabels(labels, rotation=45)",
+   [
+    "ax.set_xticklabels(45)",
+    "ax.set_ticks_by('45')",
+    "ax.set_xticklabels('45', 45)",
+    "ax.set_xticklabels('45', 'x')"
+   ]
+  ],
+  [
+   "875968.345",
+   "re.sub('[^\\\\w]', '', s)",
+   [
+    "s = re.sub('\\\\d+', '', s)",
+    "s = re.sub('\\\\d+', s)",
+    "s = s.replace('\\\\d+', '', s)",
+    "s = re.sub('\\\\d+', '\\\\1', s)"
+   ]
+  ],
+  [
+   "31258561.346",
+   "os.path.basename(os.path.dirname(os.path.realpath(__file__)))",
+   [
+    "os.chdir(os.path.realpath(__file__))",
+    "os.path.realpath(__file__)",
+    "os.chdir(os.path.dirname(__file__))",
+    "os.chdir(os.path.realpath(__file__)))"
+   ]
+  ],
+  [
+   "34750084.347",
+   "print(re.findall(\"'\\\\\\\\[0-7]{1,3}'\", str))",
+   [
+    "re.findall('\\\\w+', str)",
+    "re.findall('[^a-zA-Z]', str)",
+    "re.findall('[^a-zA-Z]*', str)",
+    "re.findall('[^a-zA-Z]+', str)"
+   ]
+  ],
+  [
+   "13209288.348",
+   "re.split('[ ](?=[A-Z]+\\\\b)', input)",
+   [
+    "re.split('[ ](?=[A-Z]+\\\\b)', input)",
+    "input = re.sub('[ ](?=[A-Z]+\\\\b)', '', input)",
+    "input = re.split('[ ](?=[A-Z]+\\\\b)', input)",
+    "input = re.split('[ ](?=[A-Z]+\\\\b)', '', input)"
+   ]
+  ],
+  [
+   "13209288.349",
+   "re.split('[ ](?=[A-Z])', input)",
+   [
+    "input = re.sub('\\\\w+', '', input)",
+    "input = re.sub('[^a-zA-Z]', input)",
+    "input = re.sub('[^a-z]', '', input)",
+    "input = re.sub('\\\\w+', input)"
+   ]
+  ],
+  [
+   "24642040.350",
+   "r = requests.post(url, files=files, headers=headers, data=data)",
+   [
+    "urllib.parse.unquote(files, headers={'headers': 'data'})",
+    "urllib.parse.unquote(files, headers=headers, metadata=data))",
+    "urllib.parse.unquote(files).read().decode('utf-8')",
+    "urllib.parse.unquote(files, headers=headers, metadata=data)"
+   ]
+  ],
+  [
+   "4290716.351",
+   "open('filename', 'wb').write(bytes_)",
+   [
+    "print(filename.write(bytes_))",
+    "print(filename.write('bytes_')",
+    "filename.write('bytes_', 16)",
+    "print(filename.write('bytes_', ''))"
+   ]
+  ],
+  [
+   "33078554.352",
+   "[dct[k] for k in lst]",
+   [
+    "[dct for dct in lst]",
+    "[dct for dct in zip(lst, lst)]",
+    "[dct for dct in lst if dct != 0]",
+    "[dct for dct in lst if dct[0] == 0]"
+   ]
+  ],
+  [
+   "15247628.353",
+   "x.set_index('name').index.get_duplicates()",
+   [
+    "x.groupby(['name'])",
+    "x.groupby('name').filter(lambda x: x.name)",
+    "x.groupby('name').filter(lambda x: x.name[1])",
+    "x.groupby('name').filter(level=1)"
+   ]
+  ],
+  [
+   "783897.354",
+   "round(1.923328437452, 3)",
+   [
+    "\"\"\"{0:.3f}\"\"\".format(1.923328437452)",
+    "\"\"\"{0:.3f}\"\"\".format(1.923328437452, 3)",
+    "print('{0:.3f}'.format(1.923328437452))",
+    "print('{0:.3f}'.format(1.923328437452, 3))"
+   ]
+  ],
+  [
+   "22859493.355",
+   "sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)",
+   [
+    "li.sort(key=lambda x: (x[1], x[2]))",
+    "li.sort(key=lambda x: x[1])",
+    "li.sort(key=lambda x: (x[1] / len(li))",
+    "li.sort(key=lambda x: x[1][0] / len(li))"
+   ]
+  ],
+  [
+   "29394552.356",
+   "ax.set_rlabel_position(135)",
+   [
+    "ax.set_index(135)",
+    "ax.set_ticks_position('135')",
+    "ax.set_index('95')",
+    "ax.set_ticks_index(135)"
+   ]
+  ],
+  [
+   "3320406.357",
+   "os.path.isabs(my_path)",
+   [
+    "print(os.path.abspath(my_path))",
+    "print(os.path.isfile(my_path))",
+    "if not my_path:\n    pass",
+    "print(os.path.realpath(my_path))"
+   ]
+  ],
+  [
+   "2212433.358",
+   "len(list(yourdict.keys()))",
+   [
+    "sum(key for key, value in list(yourdict.items()))",
+    "len(key) for key in list(yourdict.items()):\n    pass",
+    "sum(key) for key in list(yourdict.items()))",
+    "len(key) for key in list(yourdict.items())"
+   ]
+  ],
+  [
+   "2212433.359",
+   "len(set(open(yourdictfile).read().split()))",
+   [
+    "sum(key for key, value in list(yourdictfile.items()))",
+    "sum(yourdictfile.keys())",
+    "sum(yourdictfile.keys()))",
+    "sum(len(yourdictfile.keys()))"
+   ]
+  ],
+  [
+   "20067636.360",
+   "df.groupby('id').first()",
+   [
+    "df.groupby('id').apply(lambda x: x[1])",
+    "df['id'] = df['id'].groupby('id')",
+    "df['id'] = df['id'].columns",
+    "df['id'] = df['id'].groupby('ID')"
+   ]
+  ],
+  [
+   "40924332.361",
+   "pd.concat([df[0].apply(pd.Series), df[1]], axis=1)",
+   [
+    "pd.concat([df[1], df[2], axis=1)",
+    "pd.concat([df['first']], df['last']], axis=1)",
+    "pd.concat([df[1], df[2], axis=0)",
+    "pd.concat([df['first']], df['last']], axis=0)"
+   ]
+  ],
+  [
+   "30759776.362",
+   "re.findall('src=\"js/([^\"]*\\\\bjquery\\\\b[^\"]*)\"', data)",
+   [
+    "data = data.extract('src=\"js/([^\"]*\\\\bjquery\\\\b[^]*)\"')",
+    "data.extract({'src=\"js/([^\"]*\\\\bjquery\\\\b[^]*)\"})",
+    "data.extract({'src=\"js/([^\"]*\\\\bjquery\\\\b[^]*)\"}}",
+    "data.extract('src=\"js/([^\"]*\\\\bjquery\\\\b[^\"])*)\"')"
+   ]
+  ],
+  [
+   "25388796.363",
+   "sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if\n    _f])",
+   [
+    "sum(map(int, ['', '3.4', '', '\", '1.0'])",
+    "sum(map(int, ['', '3.4', '', '), '1.0'])",
+    "sum(map(int, ['', '3.4', '', '), '1.0'))",
+    "sum(map(int, ['', '3.4', '', '\", '1.0'])))"
+   ]
+  ],
+  [
+   "804995.364",
+   "subprocess.Popen(['c:\\\\Program Files\\\\VMware\\\\VMware Server\\\\vmware-cmd.bat'])",
+   [
+    "subprocess.call('c:\\\\program files\\\\vmware\\\\vmWARE server\\\\vmWare-cmd.bat',\n    shell=True)",
+    "subprocess.call(['c:\\\\program files\\\\vmware\\\\vmWARE server\\\\VMware-cmd.bat', 'r')",
+    "subprocess.call(['c:\\\\program files\\\\vmware\\\\vmWARE server\\\\VMware-cmd.bat', 'r', shell=True)",
+    "subprocess.call(['c:\\\\program files\\\\vmware\\\\vmWARE server\\\\VMware-cmd.bat', 'r', 'a')"
+   ]
+  ],
+  [
+   "26441253.365",
+   "q.put((-n, n))",
+   [
+    "[(k, v) for k, v in queue.items()]",
+    "[(x, y) for x, y in queue(q)]",
+    "[(x, y) for x in queue]",
+    "[x for x in queue(Q)]"
+   ]
+  ],
+  [
+   "18897261.366",
+   "df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])",
+   [
+    "df.groupby(color='green')",
+    "df.colour_coded(group='color')",
+    "df.groupby('color')['colour'] = 'green'",
+    "df.groupby(color='green')['group']].colour"
+   ]
+  ],
+  [
+   "373194.367",
+   "re.findall('([a-fA-F\\\\d]{32})', data)",
+   [
+    "re.findall('([A-F\\\\d]{32})', data)",
+    "re.findall('([a-fa-f\\\\d]{32})', data)",
+    "print(re.findall('([A-F\\\\d]{32})', data))",
+    "re.findall('([A-F\\\\d]{32})', '', data)"
+   ]
+  ],
+  [
+   "518021.368",
+   "len(my_list)",
+   [
+    "len(len(my_list))",
+    "len(my_list, my_list)",
+    "len(my_list, my_list))",
+    "len(len(my_list)"
+   ]
+  ],
+  [
+   "518021.369",
+   "len(l)",
+   [
+    "len(l, len(l))",
+    "len(l, axis=1)",
+    "len(l, axis=0)",
+    "len(l) + len(l))"
+   ]
+  ],
+  [
+   "518021.370",
+   "len(s)",
+   [
+    "np.len(s).sum()",
+    "np.len(s, -1)",
+    "np.len(s, s)",
+    "np.len(s, 1)"
+   ]
+  ],
+  [
+   "518021.371",
+   "len(my_tuple)",
+   [
+    "len(len(my_tuple))",
+    "len(len(my_tuple)",
+    "len(len(my_tuple) + len(len)",
+    "len(len(my_tuple) + len(len(*my_string))"
+   ]
+  ],
+  [
+   "518021.372",
+   "len(my_string)",
+   [
+    "len(len(my_string))",
+    "len(my_string, my_string)",
+    "len(my_string, my_string))",
+    "len(len(my_string)"
+   ]
+  ],
+  [
+   "40452956.373",
+   "\"\"\"\\\\a\"\"\".decode('string_escape')",
+   [
+    "re.sub('\\\\a', '\\\\a')",
+    "re.sub('\\\\a', '', '\\\\a')",
+    "re.sub('\\\\a', '\\\\A')",
+    "re.sub('\\\\a', '', '\\\\A')"
+   ]
+  ],
+  [
+   "8687018.374",
+   "\"\"\"obama\"\"\".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')",
+   [
+    "\"\"\"obama\"\"\".replace('a', 'b', 'a')",
+    "\"\"\"obama\"\"\".replace('a', 'b')",
+    "\"\"\"obama\"\"\".replace('a', 'b', '')",
+    "\"\"\"obama\"\"\".replace('a', 'b', 'a'))"
+   ]
+  ],
+  [
+   "303200.375",
+   "shutil.rmtree('/folder_name')",
+   [
+    "os.path.realpath('/folder_name')",
+    "os.path.dirname('/folder_name')",
+    "os.path.realpath( '/folder_name'))",
+    "os.path.realpath('/folder_name')"
+   ]
+  ],
+  [
+   "13740672.376",
+   "data['weekday'] = data['my_dt'].apply(lambda x: x.weekday())",
+   [
+    "pd.concat([data['weekday'], axis=1)",
+    "pd.DataFrame(['weekday'], axis=1)",
+    "pd.concat([df['weekday'], axis=1)",
+    "pd.concat([data['weekday'], axis=1, columns=My_dt)"
+   ]
+  ],
+  [
+   "20950650.377",
+   "sorted(x, key=x.get, reverse=True)",
+   [
+    "sorted(x, key=lambda x: x[1])",
+    "sorted(x, key=lambda x: x[1], reverse=True)",
+    "sorted(x, key=lambda x: reverse=True)",
+    "sorted(x, key=lambda x: x.index(1))"
+   ]
+  ],
+  [
+   "20950650.378",
+   "sorted(list(x.items()), key=lambda pair: pair[1], reverse=True)",
+   [
+    "sorted(x, key=lambda x: x[1])",
+    "x.sort(key=operator.itemgetter(1))",
+    "sorted(x, key=lambda x: x[1]))",
+    "sorted(x, key=lambda x: x[1]"
+   ]
+  ],
+  [
+   "9775297.379",
+   "np.vstack((a, b))",
+   [
+    "a.append(b, a)",
+    "a = np.array([np.arange(b))",
+    "a = np.array([b, a])",
+    "a = np.array([b, a]"
+   ]
+  ],
+  [
+   "21887754.380",
+   "print(concatenate((a, b), axis=0))",
+   [
+    "numpy.concat([a, b])",
+    "numpy.concat([a, b], axis=1)",
+    "numpy.concat([a, b], axis=0)",
+    "numpy.concat([A, B], axis=1)"
+   ]
+  ],
+  [
+   "21887754.381",
+   "print(concatenate((a, b), axis=1))",
+   [
+    "numpy.concat([a, b])",
+    "numpy.concat([a, b], axis=1)",
+    "numpy.concat([A, B], axis=1)",
+    "numpy.concat([a, b], axis=0)"
+   ]
+  ],
+  [
+   "21887754.382",
+   "c = np.r_[a[(None), :], b[(None), :]]",
+   [
+    "numpy.concat([a, b])",
+    "numpy.concat([a, b], axis=1)",
+    "numpy.concat([a, b], axis=0)",
+    "numpy.concat([A, B], axis=1)"
+   ]
+  ],
+  [
+   "21887754.383",
+   "np.array((a, b))",
+   [
+    "numpy.concat([a, b])",
+    "numpy.concat([a, b], axis=1)",
+    "numpy.concat([a, b], axis=0)",
+    "numpy.concat([A, B], axis=1)"
+   ]
+  ],
+  [
+   "2805231.384",
+   "print(socket.getaddrinfo('google.com', 80))",
+   [
+    "fetch('google.com', port=80)",
+    "os.system('google.com', 80)",
+    "os.system('google.com')",
+    "os.system('google.com', port80)"
+   ]
+  ],
+  [
+   "17552997.385",
+   "df.xs('sat', level='day', drop_level=False)",
+   [
+    "df['Day'].strftime('sat')",
+    "df['day'].strftime('sat')",
+    "df['day'] = df['sat'].dropna()",
+    "df['day'] = df['sat'].strftime('True')"
+   ]
+  ],
+  [
+   "4356842.386",
+   "return HttpResponse('Unauthorized', status=401)",
+   [
+    "return a 401(0, 1)",
+    "return a 401(0, 0)",
+    "return (401)(0, 1)\nreturn False",
+    "return a 401(0, :)"
+   ]
+  ],
+  [
+   "13598363.387",
+   "Flask(__name__, template_folder='wherever')",
+   [
+    "flask.set_folder('wherever')",
+    "template.set_folder('wherever')",
+    "flask.setdefault_folder('wherever')",
+    "flask.set_folder('wherever', '/rb')"
+   ]
+  ],
+  [
+   "1849375.388",
+   "session.execute('INSERT INTO t1 (SELECT * FROM t2)')",
+   [
+    "driver.find_element_by_xpath('select * from t2')",
+    "cursor.execute('INSERT INTO t1, SELECT * FROM t2')",
+    "driver.find_element_by_xpath(\"select * from t2')",
+    "cursor.execute('SELECT * FROM t2')"
+   ]
+  ],
+  [
+   "3398589.389",
+   "c2.sort(key=lambda row: row[2])",
+   [
+    "sorted(c2, key=lambda x: x[1])",
+    "sorted(c2, key=lambda x: x[1], reverse=True)",
+    "sorted(c2, key=lambda x: x[1]))",
+    "sorted(c2, key=lambda x: x[1])"
+   ]
+  ],
+  [
+   "3398589.390",
+   "c2.sort(key=lambda row: (row[2], row[1], row[0]))",
+   [
+    "sorted(list, key=lambda x: x[1])",
+    "sorted(list, key=lambda x: x[1], reverse=True)",
+    "sorted(list, key=lambda x: x[1]))",
+    "sorted(list(itertools.chain.from_iterable(1)))"
+   ]
+  ],
+  [
+   "3398589.391",
+   "c2.sort(key=lambda row: (row[2], row[1]))",
+   [
+    "sorted(list, key=lambda x: x[1])",
+    "sorted(list, key=lambda x: x[1], reverse=True)",
+    "sorted(list, key=lambda x: x[1]))",
+    "sorted(list(itertools.chain.from_iterable(1)))"
+   ]
+  ],
+  [
+   "10960463.392",
+   "matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})",
+   [
+    "ax.set_font('arial')",
+    "ax.set_font(arial)",
+    "ax.set_title('arial')",
+    "ax.set_font(arial, font=None)"
+   ]
+  ],
+  [
+   "20576618.393",
+   "df['date'].apply(lambda x: x.toordinal())",
+   [
+    "df['date'].strftime('%Y')",
+    "df.to_datetime('date'].strftime('%Y')",
+    "df.to_datetime('date'].strftime('%B')",
+    "df.strftime('%Y-%m-%d')"
+   ]
+  ],
+  [
+   "7263824.394",
+   "element.get_attribute('innerHTML')",
+   [
+    "element.find_element_by_css_id()",
+    "element.find_element_by_css_selector(0)",
+    "element.find_element_by_css_selector(1)",
+    "element.find_element_by_css_selector(__file__)"
+   ]
+  ],
+  [
+   "31793195.395",
+   "df.index.get_loc('bob')",
+   [
+    "df['bob'].loc[0]",
+    "pd.concat([int(bob) for bob in dataFrame]",
+    "pd.concat([int(bob.loc[0]))]",
+    "pd.concat([int(bob.loc[0], 2])]"
+   ]
+  ],
+  [
+   "7574841.396",
+   "os.system('gnome-terminal -e \\'bash -c \"sudo apt-get update; exec bash\"\\'')",
+   [
+    "os.system('gnome', shell=True)",
+    "os.system('open('gnome', shell=True)",
+    "os.system('gnome', shell=True, inplace=True)",
+    "os.system('gnome', shell=True, pd=True)"
+   ]
+  ],
+  [
+   "10487278.397",
+   "my_dict.update({'third_key': 1})",
+   [
+    "my_dict.update({'third_key': 1})",
+    "my_dict.items({'third_key': 1})",
+    "my_dict.items()[1]",
+    "my_dict.items()[0]"
+   ]
+  ],
+  [
+   "10487278.398",
+   "my_list = []",
+   [
+    "np.array([0, 1], axis=1)",
+    "np.array([0, 1], axis=0)",
+    "np.array([0, 1])",
+    "np.array([0, 1)]"
+   ]
+  ],
+  [
+   "10487278.399",
+   "my_list.append(12)",
+   [
+    "my_list.insert(12)",
+    "my_list = [item[12] for item in 12]",
+    "my_list = [item[0] for item in 12]",
+    "my_list.insert(12, 12)"
+   ]
+  ],
+  [
+   "10155684.400",
+   "myList.insert(0, 'wuggah')",
+   [
+    "myList[0].startswith('wuggah')",
+    "mylist[0].startswith('wuggah')",
+    "mylist.pop('wuggah')",
+    "myList.pop('wuggah')"
+   ]
+  ],
+  [
+   "3519125.401",
+   "\"\"\"\\\\xF3\\\\xBE\\\\x80\\\\x80\"\"\".replace('\\\\x', '').decode('hex')",
+   [
+    "struct.unpack('hex-string', 16)",
+    "struct.unpack('hex')[0]",
+    "struct.unpack('hex', 16)",
+    "struct.unpack('hex-string')"
+   ]
+  ],
+  [
+   "40144769.402",
+   "df[df.columns[-1]]",
+   [
+    "df.columns[:-1]",
+    "df.columns[-1]",
+    "df.groupby(df.columns)",
+    "df.columns[1:]]"
+   ]
+  ],
+  [
+   "30787901.403",
+   "df.loc[df['Letters'] == 'C', 'Letters'].values[0]",
+   [
+    "df[df['letters'] == 'C']",
+    "df.loc[df['letters'] == 'C']",
+    "df.loc[df['letters'] == 'c']",
+    "df['letters'] == 'C']"
+   ]
+  ],
+  [
+   "18730044.404",
+   "np.column_stack(([1, 2, 3], [4, 5, 6]))",
+   [
+    "np.concat([1, 2, 3], [4, 5, 6])",
+    "Matrix([1, 2, 3], [4, 5, 6])",
+    "np.concat([1, 2, 3], [4, 5, 6]]",
+    "Matrix([1, 2, 3], [4, 5, 6]]"
+   ]
+  ],
+  [
+   "402504.405",
+   "type(i)",
+   [
+    "print(i.type(1))",
+    "print(i.type(key=lambda x: x[1])",
+    "print(i.type(i))",
+    "print(i.type(0, 1))"
+   ]
+  ],
+  [
+   "402504.406",
+   "type(v)",
+   [
+    "print(v.__dict__)",
+    "print(v.__dict__))",
+    "print(v.__dict__).isinstance(v)",
+    "print(v.__dict__).isinstance(v))"
+   ]
+  ],
+  [
+   "402504.407",
+   "type(v)",
+   [
+    "print(v.__dict__)",
+    "print(v.__dict__))",
+    "print(v.__dict__).isinstance(v)",
+    "print(v.__dict__).isinstance(v))"
+   ]
+  ],
+  [
+   "402504.408",
+   "type(v)",
+   [
+    "print(v.__dict__)",
+    "print(v.__dict__))",
+    "print(v.__dict__).isinstance(v)",
+    "print(v.__dict__).isinstance(v))"
+   ]
+  ],
+  [
+   "402504.409",
+   "type(v)",
+   [
+    "print(v.__dict__)",
+    "print(v.__dict__))",
+    "print(v.__dict__).isinstance(v)",
+    "print(v.__dict__).isinstance(v))"
+   ]
+  ],
+  [
+   "402504.410",
+   "print(type(variable_name))",
+   [
+    "variable_name = variable_name[0]",
+    "variable_name = variable_name[::-1]",
+    "print(variable_name.type())",
+    "variable_name = variable_name.get_type()"
+   ]
+  ],
+  [
+   "2300756.411",
+   "next(itertools.islice(range(10), 5, 5 + 1))",
+   [
+    " generator.itemgetter(5)",
+    " generator.find_element_by_xpath(\"5th item\")",
+    " generator.find_element_by_xpath(5)",
+    " generator.itemgetter(5, 5)"
+   ]
+  ],
+  [
+   "20056548.412",
+   "print('\"{}\"'.format(word))",
+   [
+    "print(word.split('\\n'))[0]",
+    "print('Word.split('\\n')",
+    "print(word.split('\\n')",
+    "print(word.split('\\n')[0]"
+   ]
+  ],
+  [
+   "8546245.413",
+   "\"\"\" \"\"\".join(list)",
+   [
+    "list = [x for x in list if x.isdigit()]",
+    "list = [x for x in zip(list)]",
+    "list = [i for i in range(0, len(list)) if i]",
+    "list = [i for i in range(0, len(list),''])"
+   ]
+  ],
+  [
+   "2276416.414",
+   "y = [[] for n in range(2)]",
+   [
+    "y = [i for i in range(2)]",
+    "y = [x[0] for x in i]",
+    "y = [x[0] for x in range(2)]",
+    "y = [i for i in range(0, 2)]"
+   ]
+  ],
+  [
+   "3925614.415",
+   "data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]",
+   [
+    "data = open('c:/name/mydocuments/numbers')",
+    "data = open('C:/name/mydocuments/numbers')",
+    "data = open('C:/name/mydocuments/numbers', 'rb')",
+    "data = open('c:/name/mydocuments/numbers', 'rb')"
+   ]
+  ],
+  [
+   "22187233.416",
+   "\"\"\"\"\"\".join([char for char in 'it is icy' if char != 'i'])",
+   [
+    "re.sub('[^a-zA-Z]', 'it is icy')",
+    "re.sub('it is icy', 'i')",
+    "re.sub('[^a-zA-Z]', 'it is icy'",
+    "re.sub('it is icy')"
+   ]
+  ],
+  [
+   "22187233.417",
+   "re.sub('i', '', 'it is icy')",
+   [
+    "re.sub('[^a-zA-Z]', 'it is icy')",
+    "re.sub('[^a-zA-Z]', 'it is icy'",
+    "re.sub('it is icy', 'I', i)",
+    "re.sub('it is icy')"
+   ]
+  ],
+  [
+   "22187233.418",
+   "\"\"\"it is icy\"\"\".replace('i', '')",
+   [
+    "re.sub('it is icy')",
+    "re.sub('it is icy', 'I')",
+    "\"\"\"it is icy\"\"\".replace('I', 'I', '')",
+    "\"\"\"it is icy\"\"\".replace('I', 'I', 1)"
+   ]
+  ],
+  [
+   "22187233.419",
+   "\"\"\"\"\"\".join([char for char in 'it is icy' if char != 'i'])",
+   [
+    "re.sub('[^a-zA-Z]', '\\\\1', '', text)",
+    "re.sub('[^a-zA-Z]', '', '', '', text)",
+    "re.sub('[^a-zA-Z]', '\\\\1', '', '', text)",
+    "re.sub('[^a-zA-Z]', '', '\\\\1', '', text)"
+   ]
+  ],
+  [
+   "13413590.420",
+   "df.dropna(subset=[1])",
+   [
+    "df.loc[df.index(1)]",
+    "df.loc[df['1']].fillna(axis=1)",
+    "df.loc[df.columns[1:]]",
+    "df.loc[df.columns[:, (1)]]"
+   ]
+  ],
+  [
+   "598398.421",
+   "[x for x in myList if x.n == 30]",
+   [
+    "[x for x in mylist if x != 30]",
+    "[x for x in myList if x != 30]",
+    "[i for i, n in mylist if n != 30]",
+    "[x for x in mylist if x > 30]"
+   ]
+  ],
+  [
+   "10351772.422",
+   "nums = [int(x) for x in intstringlist]",
+   [
+    "[int(x) for x in int(nums)]",
+    "nums = [int(x) for x in intstringList]",
+    "nums = [int(x) for x in intStringList]",
+    "nums = [int(x) for x in int(x)]"
+   ]
+  ],
+  [
+   "10351772.423",
+   "map(int, eval(input('Enter the unfriendly numbers: ')))",
+   [
+    "[int(x) for x in re.findall('\\\\d+', '', 2)]",
+    "[int(x) for x in re.findall('\\\\d+', '', 16)]",
+    "[int(x) for x in re.findall('\\\\d+', '', str(x)))",
+    "[int(x) for x in re.findall('\\\\d+', '', 2)]"
+   ]
+  ],
+  [
+   "493386.424",
+   "sys.stdout.write('.')",
+   [
+    "print('.' + re.sub('\\\\d+', '.')",
+    "print('.' + re.sub('.')",
+    "print('.' + re.sub('.')",
+    "print('.' + re.sub('\\\\d+', '.'))"
+   ]
+  ],
+  [
+   "6569528.425",
+   "int(round(2.51 * 100))",
+   [
+    "float(2.52 * 100)",
+    "float(2.52 * 100))",
+    "int('2.52 * 100', float)",
+    "float('2.52 * 100', float(1))"
+   ]
+  ],
+  [
+   "3964681.426",
+   "os.chdir('/mydir')\nfor file in glob.glob('*.txt'):\n    pass",
+   [
+    "print(os.path.isfile('/mydir', \".txt')",
+    "print(os.path.isfile('/mydir', '.txt')",
+    "print(os.path.join(open('/mydir', '.txt')))",
+    "print(os.path.isfile('/mydir'))"
+   ]
+  ],
+  [
+   "3964681.427",
+   "for file in os.listdir('/mydir'):\n    if file.endswith('.txt'):\n        pass",
+   [
+    "print(os.path.isfile('/mydir', \".txt')",
+    "print(os.path.isfile('/mydir', '.txt')",
+    "print(os.path.join(open('/mydir', '.txt')))",
+    "print(os.path.isfile('/mydir'))"
+   ]
+  ],
+  [
+   "3964681.428",
+   "for root, dirs, files in os.walk('/mydir'):\n    for file in files:\n        if file.endswith('.txt'):\n            pass",
+   [
+    "print(os.path.isfile('/mydir', \".txt')",
+    "print(os.path.isfile('/mydir', '.txt')",
+    "print(os.path.join(open('/mydir', '.txt')))",
+    "print(os.path.isfile('/mydir'))"
+   ]
+  ],
+  [
+   "20865487.429",
+   "df.plot(legend=False)",
+   [
+    "df.plot(legend=True)",
+    "df.plot(legend=False)",
+    "df.plot(key=lambda x: x[1])",
+    "df.plot(key=lambda x: legend)"
+   ]
+  ],
+  [
+   "13368659.430",
+   "for i in range(256):\n    for j in range(256):\n        ip = '192.168.%d.%d' % (i, j)\n        print(ip)",
+   [
+    "os.system('192.168.x.x', shell=True)",
+    "os.system('192.168.x.x')",
+    "sys.popen('192.168.x.x')",
+    "print(os.system('192.168.x.x')"
+   ]
+  ],
+  [
+   "13368659.431",
+   "for i, j in product(list(range(256)), list(range(256))):\n    pass",
+   [
+    "os.system('192.168.x.x', shell=True)",
+    "os.system('192.168.x.x')",
+    "sys.popen('192.168.x.x')",
+    "print(os.system('192.168.x.x')"
+   ]
+  ],
+  [
+   "13368659.432",
+   "generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)",
+   [
+    "os.system('192.168.x.x', shell=True)",
+    "os.system('192.168.x.x')",
+    "sys.popen('192.168.x.x')",
+    "print(os.system('192.168.x.x')"
+   ]
+  ],
+  [
+   "4065737.433",
+   "sum(1 << i for i, b in enumerate(x) if b)",
+   [
+    "[int(x) for x in bin(x)]",
+    "sum(x[0].decode('hex') for x in x)",
+    "[int(x) for x in bin(x))",
+    "[int(x) for x in bin(x))]"
+   ]
+  ],
+  [
+   "8691311.434",
+   "target.write('%r\\n%r\\n%r\\n' % (line1, line2, line3))",
+   [
+    "target.write(line1, line2, line3)",
+    "print(target.write(line1, line2, line3))",
+    "target.write(line1, line2, line3, line4)",
+    "target.write(line1, line2, line3).split()"
+   ]
+  ],
+  [
+   "10632111.435",
+   "[y for x in data for y in (x if isinstance(x, list) else [x])]",
+   [
+    "[list(data)) for i in data]",
+    "[list(data) for i in data]",
+    "[list(data)) for _ in range(100)]",
+    "[list(data)) for i in range(100)]"
+   ]
+  ],
+  [
+   "15392730.436",
+   "print('foo\\nbar'.encode('string_escape'))",
+   [
+    "print('\\n', 'foo\\nbar')",
+    "\"\"\"foo\nbar\"\"\".rstrip('\\n')",
+    "print('\\n'.join(foo\\nbar))",
+    "\"\"\"foo\nbar\"\"\".replace('\\n')"
+   ]
+  ],
+  [
+   "1010961.437",
+   "\"\"\"\"\"\".join(s.rsplit(',', 1))",
+   [
+    "s = s.replace(',')",
+    "s.decode('last comma', ',')",
+    "s = s.replace(',' + ',')",
+    "s = s.replace(',', 1)"
+   ]
+  ],
+  [
+   "23855976.438",
+   "(x[1:] + x[:-1]) / 2",
+   [
+    "np.mean(x, y)",
+    "np.mean(x, -1)",
+    "np.mean(x[0] / len(x))",
+    "np.mean(x[0] / len(x)"
+   ]
+  ],
+  [
+   "23855976.439",
+   "x[:-1] + (x[1:] - x[:-1]) / 2",
+   [
+    "np.arange(x, y)",
+    "np.arange(x, np.mean(x))",
+    "np.array([np.mean(x, 2), axis=1)",
+    "np.array([np.mean(x, 2), axis=0)"
+   ]
+  ],
+  [
+   "6375343.440",
+   "arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')",
+   [
+    "arr.load(new.txt, encoding='utf-8')",
+    "arr.load(new.txt)",
+    "arr.load(new.txt, 'utf-8')",
+    "arr.load(new.txt, encoding='utf-8'))"
+   ]
+  ],
+  [
+   "1547733.441",
+   "l = sorted(l, key=itemgetter('time'), reverse=True)",
+   [
+    "sorted(l, key=lambda x: x[1])",
+    "sorted(l, key=lambda x: time.itemgetter(x))",
+    "sorted(l, key=lambda x: time[x])",
+    "sorted(l, key=lambda x: time.itemgetter(x)"
+   ]
+  ],
+  [
+   "1547733.442",
+   "l = sorted(l, key=lambda a: a['time'], reverse=True)",
+   [
+    "sorted(l, key=lambda x: (x[1], reverse=True)",
+    "sorted(l, key=lambda x: (sum(x[1], x[0]))",
+    "sorted(l, key=lambda x: (x[1], x[0]))",
+    "sorted(l, key=lambda x: sum(x[1], x[0]))"
+   ]
+  ],
+  [
+   "37080612.443",
+   "df.loc[df[0].str.contains('(Hel|Just)')]",
+   [
+    "df.groupby(['hel|just'])",
+    "df.groupby(['hel|just'], axis=1)",
+    "df.groupby(['hel|just'], axis=0)",
+    "df.groupby(['hel|just'], axis=1).match()"
+   ]
+  ],
+  [
+   "14716342.444",
+   "re.search('\\\\[(.*)\\\\]', your_string).group(1)",
+   [
+    "your_string.split(' ', '')",
+    "print(your_string.split(', ', ''))",
+    "print(your_string.split(',', ''))",
+    "print(your_string.split(', ', '))"
+   ]
+  ],
+  [
+   "18684076.445",
+   "[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]",
+   [
+    "df['Date'].strftime('yyyymmdd')",
+    "df.date_strftime('yyyymmdd')",
+    "df['Date'].strftime('yyyymmdd', '%Y')",
+    "df['Date'].strftime('yyyymmdd').date()"
+   ]
+  ],
+  [
+   "1666700.446",
+   "\"\"\"The big brown fox is brown\"\"\".count('brown')",
+   [
+    "\"\"\"The big brown fox is brown\"\"\".count('brown')",
+    "\"\"\"The big brown fox is brown\"\"\".count('brown')",
+    "\"\"\"The big brown fox is brown\"\"\".count()",
+    "\"\"\"The big brown fox is brown\"\"\".format('brown')"
+   ]
+  ],
+  [
+   "18979111.447",
+   "json.loads(request.body)",
+   [
+    "dict(request.body.decode('utf-8'))",
+    "dict(request.body.decode('json'))",
+    "request.body.decode('utf-8')",
+    "dict((request.body.decode('utf-8'))"
+   ]
+  ],
+  [
+   "7243750.448",
+   "urllib.request.urlretrieve(url, file_name)",
+   [
+    "urllib.request.urlretrieve(url)",
+    "urllib.request.urlopen('file_name')",
+    "urllib.request.urlretrieve(file_name)",
+    "urllib.request.urlopen(url)"
+   ]
+  ],
+  [
+   "743806.449",
+   "text.split()",
+   [
+    "re.split('\\\\w+', text)",
+    "re.split('\\\\d+', text)",
+    "re.split('\\n', text)",
+    "re.split('\\\\w+', text).split(',')"
+   ]
+  ],
+  [
+   "743806.450",
+   "text.split(',')",
+   [
+    "text = re.sub('(?)', ',')",
+    "text = re.sub('(?)', ',\")",
+    "text = re.sub('(.)', ',')",
+    "text = re.sub('(.)', ',\")"
+   ]
+  ],
+  [
+   "743806.451",
+   "line.split()",
+   [
+    "[item for item in line if item.strip()]",
+    "[x for x in line if x.strip()]",
+    "list(itertools.groupby(line))",
+    "[x for x in line if x.split('')]"
+   ]
+  ],
+  [
+   "35044115.452",
+   "[re.sub('(?<!\\\\d)\\\\.(?!\\\\d)', '', i) for i in s]",
+   [
+    "s = s.replace('.', '.')",
+    "s = s.replace('.' + '.')",
+    "re.sub('\\\\d+', s)",
+    "s = s.replace('.', '.' +''"
+   ]
+  ],
+  [
+   "38388799.453",
+   "sorted(list_of_strings, key=lambda s: s.split(',')[1])",
+   [
+    "sorted(list_of_strings, key=lambda x: x[1])",
+    "sorted(list_of_strings, key=lambda x: x[2])",
+    "sorted(list_of_strings, key=lambda x: x[1]))",
+    "sorted(list_of_strings, key=lambda x: x[2]))"
+   ]
+  ],
+  [
+   "9609375.454",
+   "subprocess.check_call('vasp | tee tee_output', shell=True)",
+   [
+    "subprocess.call('vasp', 'tee tee_output', '|')",
+    "subprocess.call('Vasp', 'tee tee_output', '|')",
+    "subprocess.call('|', 'vasp', 'tee tee_output')",
+    "subprocess.call('vasp', 'tee tee_output')"
+   ]
+  ],
+  [
+   "37004138.455",
+   "[element for element in lst if isinstance(element, int)]",
+   [
+    "del lst[::-1]",
+    "del lst[::-1]",
+    "[x for x in lst if x is not x]",
+    "[x for x in lst if x not in x]"
+   ]
+  ],
+  [
+   "37004138.456",
+   "[element for element in lst if not isinstance(element, str)]",
+   [
+    "[x for x in lst if x not in x]",
+    "[x for x in lst if not x in x]",
+    "[x for x in lst if x not in x] for y in Lst]",
+    "[x for x in lst if not x in x for x, y in x]"
+   ]
+  ],
+  [
+   "72899.457",
+   "newlist = sorted(list_to_be_sorted, key=lambda k: k['name'])",
+   [
+    "sorted(list_to_be_sorted, key=lambda d: d[name])",
+    "sorted(list_to_be_sorted, key=lambda x: x[name])",
+    "sorted(list_to_be_sorted, key=lambda x: x['name'])",
+    "sorted(list_to_be_sorted, key=lambda d: d[name]"
+   ]
+  ],
+  [
+   "72899.458",
+   "newlist = sorted(l, key=itemgetter('name'), reverse=True)",
+   [
+    "sorted(l, key=lambda x: x['name'], reverse=True)",
+    "sorted(l, key=lambda x: (x['name'], reverse=True)",
+    "sorted(l, key=lambda x: (x[1], x[1])",
+    "sorted(l, key=lambda x: (x['name'], reverse=True))"
+   ]
+  ],
+  [
+   "72899.459",
+   "list_of_dicts.sort(key=operator.itemgetter('name'))",
+   [
+    "sorted(list(d.items()), key=lambda x: x[1])",
+    "sorted(list(dictionary.items()), key=lambda x: x[1])",
+    "sorted(list(d.items()), key=lambda x: x[1]))",
+    "sorted(list(d.items()), key=lambda x: x[0])"
+   ]
+  ],
+  [
+   "72899.460",
+   "list_of_dicts.sort(key=operator.itemgetter('age'))",
+   [
+    "sorted(list(d.items()), key=lambda x: x[1])",
+    "sorted(list(dictionary.items()), key=lambda x: x[1])",
+    "sorted(list(d.items()), key=lambda x: x[1]))",
+    "sorted(list(d.items()), key=lambda x: x[0])"
+   ]
+  ],
+  [
+   "36402748.461",
+   "df.groupby('prots').sum().sort('scores', ascending=False)",
+   [
+    "df.sort(key=lambda x: x[1])",
+    "df.sort(key=lambda x: x.index(x.index)",
+    "df.sort(key=lambda x: x.index(x.index())[0]))",
+    "df.sort(key=lambda x: x.index(x.index())[1])"
+   ]
+  ],
+  [
+   "29881993.462",
+   "\"\"\",\"\"\".join(trans['category'])",
+   [
+    "[item for item in list(trans.items() if item['category'] not in item]",
+    "[item for item in list(trans.items() if item['category'] == 'category'])",
+    "[item['category'] for item in Trans if item['category' in item]",
+    "[item['category'] for item in Trans.items()]"
+   ]
+  ],
+  [
+   "34158494.463",
+   "\"\"\"\"\"\".join(['A', 'B', 'C', 'D'])",
+   [
+    "\"\"\"\"\"\".join(['a', 'b', 'c', 'd'])",
+    "\"\"\"\"\"\".join([['a', 'b', 'c', 'd'])",
+    "\"\"\"\"\"\".join(['A', 'B', 'C', 'D'])",
+    "\"\"\"\"\"\".join(['a', 'b', 'c', 'd']))"
+   ]
+  ],
+  [
+   "7750557.464",
+   "json.load(urllib.request.urlopen('url'))",
+   [
+    "json.loads(url, key=lambda x: x[1])",
+    "json.loads('url', json.values())",
+    "json.loads(url, key=lambda x: x.get('%s'))",
+    "json.loads(url, key=lambda x: (x[1], x[0])"
+   ]
+  ],
+  [
+   "12666897.465",
+   "[x for x in sents if not x.startswith('@$\\t') and not x.startswith('#')]",
+   [
+    "sents = [x for x in sents if x starts with '@$\\t' or '#')",
+    "sents = [x for x in sents if x.startswith('@$\\t')]",
+    "[x for x in sents if x starts with '@$\\t' or '#']",
+    "[x for x in sents if x starts with '@$\\t' or '#')"
+   ]
+  ],
+  [
+   "2984751.466",
+   "Entry.objects.filter(pub_date__contains='08:00')",
+   [
+    "django.filter(hours=1)",
+    "django.filter(hour=1)",
+    "django.filter(hours=1, minutes=1)",
+    "sorted(list(range(hours), key=lambda x: x.hour)"
+   ]
+  ],
+  [
+   "5944630.467",
+   "list.sort(key=lambda item: (item['points'], item['time']))",
+   [
+    "sorted(list, key=lambda x: x[1])",
+    "sorted(list, key=lambda x: x[0])",
+    "sorted(list, key=lambda x: x[1])",
+    "sorted(list, key=lambda x: (x[1], x[0])"
+   ]
+  ],
+  [
+   "7852855.468",
+   "(t - datetime.datetime(1970, 1, 1)).total_seconds()",
+   [
+    "time.mktime(1970, 1, 1)",
+    "time.strftime('1970, 1, 1)",
+    "time.mktime(1970, 1, 1))",
+    "time.strftime('1970, 1, 1) + seconds"
+   ]
+  ],
+  [
+   "2763750.469",
+   "re.sub('(\\\\_a)?\\\\.([^\\\\.]*)$', '_suff.\\\\2', 'long.file.name.jpg')",
+   [
+    "f = open('long.file.name.jpg', 'suff')",
+    "f = os.path.insert(_suff, 'long.file.name.jpg')",
+    "f = open('long.file.name.jpg', 'suff', f)",
+    "print(long.file.name.jpg.extend(_suff))"
+   ]
+  ],
+  [
+   "6420361.470",
+   "import imp\nimp.reload(module)",
+   [
+    "module.load(key=operator.itemgetter(1))",
+    "module.load(key=operator.get('module')",
+    "module.load(key=operator.itemgetter(0)",
+    "module.load(key=operator.itemgetter('module')"
+   ]
+  ],
+  [
+   "19546911.471",
+   "struct.unpack('H', struct.pack('h', number))",
+   [
+    "[int(x) for x in sorted(number)]",
+    "[int(x) for x in enumerate(number)]",
+    "[int(x) for x in sorted(number))",
+    "[int(x) for x in enumerate(number))"
+   ]
+  ],
+  [
+   "9746522.472",
+   "numlist = [float(x) for x in numlist]",
+   [
+    "float(numList, int(numlist))",
+    "float(numlist, int(x))",
+    "float(numList, int(x))",
+    "float(numList, int(x)))"
+   ]
+  ],
+  [
+   "20107570.473",
+   "df.to_csv(filename, index=False)",
+   [
+    "df.to_csv('index')",
+    "df.to_csv('index', excluding index)",
+    "df.write_csv('index', excluding index)",
+    "df.to_csv('Csv')"
+   ]
+  ],
+  [
+   "8740353.474",
+   "json_data = json.loads(unescaped)",
+   [
+    "json_data.unquote('unescaped')",
+    "json_data.unquote(unquote)",
+    "json_data.unquote('unescaped', 'ignore')",
+    "json_data = json.loads(unquote=unquote)"
+   ]
+  ],
+  [
+   "5891453.475",
+   "[chr(i) for i in range(127)]",
+   [
+    "list(itertools.chain.from_iterable(ascii))",
+    "list(itertools.chain.from_iterable(list(ascii)))",
+    "list(itertools.chain.from_iterable(list(ascii))",
+    "list(itertools.product([i for i in range(0, len(i)))"
+   ]
+  ],
+  [
+   "18367007.476",
+   "newFile.write(struct.pack('5B', *newFileBytes))",
+   [
+    "newfile = os.walk(newfilebytes)",
+    "newfile = os.path.join(newfilebytes)",
+    "newfilebytes = os.walk(newfile)",
+    "newfilebytes = os.path.abspath(newfile)"
+   ]
+  ],
+  [
+   "21805490.477",
+   "re.sub('^[A-Z0-9]*(?![a-z])', '', string)",
+   [
+    "re.findall('\\\\d+', string)",
+    "re.findall('\\\\w+', string)",
+    "re.findall('\\\\d+', string).lower()",
+    "re.findall('\\\\d+', string)[0]"
+   ]
+  ],
+  [
+   "16125229.478",
+   "list(dict.keys())[-1]",
+   [
+    "{k: v for k, v in dict.items()}",
+    "{k: v for k, v in dict.items())",
+    "{k: v for k, v in dict.items())}",
+    "{k: v for k, v in dict}"
+   ]
+  ],
+  [
+   "6159900.479",
+   "print('hi there', file=f)",
+   [
+    "f = f.write('hi there')",
+    "f.write('hi there', 'hi there')",
+    "f.write('hi there', 1)",
+    "f = f.write('hi there', 1)"
+   ]
+  ],
+  [
+   "6159900.480",
+   "f = open('myfile', 'w')\nf.write('hi there\\n')\nf.close()",
+   [
+    "myfile.write('hi there')",
+    "myfile.write('hi there', 'hi there')",
+    "myfile.write('hi there'",
+    "myfile.write('hi there', 1)"
+   ]
+  ],
+  [
+   "6159900.481",
+   "with open('somefile.txt', 'a') as the_file:\n    the_file.write('Hello\\n')",
+   [
+    "somefile.txt.write('hello')",
+    "os.path.isfile('somefile.txt')",
+    "somefile.txt[:-1]",
+    "somefile.txt.write('Hello')"
+   ]
+  ],
+  [
+   "19527279.482",
+   "s.encode('iso-8859-15')",
+   [
+    "s.decode('unicode_escape')",
+    "s.encode('unicode_escape')",
+    "s.encode('unicode_escape'))",
+    "unicodedata = s.encode('ascii')"
+   ]
+  ],
+  [
+   "10668585.483",
+   "AuthorizedEmail.objects.filter(group=group).order_by('-added')[0]",
+   [
+    "authorizedemail.get_value('added')",
+    "authorizedemail.getattr(name='added')",
+    "Book.objects.get('added')",
+    "authorizedemail.get('added')['value']"
+   ]
+  ],
+  [
+   "356483.484",
+   "re.findall('Test([0-9.]*[0-9]+)', text)",
+   [
+    "re.findall('\\\\d+', text)",
+    "re.findall('\\\\w+', text)",
+    "re.findall('\\\\w+\\\\w+)', text)",
+    "re.findall('\\\\w+\\\\w*', text)"
+   ]
+  ],
+  [
+   "356483.485",
+   "re.findall('Test([\\\\d.]*\\\\d+)', text)",
+   [
+    "re.findall('\\\\w+', text)",
+    "re.findall('\\\\d+', text)",
+    "re.findall('\\\\d+', '', text)",
+    "re.findall('\\\\d+', 'text')"
+   ]
+  ],
+  [
+   "38081866.486",
+   "os.system('powershell.exe', 'script.ps1')",
+   [
+    "subprocess.call('script.ps1', shell=True)",
+    "os.system('script.ps1', shell=True)",
+    "exec(os.system('script.ps1', shell=True)",
+    "exec(powershell.exe, shell=True)"
+   ]
+  ],
+  [
+   "7349646.487",
+   "b.sort(key=lambda x: x[1][2])",
+   [
+    "b.sort(key=operator.itemgetter(1))",
+    "b.sort(key=operator.itemgetter(1, 2))",
+    "b.sort(key=lambda x: x[1])",
+    "b.sort(key=operator.itemgetter(2))"
+   ]
+  ],
+  [
+   "2430539.488",
+   "list(cf.get_range().get_keys())",
+   [
+    "[k for k, v incf.keys() if v]",
+    "[k for k, v incf.keys())",
+    "[k for k, v incf.keys()]",
+    "cf.keys()[::-1]"
+   ]
+  ],
+  [
+   "10607688.489",
+   "datetime.datetime.now()",
+   [
+    "today = datetime.datetime.now().date()",
+    "today = datetime.datetime.now().timedelta()",
+    "time.datetime.now().date()",
+    "today = datetime.datetime.now()"
+   ]
+  ],
+  [
+   "30843103.490",
+   "next(i for i, x in enumerate(lst) if not isinstance(x, bool) and x == 1)",
+   [
+    "[i for i, j in lst if j == 1]",
+    "[i for i in lst if i == 1]",
+    "[i for i, j in lst if j != 1]",
+    "[i for i in lst if i not in 1]"
+   ]
+  ],
+  [
+   "4918425.491",
+   "a[:] = [(x - 13) for x in a]",
+   [
+    "[i for i, j in a if i != 13]",
+    "[i for i, j in a if i < 13]",
+    "[i for i in a if i < 13]",
+    "[(13) for i in a]"
+   ]
+  ],
+  [
+   "701402.492",
+   "random.choice(os.listdir('C:\\\\'))",
+   [
+    "random.choice(c:\\\\)",
+    "print(random.choice(c:\\\\))",
+    "print(random.choice(c:\\\\)",
+    "random.choice(open('C:\\\\')"
+   ]
+  ],
+  [
+   "17794266.493",
+   "max(x.min(), x.max(), key=abs)",
+   [
+    "max(x, key=lambda x: x[1])",
+    "max(x, key=np.arange(x))",
+    "max(x, key=lambda x: x[0])",
+    "max(x, key=lambda x: x[0]"
+   ]
+  ],
+  [
+   "30551576.494",
+   "re.findall('\"(http.*?)\"', s, re.MULTILINE | re.DOTALL)",
+   [
+    "print(re.findall('[^a-zA-Z]*', s))",
+    "print(re.findall('[^a-zA-Z]', s))",
+    "print(re.findall('[^a-zA-Z]', s)",
+    "print(re.findall('[^a-zA-Z]*', s)"
+   ]
+  ],
+  [
+   "30551576.495",
+   "re.findall('http://[^t][^s\"]+\\\\.html', document)",
+   [
+    "re.findall('\\\\w+', document)",
+    "re.findall('\\\\d+', document)",
+    "re.findall('\\\\d+', '', document)",
+    "re.findall('\\\\w+', '', document)"
+   ]
+  ],
+  [
+   "113534.496",
+   "mystring.replace(' ', '!!').split('!')",
+   [
+    "re.split(' ', mystring)",
+    "myString.split(' ', 1)[:-1]",
+    "myString.split(' ', 1)",
+    "myString.split(' ', 1)[0]"
+   ]
+  ],
+  [
+   "5838735.497",
+   "open(path, 'r')",
+   [
+    "os.path.open('r')",
+    "os.path.open(path, 'r')",
+    "os.path.open(path)",
+    "os.path.open('r', 'r')"
+   ]
+  ],
+  [
+   "36003967.498",
+   "[[sum(item) for item in zip(*items)] for items in zip(*data)]",
+   [
+    "sum(data, key=lambda x: x[1])",
+    "sum(x, y) for x, y in data)",
+    "sum([i for i, j in data] for i in j]",
+    "sum([i for i, j in data] for i in j])"
+   ]
+  ],
+  [
+   "7635237.499",
+   "a[:, (np.newaxis)]",
+   [
+    "a.reshape(axis=1)",
+    "a.reshape(axis=0)",
+    "a.z axis = a.reshape()",
+    "a.reshape(axis=1, a)"
+   ]
+  ]
+ ]
+}

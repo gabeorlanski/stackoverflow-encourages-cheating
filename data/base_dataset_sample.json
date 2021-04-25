@@ -1,0 +1,981 @@
+{
+ "pretrain": [
+  {
+   "slot_map": null,
+   "canonical_snippet": "sorted(l, key=lambda x: (-int(x[1]), x[0]))",
+   "snippet": "sorted(l, key=lambda x: (-int(x[1]), x[0]))",
+   "snippet_tokenized": [
+    "sorted",
+    "(",
+    "l",
+    ",",
+    "key",
+    "=",
+    "lambda",
+    "x",
+    ":",
+    "(",
+    "-",
+    "int",
+    "(",
+    "x",
+    "[",
+    "1",
+    "]",
+    ")",
+    ",",
+    "x",
+    "[",
+    "0",
+    "]",
+    ")",
+    ")",
+    ""
+   ],
+   "question_id": "34705205",
+   "canonical_intent": "sort a nested list by two elements",
+   "answer_id": 34705233,
+   "normal_intent": "sort a nested list by two elements",
+   "is_api": false,
+   "answer_score": 6,
+   "answer_body": "<code_block> <console_in> sorted(l, key=lambda x: (-int(x[1]), x[0]))\n<console_out> [['Anthony', '10'], ['Ben', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\n\n<p> Basically, by changing the sign of the score part of the key, the sort keys will be:\n<code_block> (-10, 'Anthony'),\n(-10, 'Ben'),\n(-7, 'Adam'),\n(-6, 'Joe'),\n(-4, 'Harry')\n\n<p> And so, with <code> (a, b) < (c, d) <=> (a < c) or (a == c and b < d) <p> , you end up with your desired sorting order.\n",
+   "tags": [
+    "list",
+    "sorting"
+   ],
+   "title": "sort a nested list by two elements",
+   "accepted_answer_id": 34705233,
+   "score": 5,
+   "body": "<p> Let's say I have a list like below:\n<code_block> [['Harry', '4'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Ben', '10']]\n# we can say the first element in it's lists is `name`, the second is `score`\n\n<p> I want sort it to:\n<code_block> [['Anthony', '10'], ['Ben', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\n\n<p> So first sort it in descending order by the score and then sort it in ascending order by the name.\n\n<p> I've tried:\n<code_block> <console_in> sorted(l, key=lambda x: (int(x[1]), x[0]))\n<console_out> [['Harry', '4'], ['Joe', '6'], ['Adam', '7'], ['Anthony', '10'], ['Ben', '10']]\n\n<p> It's working, so now I just need reverse it:\n<code_block> <console_in> sorted(l, key=lambda x: (int(x[1]), x[0]), reverse=True)\n<console_out> [['Ben', '10'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\n\n<p> Ah, <code> reverse=True <p>  simply reversed the list but didn't give the expect output. So I just want reverse the output of <code> int(x[1]) <p> , but not <code> x[0] <p> . \n<p> How can I do that?\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "[int(x) for x in str(num)]",
+   "snippet": "[int(x) for x in str(num)]",
+   "snippet_tokenized": [
+    "[",
+    "int",
+    "(",
+    "x",
+    ")",
+    "for",
+    "x",
+    "in",
+    "str",
+    "(",
+    "num",
+    ")",
+    "]",
+    ""
+   ],
+   "question_id": "13905936",
+   "canonical_intent": "converting integer to list in python",
+   "answer_id": 13905946,
+   "normal_intent": "converting integer to list in python",
+   "is_api": false,
+   "answer_score": 85,
+   "answer_body": "<p> Convert the integer to string first, and then use <code> map <p>  to apply <code> int <p>  on it:\n<code_block> <console_in> num = 132\n<console_in> map(int, str(num))    #note, This will return a map object in python 3.\n<console_out> [1, 3, 2]\n\n<p> or using a list comprehension:\n<code_block> <console_in> [int(x) for x in str(num)]\n<console_out> [1, 3, 2]\n\n",
+   "tags": [
+    "list",
+    "integer",
+    "type-conversion"
+   ],
+   "title": "converting integer to digit list",
+   "accepted_answer_id": null,
+   "score": 51,
+   "body": "<p> What is the quickest and cleanest way to convert an <code> integer <p>  into a <code> list <p> ? \n<p> For example, change <code> 132 <p>  into <code> [1,3,2] <p>  and <code> 23 <p>  into <code> [2,3] <p> . I have a variable which is an <code> int <p> , and I want to be able to compare the individual digits so I thought making it into a list would be best, since I can just do <code> int(number[0]) <p> , <code> int(number[1]) <p>  to easily convert the list element back into int for digit operations.\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "c.decode('unicode_escape')",
+   "snippet": "c.decode('unicode_escape')",
+   "snippet_tokenized": [
+    "c",
+    ".",
+    "decode",
+    "(",
+    "'unicode_escape'",
+    ")",
+    ""
+   ],
+   "question_id": "13837848",
+   "canonical_intent": "converting byte string in unicode string",
+   "answer_id": 13838041,
+   "normal_intent": "converting byte string in unicode string",
+   "is_api": false,
+   "answer_score": 57,
+   "answer_body": "<p> In strings (or Unicode objects in Python 2), <code> \\u <p>  has a special meaning, namely saying, \"here comes a Unicode character specified by it's Unicode ID\". Hence <code> u\"\\u0432\" <p>  will result in the character v.\n<p> The <code> b'' <p>  prefix tells you this is a sequence of 8-bit bytes, and bytes object has no Unicode characters, so the <code> \\u <p>  code has no special meaning. Hence, <code> b\"\\u0432\" <p>  is just the sequence of the bytes <code> \\ <p> , <code> u <p> , <code> 0 <p> , <code> 4 <p> , <code> 3 <p>  and <code> 2 <p> .\n<p> Essentially you have an 8-bit string containing not a Unicode character, but the specification of a Unicode character.\n<p> You can convert this specification using the unicode escape encoder.\n<code_block> <console_in> c.decode('unicode_escape')\n<console_out> 'v'\n\n",
+   "tags": [
+    "string",
+    "unicode",
+    "type-conversion"
+   ],
+   "title": "converting byte string in unicode string",
+   "accepted_answer_id": 13838041,
+   "score": 36,
+   "body": "<p> I have a code such that:\n<code_block> a = \"\\u0432\"\nb = u\"\\u0432\"\nc = b\"\\u0432\"\nd = c.decode('utf8')\n\nprint(type(a), a)\nprint(type(b), b)\nprint(type(c), c)\nprint(type(d), d)\n\n<p> And output:\n<code_block> <class 'str'> v\n<class 'str'> v\n<class 'bytes'> b'\\\\u0432'\n<class 'str'> \\u0432\n\n<p> Why in the latter case I see a character code, instead of the character?\nHow I can transform Byte string to Unicode string that in case of an output I saw the character, instead of its code?\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "parser.add_argument('-t', dest='table', help='', nargs='+')",
+   "snippet": "parser.add_argument('-t', dest='table', help='', nargs='+')",
+   "snippet_tokenized": [
+    "parser",
+    ".",
+    "add_argument",
+    "(",
+    "'-t'",
+    ",",
+    "dest",
+    "=",
+    "'table'",
+    ",",
+    "help",
+    "=",
+    "''",
+    ",",
+    "nargs",
+    "=",
+    "'+'",
+    ")",
+    ""
+   ],
+   "question_id": "23490152",
+   "canonical_intent": "list of arguments with argparse",
+   "answer_id": 23490179,
+   "normal_intent": "list of arguments with argparse",
+   "is_api": false,
+   "answer_score": 13,
+   "answer_body": "<p> Use <code> nargs <p> :\n\n<em> ArgumentParser <p>  objects usually associate a single command-line\n  argument with a single action to be taken. The <em> nargs <p>  keyword argument\n  associates a different number of command-line arguments with a single\n  action.\n\n<p> For example, if <code> nargs <p>  is set to <code> '+'\n\n<p> Just like <code> '*' <p> , all command-line args present are gathered into a list.\n  Additionally, an error message will be generated if there wasn't at\n  least one command-line argument present.\n\n<p> So, your code would look like\n<code_block> parser.add_argument('-t', dest='table', help='', nargs='+')\n\n<p> That way <code> -t <p>  arguments will be gathered into <code> list <p>  automatically (you don't have to explicitly specify the <code> action <p> ).\n",
+   "tags": [
+    "argparse"
+   ],
+   "title": "list of arguments with argparse",
+   "accepted_answer_id": 23490179,
+   "score": 6,
+   "body": "<p> I'm trying to pass a list of arguments with argparse but the only way that I've found involves rewriting the option for each argument that I want to pass:\n<p> What I currently use:\n<code_block> main.py -t arg1 -a arg2\n\n<p> and I would like:\n<code_block> main.py -t arg1 arg2 <console_out>\n\n<p> Here is my code:\n<code_block> parser.add_argument(\"-t\", action='append', dest='table', default=[], help=\"\")\n\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')",
+   "snippet": "datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')",
+   "snippet_tokenized": [
+    "datetime",
+    ".",
+    "datetime",
+    ".",
+    "strptime",
+    "(",
+    "s",
+    ",",
+    "'%Y-%m-%dT%H:%M:%SZ'",
+    ")",
+    ""
+   ],
+   "question_id": "2721782",
+   "canonical_intent": "how to convert a date string to a datetime object?",
+   "answer_id": 2721807,
+   "normal_intent": "how to convert a date string to a datetime object?",
+   "is_api": false,
+   "answer_score": 36,
+   "answer_body": "<p> Since the string is in ISO format, it can be meaningfully compared directly with the ISO format version of the <code> datetime <p>  you mention:\n<code_block> <console_in> s='2005-08-11T16:34:33Z'\n<console_in> t=datetime.datetime(2009,04,01)\n<console_in> t.isoformat()\n<console_out> '2009-04-01T00:00:00'\n<console_in> s < t\n<console_out> Traceback (most recent call last):\n  File \" <stdin>\", line 1, in <module>\nTypeError: can't compare datetime.datetime to str\n<console_in> s < t.isoformat()\n<console_out> True\n<console_in> z='2009-10-01T18:20:12'\n<console_in> z < t.isoformat()\n<console_out> False\n\n<p> as you see, while you can't compare string with datetime objects, as long as the strings are in ISO format it's fine to compare them with the <code> .isoformat() <p>  of the datetime objects. That's the beauty of the ISO format string representation of dates and times: it's correctly comparable and sorts correctly <strong> as strings <p> , without necessarily requiring conversion into other types.\n<p> If you're keen to convert, of course, you can:\n<code_block> <console_in> datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')\n<console_out> datetime.datetime(2005, 8, 11, 16, 34, 33)\n\n",
+   "tags": [
+    "datetime"
+   ],
+   "title": "how to convert a date string to a datetime object?",
+   "accepted_answer_id": 2721807,
+   "score": 20,
+   "body": "<p> I have following date:\n<code_block> 2005-08-11T16:34:33Z\n\n<p> I need to know if this is date is before or after <em> datetime(2009,04,01) <p>  and I can't seem to find a method that will convert that string to something that lets me compare it to <em> datetime(2009,04,01) <p>  in a meaningful way.\n"
+  }
+ ],
+ "test": [
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "signal.SIGUSR1",
+     "quote": "`",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "os.kill(os.getpid(), signal.SIGUSR1)",
+   "snippet": "os.kill(os.getpid(), signal.SIGUSR1)",
+   "snippet_tokenized": [
+    "os",
+    ".",
+    "kill",
+    "(",
+    "os",
+    ".",
+    "getpid",
+    "(",
+    ")",
+    ",",
+    "signal",
+    ".",
+    "SIGUSR1",
+    ")",
+    ""
+   ],
+   "question_id": "15080500",
+   "canonical_intent": "send a signal str_0 to the current process",
+   "answer_id": null,
+   "normal_intent": "send a signal `signal.sigusr1` to the current process",
+   "is_api": false,
+   "answer_score": 48,
+   "answer_body": "<p> You can use <a> os.kill() <p> :\n<code_block> os.kill(os.getpid(), signal.SIGUSR1)\n\n<p> Put this anywhere in your code that you want to send the signal from.\n",
+   "tags": [
+    "linux",
+    "signals"
+   ],
+   "title": "how can i send a signal from a python program?",
+   "accepted_answer_id": null,
+   "score": 24,
+   "body": "<p> I have this code which listens to USR1 signals\n<code_block> import signal\nimport os\nimport time\n\ndef receive_signal(signum, stack):\n    print 'Received:', signum\n\nsignal.signal(signal.SIGUSR1, receive_signal)\nsignal.signal(signal.SIGUSR2, receive_signal)\n\nprint 'My PID is:', os.getpid()\n\nwhile True:\n    print 'Waiting...'\n    time.sleep(3)\n\n<p> This works when I send signals with <code> kill -USR1 pid\n<p> But how can I send the same signal from within the above python script so that after 10 seconds it automatically sends <code> USR1 <p>  and also receives it , without me having to open two terminals to check it?\n"
+  },
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "4a4b4c",
+     "quote": "'",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "bytes.fromhex('str_0').decode('utf-8')",
+   "snippet": "bytes.fromhex('4a4b4c').decode('utf-8')",
+   "snippet_tokenized": [
+    "bytes",
+    ".",
+    "fromhex",
+    "(",
+    "'4a4b4c'",
+    ")",
+    ".",
+    "decode",
+    "(",
+    "'utf-8'",
+    ")",
+    ""
+   ],
+   "question_id": "3283984",
+   "canonical_intent": "decode a hex string str_0 to utf-8.",
+   "answer_id": null,
+   "normal_intent": "decode a hex string '4a4b4c' to utf-8.",
+   "is_api": false,
+   "answer_score": 101,
+   "answer_body": "<p> Something like:\n<code_block> <console_in> bytes.fromhex('4a4b4c').decode('utf-8')\n<console_out> 'JKL'\n\n<p> Just put the actual encoding you are using.\n",
+   "tags": [],
+   "title": "decode hex string in python 3",
+   "accepted_answer_id": 3284069,
+   "score": 64,
+   "body": "<p> In Python 2, converting the hexadecimal form of a string into the corresponding unicode was straightforward:\n<code_block> comments.decode(\"hex\")\n\n<p> where the variable 'comments' is a part of a line in a file (the rest of the line does <em> not <p>  need to be converted, as it is represented only in ASCII.\n<p> Now in Python 3, however, this doesn't work (I assume because of the bytes/string vs. string/unicode switch. I feel like there should be a one-liner in Python 3 to do the same thing, rather than reading the entire line as a series of bytes (which I don't want to do) and then converting each part of the line separately. If it's possible, I'd like to read the entire line as a unicode string (because the rest of the line is in unicode) and only convert this one part from a hexadecimal representation.\n"
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "myList",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "all(x == var_0[0] for x in var_0)",
+   "snippet": "all(x == myList[0] for x in myList)",
+   "snippet_tokenized": [
+    "all",
+    "(",
+    "x",
+    "==",
+    "myList",
+    "[",
+    "0",
+    "]",
+    "for",
+    "x",
+    "in",
+    "myList",
+    ")",
+    ""
+   ],
+   "question_id": "3844801",
+   "canonical_intent": "check if all elements in list var_0 are identical",
+   "answer_id": null,
+   "normal_intent": "check if all elements in list `mylist` are identical",
+   "is_api": false,
+   "answer_score": 471,
+   "answer_body": "<p> Use <code> itertools.groupby <p>  (see <a> the <code> itertools <a>  recipes <p> ):\n<code_block> from itertools import groupby\ndef all_equal(iterable):\n    g = groupby(iterable)\n    return next(g, True) and not next(g, False)\n\n<p> or without <code> groupby <p> :\n<code_block> def all_equal(iterator):\n    iterator = iter(iterator)\n    try:\n        first = next(iterator)\n    except StopIteration:\n        return True\n    return all(first == rest for rest in iterator)\n\n\n<p> There are a number of alternative one-liners you might consider:\n\n<p> Converting the input to a set and checking that it only has one or zero (in case the input is empty) items\n<code_block> def all_equal2(iterator):\n    return len(set(iterator)) <= 1\n\n\n<p> Comparing against the input list without the first item\n<code_block> def all_equal3(lst):\n    return lst[:-1] == lst[1:]\n\n\n<a> Counting how many times the first item appears in the list\n<code_block> def all_equal_ivo(lst):\n    return not lst or lst.count(lst[0]) == len(lst)\n\n\n<a> Comparing against a list of the first element repeated\n<code_block> def all_equal_6502(lst):\n    return not lst or [lst[0]]*len(lst) == lst\n\n\n\n<p> But they have some downsides, namely:\n\n<code> all_equal <li>  and <code> all_equal2 <li>  can use any iterators, but the others must take a sequence input, typically concrete containers like a list or tuple.\n<code> all_equal <li>  and <code> all_equal3 <li>  stop as soon as a difference is found (what is called \" <a> short circuit <li> \"), whereas all the alternatives require iterating over the entire list, even if you can tell that the answer is <code> False <li>  just by looking at the first two elements.\n<li> In <code> all_equal2 <li>  the content must be <a> hashable <li> . A list of lists will raise a <code> TypeError <li>  for example.\n<code> all_equal2 <li>  (in the worst case) and <code> all_equal_6502 <li>  create a copy of the list, meaning you need to use double the memory.\n\n<p> On Python 3.9, using <code> perfplot <p> , we get these timings (lower <code> Runtime [s] <p>  is better):\n\n",
+   "tags": [
+    "algorithm",
+    "comparison"
+   ],
+   "title": "check if all elements in a list are identical",
+   "accepted_answer_id": 3844832,
+   "score": 436,
+   "body": "<p> I need a function which takes in a <code> list <p>  and outputs <code> True <p>  if all elements in the input list evaluate as equal to each other using the standard equality operator and <code> False <p>  otherwise.\n<p> I feel it would be best to iterate through the list comparing adjacent elements and then <code> AND <p>  all the resulting Boolean values. But I'm not sure what's the most Pythonic way to do that.\n"
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "Python",
+     "quote": "`",
+     "type": "var"
+    },
+    "str_0": {
+     "value": ":",
+     "quote": "`",
+     "type": "str"
+    },
+    "str_1": {
+     "value": "Very Good",
+     "quote": "`",
+     "type": "str"
+    },
+    "str_2": {
+     "value": "20",
+     "quote": "`",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "print('%*s : %*s' % (20, 'var_0', 20, 'str_1'))",
+   "snippet": "print('%*s : %*s' % (20, 'Python', 20, 'Very Good'))",
+   "snippet_tokenized": [
+    "print",
+    "(",
+    "'%*s : %*s'",
+    "%",
+    "(",
+    "20",
+    ",",
+    "'Python'",
+    ",",
+    "20",
+    ",",
+    "'Very Good'",
+    ")",
+    ")",
+    ""
+   ],
+   "question_id": "4302166",
+   "canonical_intent": "format number of spaces between strings var_0, str_0 and str_1 to be str_2",
+   "answer_id": null,
+   "normal_intent": "format number of spaces between strings `python`, `:` and `very good` to be `20`",
+   "is_api": false,
+   "answer_score": 38,
+   "answer_body": "<p> You can fetch the padding value from the argument list:\n<code_block> print '%*s : %*s' % (20, \"Python\", 20, \"Very Good\")\n\n<p> You can even insert the padding values dynamically:\n<code_block> width = 20\nargs = (\"Python\", \"Very Good\")\npadded_args = zip([width] * len(args), args)\n# Flatten the padded argument list.\nprint \"%*s : %*s\" % tuple([item for list in padded_args for item in list])\n\n",
+   "tags": [
+    "string"
+   ],
+   "title": "format string dynamically",
+   "accepted_answer_id": 4302182,
+   "score": 57,
+   "body": "<p> If I want to make my formatted string dynamically adjustable, I can change the following code from\n<code_block> print '%20s : %20s' % (\"Python\", \"Very Good\")\n\n<p> to\n<code_block> width = 20\nprint ('%' + str(width) + 's : %' + str(width) + 's') % (\"Python\", \"Very Good\")\n\n<p> However, it seems that string concatenation is cumbersome here. Any other way to simplify things?\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "d.decode('cp1251').encode('utf8')",
+   "snippet": "d.decode('cp1251').encode('utf8')",
+   "snippet_tokenized": [
+    "d",
+    ".",
+    "decode",
+    "(",
+    "'cp1251'",
+    ")",
+    ".",
+    "encode",
+    "(",
+    "'utf8'",
+    ")",
+    ""
+   ],
+   "question_id": "7555335",
+   "canonical_intent": "how to convert a string from cp-1251 to utf-8?",
+   "answer_id": null,
+   "normal_intent": "how to convert a string from cp-1251 to utf-8?",
+   "is_api": false,
+   "answer_score": 31,
+   "answer_body": "<p> If you know for sure that you have cp1251 in your input, you can do\n<code_block> d.decode('cp1251').encode('utf8')\n\n",
+   "tags": [
+    "utf-8",
+    "cp1251"
+   ],
+   "title": "how to convert a string from cp-1251 to utf-8?",
+   "accepted_answer_id": 7555361,
+   "score": 26,
+   "body": "<p> I'm using mutagen to convert ID3 tags data from <a> CP-1251 <p> / <a> CP-1252 <p>  to UTF-8. In Linux there is no problem. But on Windows, calling <code> SetValue() <p>  on a wx.TextCtrl produces the error:\n\n<p> UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position\n  0: ordinal not in range(128)\n\n<p> The original string (assumed to be CP-1251 encoded) that I'm pulling from <a> mutagen <p>  is:\n<code_block> u'\\xc1\\xe5\\xeb\\xe0\\xff \\xff\\xe1\\xeb\\xfb\\xed\\xff \\xe3\\xf0\\xee\\xec\\xf3'\n\n<p> I've tried converting this to UTF-8:\n<code_block> dd = d.decode('utf-8')\n\n<p> <console_out>and even changing the default encoding from ASCII to UTF-8:\n<code_block> sys.setdefaultencoding('utf-8')\n\n<p> <console_out>But I get the same error.\n"
+  }
+ ],
+ "train": [
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "x",
+     "quote": "'",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "sum(d * 10 ** i for i, d in enumerate(str_0[::-1]))",
+   "snippet": "sum(d * 10 ** i for i, d in enumerate(x[::-1]))",
+   "snippet_tokenized": [
+    "sum",
+    "(",
+    "d",
+    "*",
+    "10",
+    "**",
+    "i",
+    "for",
+    "i",
+    ",",
+    "d",
+    "in",
+    "enumerate",
+    "(",
+    "x",
+    "[",
+    ":",
+    ":",
+    "-",
+    "1",
+    "]",
+    ")",
+    ")",
+    ""
+   ],
+   "question_id": "41067960",
+   "canonical_intent": "concatenate elements of a list str_0 of multiple integers to a single integer",
+   "answer_id": null,
+   "normal_intent": "concatenate elements of a list 'x' of multiple integers to a single integer",
+   "is_api": false,
+   "answer_score": 28,
+   "answer_body": "<p> If you have a list of <code> int <p> s and you want to join them together, you can use <code> map <p>  with <code> str <p>  to convert them to strings, <code> join <p>  them on the empty string and then cast back to <code> int <p> s with <code> int <p> .\n<p> In code, this looks like this:\n<code_block> r = int(\"\".join(map(str, x)))\n\n<p> and <code> r <p>  now has the wanted value of <code> 135 <p> .\n<p> This, of course, is a limited approach that comes with some conditions. It requires the list in question to contain nothing else but positive <code> int <p> s (as your sample) or strings representing <code> int <p> s, else the steps of conversion to string might fail or the joining of (negative) numbers will be clunky. \n",
+   "tags": [
+    "list",
+    "int"
+   ],
+   "title": "how to convert a list of multiple integers into a single integer?",
+   "accepted_answer_id": 41067989,
+   "score": 15,
+   "body": "<p> How do I convert a list in Python 3.5 such as: \n<code_block> x=[1, 3, 5]\n\n<p> to an int of <code> 135 <p>  (a whole int)?\n"
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "r = int(''.join(map(str, x)))",
+   "snippet": "r = int(''.join(map(str, x)))",
+   "snippet_tokenized": [
+    "r",
+    "=",
+    "int",
+    "(",
+    "''",
+    ".",
+    "join",
+    "(",
+    "map",
+    "(",
+    "str",
+    ",",
+    "x",
+    ")",
+    ")",
+    ")",
+    ""
+   ],
+   "question_id": "41067960",
+   "canonical_intent": "convert a list of integers into a single integer",
+   "answer_id": null,
+   "normal_intent": "convert a list of integers into a single integer",
+   "is_api": false,
+   "answer_score": 28,
+   "answer_body": "<p> If you have a list of <code> int <p> s and you want to join them together, you can use <code> map <p>  with <code> str <p>  to convert them to strings, <code> join <p>  them on the empty string and then cast back to <code> int <p> s with <code> int <p> .\n<p> In code, this looks like this:\n<code_block> r = int(\"\".join(map(str, x)))\n\n<p> and <code> r <p>  now has the wanted value of <code> 135 <p> .\n<p> This, of course, is a limited approach that comes with some conditions. It requires the list in question to contain nothing else but positive <code> int <p> s (as your sample) or strings representing <code> int <p> s, else the steps of conversion to string might fail or the joining of (negative) numbers will be clunky. \n",
+   "tags": [
+    "list",
+    "int"
+   ],
+   "title": "how to convert a list of multiple integers into a single integer?",
+   "accepted_answer_id": 41067989,
+   "score": 15,
+   "body": "<p> How do I convert a list in Python 3.5 such as: \n<code_block> x=[1, 3, 5]\n\n<p> to an int of <code> 135 <p>  (a whole int)?\n"
+  },
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "%Y-%m-%d %H:%M:%S.%f",
+     "quote": "'",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "datetime.strptime('2010-11-13 10:33:54.227806', 'str_0')",
+   "snippet": "datetime.strptime(\"2010-11-13 10:33:54.227806\", \"%Y-%m-%d %H:%M:%S.%f\")",
+   "snippet_tokenized": [
+    "datetime",
+    ".",
+    "strptime",
+    "(",
+    "'2010-11-13 10:33:54.227806'",
+    ",",
+    "'%Y-%m-%d %H:%M:%S.%f'",
+    ")",
+    ""
+   ],
+   "question_id": "4170655",
+   "canonical_intent": "convert a datetime string back to a datetime object of format str_0",
+   "answer_id": null,
+   "normal_intent": "convert a datetime string back to a datetime object of format '%y-%m-%d %h:%m:%s.%f'",
+   "is_api": false,
+   "answer_score": 26,
+   "answer_body": "<p> You want datetime.strptime(date_string, format).\n<code_block> from datetime import datetime\ndatetime.strptime(\"2010-11-13 10:33:54.227806\", \"%Y-%m-%d %H:%M:%S.%f\")\n\n<p> For details on the format string, see <a> http://docs.python.org/library/datetime.html#strftime-and-strptime-behavior\n",
+   "tags": [
+    "datetime"
+   ],
+   "title": "how to convert a datetime string back to datetime object?",
+   "accepted_answer_id": 4170691,
+   "score": 12,
+   "body": "<p> I am storing a <code> datetime <p>  string in a database. Now I face a problem. When I fetch the string from the database, I need to convert it back to a <code> datetime <p>  object...\n<p> Any easy way to do that?\n<p> The string of datetime looks like:\n<code_block> 2010-11-13 10:33:54.227806\n\n"
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "d",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "[(i, sum(j) / len(j)) for i, j in list(var_0.items())]",
+   "snippet": "[(i, sum(j) / len(j)) for i, j in list(d.items())]",
+   "snippet_tokenized": [
+    "[",
+    "(",
+    "i",
+    ",",
+    "sum",
+    "(",
+    "j",
+    ")",
+    "/",
+    "len",
+    "(",
+    "j",
+    ")",
+    ")",
+    "for",
+    "i",
+    ",",
+    "j",
+    "in",
+    "list",
+    "(",
+    "d",
+    ".",
+    "items",
+    "(",
+    ")",
+    ")",
+    "]",
+    ""
+   ],
+   "question_id": "29565452",
+   "canonical_intent": "get the average of a list values for each key in dictionary var_0)",
+   "answer_id": null,
+   "normal_intent": "get the average of a list values for each key in dictionary `d`)",
+   "is_api": false,
+   "answer_score": 4,
+   "answer_body": "<p> You can use <code> collections.defaultdict <p>  to create a dictionary with unique keys and lists of values:\n<code_block> <console_in> l=[(3, '655'),(3, '645'),(3, '641'),(4, '602'),(4, '674'),(4, '620')]\n<console_in> from collections import defaultdict\n<console_in> d=defaultdict(list)\n<console_in> \n<console_in> for i,j in l:\n<console_out>    d[i].append(int(j))\n<console_out> \n<console_in> d\n<console_out> defaultdict( <type 'list'>, {3: [655, 645, 641], 4: [602, 674, 620]})\n\n<p> Then use a list comprehension to create the expected pairs:\n<code_block> <console_in> [(i,sum(j)/len(j)) for i,j in d.items()]\n<console_out> [(3, 647), (4, 632)]\n\n<p> And within your code you can do:\n<code_block> with open('file.csv', 'rb') as csvfile:\n    reader = csv.reader(csvfile)\n    for row in reader:\n        date = time.strptime(row[3], \"%a %b %d %H:%M:%S %Z %Y\")\n        data = date, row[5]\n\n        month = data[0][1]\n        avg = data[1]\n        d[month].append(int(avg))\n\n     print [(i,sum(j)/len(j)) for i,j in d.items()]\n\n",
+   "tags": [
+    "dictionary"
+   ],
+   "title": "averaging the values in a dictionary based on the key",
+   "accepted_answer_id": 29565591,
+   "score": 4,
+   "body": "<p> I am new to Python and I have a set of values like the following:\n<code_block> (3, '655')\n(3, '645')\n(3, '641')\n(4, '602')\n(4, '674')\n(4, '620')\n\n<p> This is generated from a CSV file with the following code (python 2.6):\n<code_block> import csv\nimport time\n\nwith open('file.csv', 'rb') as csvfile:\n    reader = csv.reader(csvfile)\n    for row in reader:\n        date = time.strptime(row[3], \"%a %b %d %H:%M:%S %Z %Y\")\n        data = date, row[5]\n\n        month = data[0][1]\n        avg = data[1]\n        monthAvg = month, avg\n        print monthAvg\n\n<p> What I would like to do is get an average of the values based on the keys:\n<code_block> (3, 647)\n(4, 632)\n\n<p> My initial thought was to create a new dictionary.  \n<code_block> loop through the original dictionary\n    if the key does not exist\n        add the key and value to the new dictionary\n    else\n        sum the value to the existing value in the new dictionary\n\n<p> I'd also have to keep a count of the number of keys so I could produce the average.  Seems like a lot of work though - I wasn't sure if there was a more elegant way to accomplish this.\n<p> Thank you.\n"
+  },
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "[1, 2]",
+     "quote": "`",
+     "type": "str"
+    },
+    "str_1": {
+     "value": "[3, 4]",
+     "quote": "`",
+     "type": "str"
+    },
+    "[str_0]": {
+     "value": "[1, 2]",
+     "quote": "`",
+     "type": "str"
+    },
+    "[str_1]": {
+     "value": "[3, 4]",
+     "quote": "`",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "zip([str_0], [str_1])",
+   "snippet": "zip([1, 2], [3, 4])",
+   "snippet_tokenized": [
+    "zip",
+    "(",
+    "[",
+    "1",
+    ",",
+    "2",
+    "]",
+    ",",
+    "[",
+    "3",
+    ",",
+    "4",
+    "]",
+    ")",
+    ""
+   ],
+   "question_id": "13704860",
+   "canonical_intent": "zip two lists str_0 and str_1 into a list of two tuples containing elements at the same index in each list",
+   "answer_id": null,
+   "normal_intent": "zip two lists `[1, 2]` and `[3, 4]` into a list of two tuples containing elements at the same index in each list",
+   "is_api": false,
+   "answer_score": 245,
+   "answer_body": "<p> When you <code> zip() <p>  together three lists containing 20 elements each, the result has twenty elements. Each element is a three-tuple.\n<p> See for yourself:\n<code_block> <console_in> a = b = c = range(20)\n<console_out> \n<console_in> zip(a, b, c)\n<console_out> \n[(0, 0, 0),\n (1, 1, 1),\n <console_out>\n (17, 17, 17),\n (18, 18, 18),\n (19, 19, 19)]\n\n<p> To find out how many elements each tuple contains, you could examine the length of the first element:\n<code_block> <console_in> result = zip(a, b, c)\n<console_out> \n<console_in> len(result[0])\n<console_out> 3\n\n<p> Of course, this won't work if the lists were empty to start with.\n",
+   "tags": [],
+   "title": "zip lists in python",
+   "accepted_answer_id": 13704903,
+   "score": 169,
+   "body": "<p> I am trying to learn how to \"zip\" lists. To this end, I have a program, where at a particular point, I do the following:\n<code_block> x1, x2, x3 = stuff.calculations(withdataa)\n\n<p> This gives me three lists, <code> x1 <p> , <code> x2 <p> , and <code> x3 <p> , each of, say, size 20.\n<p> Now, I do:\n<code_block> zipall = zip(x1, x2, x3)\n\n<p> However, when I do:\n<code_block> print \"len of zipall %s\" % len(zipall)\n\n<p> I get 20, which is not what I expected. I expected three. I think I am doing something fundamentally wrong.\n"
+  }
+ ],
+ "sampled_api": [
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "w",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "l",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_2": {
+     "value": "c",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_3": {
+     "value": "theyear",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "text_calendar.formatyear(var_3, var_0=2)",
+   "snippet": "text_calendar.formatyear(theyear, w=2)",
+   "snippet_tokenized": [
+    "text_calendar",
+    ".",
+    "formatyear",
+    "(",
+    "theyear",
+    ",",
+    "w",
+    "=",
+    "2",
+    ")",
+    ""
+   ],
+   "question_id": 937,
+   "canonical_intent": "return a m-column calendar for an entire year as a multi-line string . optional parameters var_0 , var_1 , and var_2 are for date column width , lines per week , and number of spaces between month columns , respectively . with arguments var_3.",
+   "answer_id": null,
+   "normal_intent": "return a m-column calendar for an entire year as a multi-line string . optional parameters `w` , `l` , and `c` are for date column width , lines per week , and number of spaces between month columns , respectively . with arguments `theyear`.",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "low",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "high",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_2": {
+     "value": "mode",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "random.triangular(var_0, var_1, var_2)",
+   "snippet": "random.triangular(low, high, mode)",
+   "snippet_tokenized": [
+    "random",
+    ".",
+    "triangular",
+    "(",
+    "low",
+    ",",
+    "high",
+    ",",
+    "mode",
+    ")",
+    ""
+   ],
+   "question_id": 7908,
+   "canonical_intent": "return a random floating point number n such that var_0 < = n < = var_1 and with the specified var_2 between those bounds .",
+   "answer_id": null,
+   "normal_intent": "return a random floating point number n such that `low` < = n < = `high` and with the specified `mode` between those bounds .",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "str_0": {
+     "value": "",
+     "quote": "'",
+     "type": "str"
+    }
+   },
+   "canonical_snippet": "datetime.__str__()",
+   "snippet": "datetime.__str__()",
+   "snippet_tokenized": [
+    "datetime",
+    ".",
+    "__str__",
+    "(",
+    ")",
+    ""
+   ],
+   "question_id": 2310,
+   "canonical_intent": "for a datetime instance d , str ( d ) is equivalent to d.isoformat ( str_0 ) .",
+   "answer_id": null,
+   "normal_intent": "for a datetime instance d , str ( d ) is equivalent to d.isoformat ( ' ' ) .",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "bg",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "turtle.screensize(var_0=None)",
+   "snippet": "turtle.screensize(bg=None)",
+   "snippet_tokenized": [
+    "turtle",
+    ".",
+    "screensize",
+    "(",
+    "bg",
+    "=",
+    "None",
+    ")",
+    ""
+   ],
+   "question_id": 11050,
+   "canonical_intent": "if no arguments are given , return current ( canvaswidth , canvasheight ) . with arguments var_0.",
+   "answer_id": null,
+   "normal_intent": "if no arguments are given , return current ( canvaswidth , canvasheight ) . with arguments `bg`.",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "type",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "elname",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_2": {
+     "value": "attname",
+     "quote": "`",
+     "type": "var"
+    },
+    "str_0": {
+     "value": "CDATA",
+     "quote": "'",
+     "type": "str"
+    },
+    "str_1": {
+     "value": "ID",
+     "quote": "'",
+     "type": "str"
+    },
+    "str_2": {
+     "value": "IDREF",
+     "quote": "'",
+     "type": "str"
+    },
+    "var_3": {
+     "value": "default",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_4": {
+     "value": "required",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "xmlparser.AttlistDeclHandler(var_1, var_2, var_0, var_3, var_4)",
+   "snippet": "xmlparser.AttlistDeclHandler(elname, attname, type, default, required)",
+   "snippet_tokenized": [
+    "xmlparser",
+    ".",
+    "AttlistDeclHandler",
+    "(",
+    "elname",
+    ",",
+    "attname",
+    ",",
+    "type",
+    ",",
+    "default",
+    ",",
+    "required",
+    ")",
+    ""
+   ],
+   "question_id": 7759,
+   "canonical_intent": "called for each declared attribute for an element var_0 . var_1 is the name of the element to which the declaration applies and var_2 is the name of the attribute declared . the attribute type is a string passed as type ; the possible values are str_0 , str_1 , str_2 , ... var_3 gives the default value for the attribute used when the attribute is not specified by the document instance , or none if there is no default value ( # implied values ) . if the attribute is var_4 to be given in the document instance , required will be true .",
+   "answer_id": null,
+   "normal_intent": "called for each declared attribute for an element `type` . `elname` is the name of the element to which the declaration applies and `attname` is the name of the attribute declared . the attribute type is a string passed as type ; the possible values are 'cdata ' , 'id ' , 'idref ' , ... `default` gives the default value for the attribute used when the attribute is not specified by the document instance , or none if there is no default value ( # implied values ) . if the attribute is `required` to be given in the document instance , required will be true .",
+   "is_api": true
+  }
+ ],
+ "direct_api": [
+  {
+   "slot_map": null,
+   "canonical_snippet": "key in d",
+   "snippet": "key in d",
+   "snippet_tokenized": [
+    "key",
+    "in",
+    "d",
+    ""
+   ],
+   "question_id": 9475,
+   "canonical_intent": "return true if d has a key key, else false.",
+   "answer_id": null,
+   "normal_intent": "return true if d has a key key, else false.",
+   "is_api": true
+  },
+  {
+   "slot_map": null,
+   "canonical_snippet": "key not in d",
+   "snippet": "key not in d",
+   "snippet_tokenized": [
+    "key",
+    "not",
+    "in",
+    "d",
+    ""
+   ],
+   "question_id": 9476,
+   "canonical_intent": "equivalent to not key in d.",
+   "answer_id": null,
+   "normal_intent": "equivalent to not key in d.",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "x",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "i",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "array.insert(var_1, var_0)",
+   "snippet": "array.insert(i, x)",
+   "snippet_tokenized": [
+    "array",
+    ".",
+    "insert",
+    "(",
+    "i",
+    ",",
+    "x",
+    ")",
+    ""
+   ],
+   "question_id": 131,
+   "canonical_intent": "insert a new item with value var_0 in the array before position var_1 .",
+   "answer_id": null,
+   "normal_intent": "insert a new item with value `x` in the array before position `i` .",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "x",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "i",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "deque.insert(var_1, var_0)",
+   "snippet": "deque.insert(i, x)",
+   "snippet_tokenized": [
+    "deque",
+    ".",
+    "insert",
+    "(",
+    "i",
+    ",",
+    "x",
+    ")",
+    ""
+   ],
+   "question_id": 1363,
+   "canonical_intent": "insert var_0 into the deque at position var_1 .",
+   "answer_id": null,
+   "normal_intent": "insert `x` into the deque at position `i` .",
+   "is_api": true
+  },
+  {
+   "slot_map": {
+    "var_0": {
+     "value": "x",
+     "quote": "`",
+     "type": "var"
+    },
+    "var_1": {
+     "value": "i",
+     "quote": "`",
+     "type": "var"
+    }
+   },
+   "canonical_snippet": "math.ldexp(var_0, var_1)",
+   "snippet": "math.ldexp(x, i)",
+   "snippet_tokenized": [
+    "math",
+    ".",
+    "ldexp",
+    "(",
+    "x",
+    ",",
+    "i",
+    ")",
+    ""
+   ],
+   "question_id": 5901,
+   "canonical_intent": "return var_0 * ( 2**i ) . with arguments var_1.",
+   "answer_id": null,
+   "normal_intent": "return `x` * ( 2**i ) . with arguments `i`.",
+   "is_api": true
+  }
+ ]
+}
