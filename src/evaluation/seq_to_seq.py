@@ -27,7 +27,8 @@ class CodeGenerationEvaluator:
                  logger: logging.Logger = None,
                  minimal: bool = False,
                  smooth_bleu: bool = False,
-                 get_high_rouge: bool = False):
+                 get_high_rouge: bool = False,
+                 only_alphanumeric_chars:bool=False):
         self.sacre_bleu: Metric = load_metric('sacrebleu')
         self.normal_bleu: Metric = load_metric('bleu')
         self.rouge: Metric = load_metric('rouge')
@@ -37,6 +38,7 @@ class CodeGenerationEvaluator:
         self.minimal = minimal
         self.smooth_bleu = smooth_bleu
         self.get_high_rouge = get_high_rouge
+        self.only_alphanumeric_chars = only_alphanumeric_chars
 
     def postprocessText(self, preds, labels):
         preds = list(map(self.postprocessSingle, preds))
@@ -44,9 +46,11 @@ class CodeGenerationEvaluator:
 
         return preds, labels
 
-    @staticmethod
-    def postprocessSingle(s):
-        out = special_chars.sub(r' \1 ', s.strip())
+    def postprocessSingle(self, s):
+        if not self.only_alphanumeric_chars:
+            out = special_chars.sub(r' \1 ', s.strip())
+        else:
+            out = special_chars.sub(r' ', s.strip())
         out = lower_upper.sub(r'\1 \2', out)
         out = double_space.sub(r'\1', out)
         return out.replace('"', '`').replace("\'", "`")

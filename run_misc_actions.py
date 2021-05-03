@@ -8,14 +8,14 @@ from src.dataset import stackoverflow
 from src.dataset.common import getSODatasetStats
 import json
 from collections import defaultdict
-from src.common.util_for_run import *
+from src.run_actions import *
 from datasets import load_dataset
 
 
 @plac.annotations(
     action=plac.Annotation("Action to run",
-                           choices=['getStats', 'statsToLatex',
-                                    'expExample', 'getTestResults']),
+                           choices=['getStats', 'statsToLatex', 'expExample', 'getTestResults',
+                                    'predStats']),
     data_path=plac.Annotation("Path to the data directory.", kind='option', abbrev='data',
                               type=str),
     output_path=plac.Annotation("Path to the output directory.", kind='option', abbrev='o',
@@ -163,6 +163,12 @@ def main(action: str,
                 # 'Oracle Valid'          : 'Oracle Valid \\%'
             },
             is_cv=True
+        )
+    elif action == 'predStats':
+        getPredsStats(
+            data_path.joinpath('simplified_preds.json'),
+            output_path,
+            logger
         )
     return
 

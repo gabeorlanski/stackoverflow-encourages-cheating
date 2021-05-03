@@ -11,6 +11,6 @@ Baseline|body|body_baseline
 Baseline|body+mined|mined_body
 -Code|body+mined|mined_body_noCode
 +Tags|body+mined|mined_body_tags
--NL|body+mined|mined_body_code
+-NL|body+mined|mined_body_only_code
 -Blocks|body+mined|mined_no_blocks
 -Inline|body+mined|mined_no_inline

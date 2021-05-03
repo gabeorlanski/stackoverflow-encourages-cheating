@@ -6,17 +6,19 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 import re
-from ..evaluation.seq_to_seq import CodeGenerationEvaluator
+from .evaluation.seq_to_seq import CodeGenerationEvaluator
 from transformers import AutoTokenizer
 import torch
 import ast
 from tqdm import tqdm
 import sys
-
+import textwrap
 markers = re.compile(r'(<\w+>) ')
+code_block_marker = re.compile(r'(<code_block>)')
 __all__ = [
     'getExperimentTestResults',
-    'getGenerated'
+    'getGenerated',
+    'getPredsStats'
 ]
 
 
@@ -140,7 +142,7 @@ def getExperimentTestResults(
             key=lambda x: x.replace('-', 'z')),
         axis=1
     )
-    df.to_csv(data_dir.joinpath('single_test_results.csv'),sep=';')
+    df.to_csv(data_dir.joinpath('single_test_results.csv'), sep=';')
     # Make the latex if it is cv
     if is_cv:
         for i, r in df.iterrows():
@@ -248,7 +250,7 @@ def getGenerated(
         file_name_shorthand
     )
 
-    predictions_by_ablation = defaultdict(list)
+    simplified_preds = defaultdict(dict)
     # Align the generated results with the data from the unprocessed dataset.
     write_file = out_file.open('w', encoding='utf-8')
     for question, predictions in tqdm(all_predictions.items(), total=len(all_predictions),
@@ -267,10 +269,10 @@ def getGenerated(
                                   f"returned '{question['question_id']}'")
             continue
 
-        base_data = {
+        simplified_preds[question] = {
             'intent': question_data['intent'],
-            'qid'   : question,
-            'body'  : question_data['body']
+            'body'  : markers.sub('', question_data['body']),
+            'preds' : {}
         }
 
         # Because we write to a file...we need this mess
@@ -280,18 +282,24 @@ def getGenerated(
         keys_use = ['tags', 'score', 'slot_map', 'intent', 'body']
         for k in keys_use:
             if k == 'tags':
-                write_file.write(f"{k}: {', '.join(question_data[k])}")
+                write_file.write(f"{k}: {', '.join(question_data[k])}\n")
             elif k == "body":
-                write_file.write(f"{k}(Some added characters for better readability):\n")
-                for line in question_data[k].splitlines(False):
-                    if not line.strip():
+                write_file.write(f"{k}(Left in tags for better readability):\n")
+                body = code_block_marker.sub(r'\1\n', question_data[k])
+                consecutive_empty_line = False
+                for line in body.splitlines(True):
+                    # use_line = cleanLine(line)
+                    if line == '\n':
+                        if not consecutive_empty_line:
+                            write_file.write('\n')
+                        consecutive_empty_line = True
                         continue
-                    use_line = cleanLine(line)
-                    # The scuffed wrapping.
-                    write_file.write('\t' + use_line + '\n')
+                    consecutive_empty_line = False
+                    for wrapped_line in textwrap.wrap(line, 70):
+                        write_file.write(wrapped_line + '\n')
             else:
-                write_file.write(f"{k}: {question_data[k]}")
-            write_file.write('\n')
+                write_file.write(f"{k}: {question_data[k]}\n")
+            # write_file.write('\n')
         write_file.write('\n' + "-" * 37 + 'OUTPUT' + '-' * 37 + '\n')
 
         printed_expected = False
@@ -299,19 +307,17 @@ def getGenerated(
             use_name = name[0] + ':' + name[1]
             if not printed_expected:
                 write_file.write(f"\n{'Expected':>24}= {repr(p_dict['label'])}\n")
-                base_data['snippet'] = p_dict['label']
-                predictions_by_ablation['truth'].append(base_data)
+                simplified_preds[question]['snippet'] = p_dict['label']
                 printed_expected = True
 
-            preds_list = (
-                '\t'.join(repr(p) for p in p_dict['pred'])
-                if isinstance(p_dict['pred'], list) else
-                repr(p_dict['pred'])
-            )
-            write_file.write(f"{use_name:>24}= {preds_list}\n")
-            predictions_by_ablation[use_name].append({'pred': p_dict['pred'][0], **base_data})
+            pred_write = p_dict['pred'][0] if isinstance(p_dict['pred'], list) else p_dict['pred']
+            write_file.write(f"{use_name:>24}= {pred_write}\n")
+            simplified_preds[question]['preds'][use_name] = pred_write
         write_file.write('\n')
     write_file.close()
+
+    with out_file.parent.joinpath('simplified_preds.json').open('w', encoding='utf-8') as f:
+        json.dump(simplified_preds, f, indent=True)
 
 
 def isValidCode(snippet):
@@ -320,3 +326,31 @@ def isValidCode(snippet):
     except SyntaxError:
         return False
     return True
+
+
+def getPredsStats(preds_file: Path,
+                  out_dir: Path,
+                  logger: logging.Logger):
+    predictions = json.loads(preds_file.read_text('utf-8'))
+    ablation_stats = defaultdict(lambda: defaultdict(list))
+    question_stats = defaultdict(list)
+    labels = []
+    evaluator = CodeGenerationEvaluator(AutoTokenizer.from_pretrained('facebook/bart-base'),
+                                        torch.device('cpu'), logger, smooth_bleu=True)
+    output_stats = {}
+
+    for question_id, question_info in tqdm(predictions.items(), desc="Calculating Stats",
+                                           file=sys.stdout):
+        logger.info(f"Handling question {question_id}")
+        labels.append(question_info['snippet'])
+
+        valid_ablations = []
+        for ablation, predicition in question_info['preds'].items():
+            is_valid_code = isValidCode(predicition)
+            if is_valid_code:
+                valid_ablations.append(ablation)
+            ablation_stats[ablation]['invalid_code'].append(0 if is_valid_code else 1)
+        question_stats['valid_count'].append(valid_ablations)
+
+    logger.info(f"Done")
+    return
