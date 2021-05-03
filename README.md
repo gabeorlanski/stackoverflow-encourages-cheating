@@ -9,7 +9,9 @@ and [External Knowledge Codegen](https://github.com/neulab/external-knowledge-co
 
 Run the Google colab found **ADD LINK** for our best performing model.
 
-We also provide all of the generated samples from our test with the inputs [![Open Replication In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/gabeorlanski/noisy-so-code-generation/blob/main/BART_CG_Experiments.ipynb)
+We also provide all of the generated samples from our test with the inputs: [Notebook Link](https://github.com/gabeorlanski/noisy-so-code-generation/blob/main/BART_CG_Experiments.ipynb) [![Open Replication In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/gabeorlanski/noisy-so-code-generation/blob/main/BART_CG_Experiments.ipynb)
+
+Note: It will take 1-2 hours to train and run on Google Colab
 
 ## For working outside of colab
 
