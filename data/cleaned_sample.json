@@ -6,7 +6,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "return true if d has a key key, else false.",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 9476,
@@ -14,7 +16,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "equivalent to not key in d.",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 131,
@@ -22,7 +26,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "insert a new item with value `x` in the array before position `i` .",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 1363,
@@ -30,7 +36,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "insert `x` into the deque at position `i` .",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 5901,
@@ -38,7 +46,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "return `x` * ( 2**i ) . with arguments `i`.",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   }
  ],
  "pretrain": [
@@ -48,7 +58,12 @@
    "is_api": false,
    "answer_id": 34705233,
    "intent": "sort a nested list by two elements",
-   "body": "Let's say I have a list like below:\n[['Harry', '4'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Ben', '10']]\n# we can say the first element in it's lists is `name`, the second is `score`\nI want sort it to:\n[['Anthony', '10'], ['Ben', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\nSo first sort it in descending order by the score and then sort it in ascending order by the name.\nI've tried:\nsorted(l, key=lambda x: (int(x[1]), x[0]))\n[['Harry', '4'], ['Joe', '6'], ['Adam', '7'], ['Anthony', '10'], ['Ben', '10']]\nIt's working, so now I just need reverse it:\nsorted(l, key=lambda x: (int(x[1]), x[0]), reverse=True)\n[['Ben', '10'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\nAh, reverse=True simply reversed the list but didn't give the expect output. So I just want reverse the output of int(x[1]) , but not x[0] . \nHow can I do that?\n"
+   "body": "Let's say I have a list like below:\n[['Harry', '4'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Ben', '10']]\n# we can say the first element in it's lists is `name`, the second is `score`\nI want sort it to:\n[['Anthony', '10'], ['Ben', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\nSo first sort it in descending order by the score and then sort it in ascending order by the name.\nI've tried:\nsorted(l, key=lambda x: (int(x[1]), x[0]))\n[['Harry', '4'], ['Joe', '6'], ['Adam', '7'], ['Anthony', '10'], ['Ben', '10']]\nIt's working, so now I just need reverse it:\nsorted(l, key=lambda x: (int(x[1]), x[0]), reverse=True)\n[['Ben', '10'], ['Anthony', '10'], ['Adam', '7'], ['Joe', '6'], ['Harry', '4']]\nAh, reverse=True simply reversed the list but didn't give the expect output. So I just want reverse the output of int(x[1]) , but not x[0] . \nHow can I do that?\n",
+   "title": "sort a nested list by two elements",
+   "tags": [
+    "list",
+    "sorting"
+   ]
   },
   {
    "question_id": "13905936",
@@ -56,7 +71,13 @@
    "is_api": false,
    "answer_id": 13905946,
    "intent": "converting integer to list in python",
-   "body": "What is the quickest and cleanest way to convert an integer into a list ? \nFor example, change 132 into [1,3,2] and 23 into [2,3] . I have a variable which is an int , and I want to be able to compare the individual digits so I thought making it into a list would be best, since I can just do int(number[0]) , int(number[1]) to easily convert the list element back into int for digit operations.\n"
+   "body": "What is the quickest and cleanest way to convert an integer into a list ? \nFor example, change 132 into [1,3,2] and 23 into [2,3] . I have a variable which is an int , and I want to be able to compare the individual digits so I thought making it into a list would be best, since I can just do int(number[0]) , int(number[1]) to easily convert the list element back into int for digit operations.\n",
+   "title": "converting integer to digit list",
+   "tags": [
+    "list",
+    "integer",
+    "type-conversion"
+   ]
   },
   {
    "question_id": "13837848",
@@ -64,7 +85,13 @@
    "is_api": false,
    "answer_id": 13838041,
    "intent": "converting byte string in unicode string",
-   "body": "I have a code such that:\na = \"\\u0432\"\nb = u\"\\u0432\"\nc = b\"\\u0432\"\nd = c.decode('utf8')\nprint(type(a), a)\nprint(type(b), b)\nprint(type(c), c)\nprint(type(d), d)\nAnd output:\n<class 'str'> v\n<class 'str'> v\n<class 'bytes'> b'\\\\u0432'\n<class 'str'> \\u0432\nWhy in the latter case I see a character code, instead of the character?\nHow I can transform Byte string to Unicode string that in case of an output I saw the character, instead of its code?\n"
+   "body": "I have a code such that:\na = \"\\u0432\"\nb = u\"\\u0432\"\nc = b\"\\u0432\"\nd = c.decode('utf8')\nprint(type(a), a)\nprint(type(b), b)\nprint(type(c), c)\nprint(type(d), d)\nAnd output:\n<class 'str'> v\n<class 'str'> v\n<class 'bytes'> b'\\\\u0432'\n<class 'str'> \\u0432\nWhy in the latter case I see a character code, instead of the character?\nHow I can transform Byte string to Unicode string that in case of an output I saw the character, instead of its code?\n",
+   "title": "converting byte string in unicode string",
+   "tags": [
+    "string",
+    "unicode",
+    "type-conversion"
+   ]
   },
   {
    "question_id": "23490152",
@@ -72,7 +99,11 @@
    "is_api": false,
    "answer_id": 23490179,
    "intent": "list of arguments with argparse",
-   "body": "I'm trying to pass a list of arguments with argparse but the only way that I've found involves rewriting the option for each argument that I want to pass:\nWhat I currently use:\nmain.py -t arg1 -a arg2\nand I would like:\nmain.py -t arg1 arg2 \nHere is my code:\nparser.add_argument(\"-t\", action='append', dest='table', default=[], help=\"\")\n"
+   "body": "I'm trying to pass a list of arguments with argparse but the only way that I've found involves rewriting the option for each argument that I want to pass:\nWhat I currently use:\nmain.py -t arg1 -a arg2\nand I would like:\nmain.py -t arg1 arg2 \nHere is my code:\nparser.add_argument(\"-t\", action='append', dest='table', default=[], help=\"\")\n",
+   "title": "list of arguments with argparse",
+   "tags": [
+    "argparse"
+   ]
   },
   {
    "question_id": "2721782",
@@ -80,7 +111,11 @@
    "is_api": false,
    "answer_id": 2721807,
    "intent": "how to convert a date string to a datetime object?",
-   "body": "I have following date:\n2005-08-11T16:34:33Z\nI need to know if this is date is before or after datetime(2009,04,01) and I can't seem to find a method that will convert that string to something that lets me compare it to datetime(2009,04,01) in a meaningful way.\n"
+   "body": "I have following date:\n2005-08-11T16:34:33Z\nI need to know if this is date is before or after datetime(2009,04,01) and I can't seem to find a method that will convert that string to something that lets me compare it to datetime(2009,04,01) in a meaningful way.\n",
+   "title": "how to convert a date string to a datetime object?",
+   "tags": [
+    "datetime"
+   ]
   }
  ],
  "sampled_api": [
@@ -90,7 +125,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "return a m-column calendar for an entire year as a multi-line string . optional parameters `w` , `l` , and `c` are for date column width , lines per week , and number of spaces between month columns , respectively . with arguments `theyear`.",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 7908,
@@ -98,7 +135,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "return a random floating point number n such that `low` < = n < = `high` and with the specified `mode` between those bounds .",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 2310,
@@ -106,7 +145,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "for a datetime instance d , str ( d ) is equivalent to d.isoformat ( ' ' ) .",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 11050,
@@ -114,7 +155,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "if no arguments are given , return current ( canvaswidth , canvasheight ) . with arguments `bg`.",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   },
   {
    "question_id": 7759,
@@ -122,7 +165,9 @@
    "is_api": true,
    "answer_id": null,
    "intent": "called for each declared attribute for an element `type` . `elname` is the name of the element to which the declaration applies and `attname` is the name of the attribute declared . the attribute type is a string passed as type ; the possible values are 'cdata ' , 'id ' , 'idref ' , ... `default` gives the default value for the attribute used when the attribute is not specified by the document instance , or none if there is no default value ( # implied values ) . if the attribute is `required` to be given in the document instance , required will be true .",
-   "body": null
+   "body": null,
+   "title": null,
+   "tags": []
   }
  ],
  "test": [
@@ -132,7 +177,12 @@
    "is_api": false,
    "answer_id": null,
    "intent": "send a signal `signal.sigusr1` to the current process",
-   "body": "I have this code which listens to USR1 signals\nimport signal\nimport os\nimport time\ndef receive_signal(signum, stack):\nprint 'Received:', signum\nsignal.signal(signal.SIGUSR1, receive_signal)\nsignal.signal(signal.SIGUSR2, receive_signal)\nprint 'My PID is:', os.getpid()\nwhile True:\nprint 'Waiting...'\ntime.sleep(3)\nThis works when I send signals with kill -USR1 pid\nBut how can I send the same signal from within the above python script so that after 10 seconds it automatically sends USR1 and also receives it , without me having to open two terminals to check it?\n"
+   "body": "I have this code which listens to USR1 signals\nimport signal\nimport os\nimport time\ndef receive_signal(signum, stack):\nprint 'Received:', signum\nsignal.signal(signal.SIGUSR1, receive_signal)\nsignal.signal(signal.SIGUSR2, receive_signal)\nprint 'My PID is:', os.getpid()\nwhile True:\nprint 'Waiting...'\ntime.sleep(3)\nThis works when I send signals with kill -USR1 pid\nBut how can I send the same signal from within the above python script so that after 10 seconds it automatically sends USR1 and also receives it , without me having to open two terminals to check it?\n",
+   "title": "how can i send a signal from a python program?",
+   "tags": [
+    "linux",
+    "signals"
+   ]
   },
   {
    "question_id": "3283984",
@@ -140,7 +190,9 @@
    "is_api": false,
    "answer_id": null,
    "intent": "decode a hex string '4a4b4c' to utf-8.",
-   "body": "In Python 2, converting the hexadecimal form of a string into the corresponding unicode was straightforward:\ncomments.decode(\"hex\")\nwhere the variable 'comments' is a part of a line in a file (the rest of the line does not need to be converted, as it is represented only in ASCII.\nNow in Python 3, however, this doesn't work (I assume because of the bytes/string vs. string/unicode switch. I feel like there should be a one-liner in Python 3 to do the same thing, rather than reading the entire line as a series of bytes (which I don't want to do) and then converting each part of the line separately. If it's possible, I'd like to read the entire line as a unicode string (because the rest of the line is in unicode) and only convert this one part from a hexadecimal representation.\n"
+   "body": "In Python 2, converting the hexadecimal form of a string into the corresponding unicode was straightforward:\ncomments.decode(\"hex\")\nwhere the variable 'comments' is a part of a line in a file (the rest of the line does not need to be converted, as it is represented only in ASCII.\nNow in Python 3, however, this doesn't work (I assume because of the bytes/string vs. string/unicode switch. I feel like there should be a one-liner in Python 3 to do the same thing, rather than reading the entire line as a series of bytes (which I don't want to do) and then converting each part of the line separately. If it's possible, I'd like to read the entire line as a unicode string (because the rest of the line is in unicode) and only convert this one part from a hexadecimal representation.\n",
+   "title": "decode hex string in python 3",
+   "tags": []
   },
   {
    "question_id": "3844801",
@@ -148,7 +200,12 @@
    "is_api": false,
    "answer_id": null,
    "intent": "check if all elements in list `mylist` are identical",
-   "body": "I need a function which takes in a list and outputs True if all elements in the input list evaluate as equal to each other using the standard equality operator and False otherwise.\nI feel it would be best to iterate through the list comparing adjacent elements and then AND all the resulting Boolean values. But I'm not sure what's the most Pythonic way to do that.\n"
+   "body": "I need a function which takes in a list and outputs True if all elements in the input list evaluate as equal to each other using the standard equality operator and False otherwise.\nI feel it would be best to iterate through the list comparing adjacent elements and then AND all the resulting Boolean values. But I'm not sure what's the most Pythonic way to do that.\n",
+   "title": "check if all elements in a list are identical",
+   "tags": [
+    "algorithm",
+    "comparison"
+   ]
   },
   {
    "question_id": "4302166",
@@ -156,7 +213,11 @@
    "is_api": false,
    "answer_id": null,
    "intent": "format number of spaces between strings `python`, `:` and `very good` to be `20`",
-   "body": "If I want to make my formatted string dynamically adjustable, I can change the following code from\nprint '%20s : %20s' % (\"Python\", \"Very Good\")\nto\nwidth = 20\nprint ('%' + str(width) + 's : %' + str(width) + 's') % (\"Python\", \"Very Good\")\nHowever, it seems that string concatenation is cumbersome here. Any other way to simplify things?\n"
+   "body": "If I want to make my formatted string dynamically adjustable, I can change the following code from\nprint '%20s : %20s' % (\"Python\", \"Very Good\")\nto\nwidth = 20\nprint ('%' + str(width) + 's : %' + str(width) + 's') % (\"Python\", \"Very Good\")\nHowever, it seems that string concatenation is cumbersome here. Any other way to simplify things?\n",
+   "title": "format string dynamically",
+   "tags": [
+    "string"
+   ]
   },
   {
    "question_id": "7555335",
@@ -164,7 +225,12 @@
    "is_api": false,
    "answer_id": null,
    "intent": "how to convert a string from cp-1251 to utf-8?",
-   "body": "I'm using mutagen to convert ID3 tags data from CP-1251 / CP-1252 to UTF-8. In Linux there is no problem. But on Windows, calling SetValue() on a wx.TextCtrl produces the error:\nUnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position\n0: ordinal not in range(128)\nThe original string (assumed to be CP-1251 encoded) that I'm pulling from mutagen is:\nu'\\xc1\\xe5\\xeb\\xe0\\xff \\xff\\xe1\\xeb\\xfb\\xed\\xff \\xe3\\xf0\\xee\\xec\\xf3'\nI've tried converting this to UTF-8:\ndd = d.decode('utf-8')\nand even changing the default encoding from ASCII to UTF-8:\nsys.setdefaultencoding('utf-8')\nBut I get the same error.\n"
+   "body": "I'm using mutagen to convert ID3 tags data from CP-1251 / CP-1252 to UTF-8. In Linux there is no problem. But on Windows, calling SetValue() on a wx.TextCtrl produces the error:\nUnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position\n0: ordinal not in range(128)\nThe original string (assumed to be CP-1251 encoded) that I'm pulling from mutagen is:\nu'\\xc1\\xe5\\xeb\\xe0\\xff \\xff\\xe1\\xeb\\xfb\\xed\\xff \\xe3\\xf0\\xee\\xec\\xf3'\nI've tried converting this to UTF-8:\ndd = d.decode('utf-8')\nand even changing the default encoding from ASCII to UTF-8:\nsys.setdefaultencoding('utf-8')\nBut I get the same error.\n",
+   "title": "how to convert a string from cp-1251 to utf-8?",
+   "tags": [
+    "utf-8",
+    "cp1251"
+   ]
   }
  ],
  "train": [
@@ -174,7 +240,12 @@
    "is_api": false,
    "answer_id": null,
    "intent": "concatenate elements of a list 'x' of multiple integers to a single integer",
-   "body": "How do I convert a list in Python 3.5 such as: \nx=[1, 3, 5]\nto an int of 135 (a whole int)?\n"
+   "body": "How do I convert a list in Python 3.5 such as: \nx=[1, 3, 5]\nto an int of 135 (a whole int)?\n",
+   "title": "how to convert a list of multiple integers into a single integer?",
+   "tags": [
+    "list",
+    "int"
+   ]
   },
   {
    "question_id": "41067960",
@@ -182,7 +253,12 @@
    "is_api": false,
    "answer_id": null,
    "intent": "convert a list of integers into a single integer",
-   "body": "How do I convert a list in Python 3.5 such as: \nx=[1, 3, 5]\nto an int of 135 (a whole int)?\n"
+   "body": "How do I convert a list in Python 3.5 such as: \nx=[1, 3, 5]\nto an int of 135 (a whole int)?\n",
+   "title": "how to convert a list of multiple integers into a single integer?",
+   "tags": [
+    "list",
+    "int"
+   ]
   },
   {
    "question_id": "4170655",
@@ -190,7 +266,11 @@
    "is_api": false,
    "answer_id": null,
    "intent": "convert a datetime string back to a datetime object of format '%y-%m-%d %h:%m:%s.%f'",
-   "body": "I am storing a datetime string in a database. Now I face a problem. When I fetch the string from the database, I need to convert it back to a datetime object...\nAny easy way to do that?\nThe string of datetime looks like:\n2010-11-13 10:33:54.227806\n"
+   "body": "I am storing a datetime string in a database. Now I face a problem. When I fetch the string from the database, I need to convert it back to a datetime object...\nAny easy way to do that?\nThe string of datetime looks like:\n2010-11-13 10:33:54.227806\n",
+   "title": "how to convert a datetime string back to datetime object?",
+   "tags": [
+    "datetime"
+   ]
   },
   {
    "question_id": "29565452",
@@ -198,7 +278,11 @@
    "is_api": false,
    "answer_id": null,
    "intent": "get the average of a list values for each key in dictionary `d`)",
-   "body": "I am new to Python and I have a set of values like the following:\n(3, '655')\n(3, '645')\n(3, '641')\n(4, '602')\n(4, '674')\n(4, '620')\nThis is generated from a CSV file with the following code (python 2.6):\nimport csv\nimport time\nwith open('file.csv', 'rb') as csvfile:\nreader = csv.reader(csvfile)\nfor row in reader:\ndate = time.strptime(row[3], \"%a %b %d %H:%M:%S %Z %Y\")\ndata = date, row[5]\nmonth = data[0][1]\navg = data[1]\nmonthAvg = month, avg\nprint monthAvg\nWhat I would like to do is get an average of the values based on the keys:\n(3, 647)\n(4, 632)\nMy initial thought was to create a new dictionary. \nloop through the original dictionary\nif the key does not exist\nadd the key and value to the new dictionary\nelse\nsum the value to the existing value in the new dictionary\nI'd also have to keep a count of the number of keys so I could produce the average. Seems like a lot of work though - I wasn't sure if there was a more elegant way to accomplish this.\nThank you.\n"
+   "body": "I am new to Python and I have a set of values like the following:\n(3, '655')\n(3, '645')\n(3, '641')\n(4, '602')\n(4, '674')\n(4, '620')\nThis is generated from a CSV file with the following code (python 2.6):\nimport csv\nimport time\nwith open('file.csv', 'rb') as csvfile:\nreader = csv.reader(csvfile)\nfor row in reader:\ndate = time.strptime(row[3], \"%a %b %d %H:%M:%S %Z %Y\")\ndata = date, row[5]\nmonth = data[0][1]\navg = data[1]\nmonthAvg = month, avg\nprint monthAvg\nWhat I would like to do is get an average of the values based on the keys:\n(3, 647)\n(4, 632)\nMy initial thought was to create a new dictionary. \nloop through the original dictionary\nif the key does not exist\nadd the key and value to the new dictionary\nelse\nsum the value to the existing value in the new dictionary\nI'd also have to keep a count of the number of keys so I could produce the average. Seems like a lot of work though - I wasn't sure if there was a more elegant way to accomplish this.\nThank you.\n",
+   "title": "averaging the values in a dictionary based on the key",
+   "tags": [
+    "dictionary"
+   ]
   },
   {
    "question_id": "13704860",
@@ -206,7 +290,9 @@
    "is_api": false,
    "answer_id": null,
    "intent": "zip two lists `[1, 2]` and `[3, 4]` into a list of two tuples containing elements at the same index in each list",
-   "body": "I am trying to learn how to \"zip\" lists. To this end, I have a program, where at a particular point, I do the following:\nx1, x2, x3 = stuff.calculations(withdataa)\nThis gives me three lists, x1 , x2 , and x3 , each of, say, size 20.\nNow, I do:\nzipall = zip(x1, x2, x3)\nHowever, when I do:\nprint \"len of zipall %s\" % len(zipall)\nI get 20, which is not what I expected. I expected three. I think I am doing something fundamentally wrong.\n"
+   "body": "I am trying to learn how to \"zip\" lists. To this end, I have a program, where at a particular point, I do the following:\nx1, x2, x3 = stuff.calculations(withdataa)\nThis gives me three lists, x1 , x2 , and x3 , each of, say, size 20.\nNow, I do:\nzipall = zip(x1, x2, x3)\nHowever, when I do:\nprint \"len of zipall %s\" % len(zipall)\nI get 20, which is not what I expected. I expected three. I think I am doing something fundamentally wrong.\n",
+   "title": "zip lists in python",
+   "tags": []
   }
  ]
 }

@@ -47,7 +47,7 @@ python experiment.py best "facebook/bart-base" bartBase -combine-mined
 
 [Here](https://www.dropbox.com/s/xv3zcutli07w37w/base_dataset.zip?dl=0) is our dataset that we used.
 
-[This dataset](https://www.dropbox.com/s/imcpjvs2gy31tvf/cleaned_so_data.rar?dl=00) is the _cleaned_ data using the process we describe further down.
+[This dataset](https://www.dropbox.com/s/glioprd0aly4381/cleaned_so_dataset.rar?dl=0) is the _cleaned_ data using the process we describe further down.
 
 You can find a sample schema for this data [here](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/data/base_dataset_sample.json).
 
@@ -58,7 +58,7 @@ to remove them. Note, you must surround the tag text with `< >`.
 
 ### Parsed StackOverflow Data:
 
-[Link to the parsed StackOverflow Questions](https://www.dropbox.com/s/imcpjvs2gy31tvf/cleaned_so_data.rar?dl=0)
+[Link to the parsed StackOverflow Questions](https://www.dropbox.com/s/glioprd0aly4381/cleaned_so_dataset.rar?dl=0)
 
 For actually working with this data:
 

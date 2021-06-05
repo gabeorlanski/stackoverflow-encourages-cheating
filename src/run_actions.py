@@ -413,7 +413,9 @@ def cleanDataset(base_data_dir: Path,
                     'is_api'     : question['is_api'],
                     'answer_id'  : question['answer_id'],
                     'intent'     : question['normal_intent'],
-                    'body'       : cleanBody(question.get('body', None))
+                    'body'       : cleanBody(question.get('body', None)),
+                    'title'      : question.get('title', None),
+                    'tags'       : question.get('tags', [])
                 }
                 if len(sample_data[file.stem]) < 5:
                     sample_data[file.stem].append(question_dict)
