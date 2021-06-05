@@ -10,15 +10,18 @@ from .evaluation.seq_to_seq import CodeGenerationEvaluator
 from transformers import AutoTokenizer
 import torch
 import ast
-from tqdm import tqdm
+import shutil
 import sys
 import textwrap
+from tqdm import tqdm
+
 markers = re.compile(r'(<\w+>) ')
 code_block_marker = re.compile(r'(<code_block>)')
 __all__ = [
     'getExperimentTestResults',
     'getGenerated',
-    'getPredsStats'
+    'getPredsStats',
+    'cleanDataset'
 ]
 
 
@@ -354,3 +357,65 @@ def getPredsStats(preds_file: Path,
 
     logger.info(f"Done")
     return
+
+
+def cleanDataset(base_data_dir: Path,
+                 special_tags_path: Path,
+                 out_path: Path,
+                 logger: logging.Logger) -> Dict:
+    logger.info(f"Cleaning SO Data")
+
+    # Create regular expressions for later cleaning.
+    double_newline = re.compile(r'\n\n+', re.MULTILINE)
+    double_space = re.compile(r'(\s)[^\S\n]+', re.MULTILINE)
+
+    # Open and read the list of special tokens from the file. Every line in the
+    # file is a unique token. In the text, they show up as `<token>`, but do not
+    # have this format in the `.txt` file. Therefore, we wrap them in `<>`.
+    special_tags = [
+        f"<{l.strip()}>" for l in special_tags_path.read_text('utf-8').splitlines(False)
+        if l.strip()
+    ]
+
+    logger.info(f"Found {len(special_tags)} special tokens.")
+    logger.info(f"Cleaning data and saving to '{out_path}'")
+
+    if out_path.exists():
+        # Remove the existing file
+        shutil.rmtree(out_path)
+
+    # Make the directory and any missing parents
+    out_path.mkdir(parents=True)
+
+    def cleanBody(raw_body):
+        if not raw_body:
+            return None
+
+        for t in special_tags:
+            raw_body = raw_body.replace(t, '')
+
+        return double_newline.sub('\n', double_space.sub(r'\1', raw_body)).lstrip()
+
+    sample_data = defaultdict(list)
+
+    for file in base_data_dir.glob('*.jsonl'):
+        # Read the jsonl file containing the dataset
+        data = [json.loads(line) for line in file.read_text('utf-8').splitlines(False)]
+
+        logger.info(f"Cleaning {len(data)} questions from '{file.stem}'")
+
+        with out_path.joinpath(file.name).open('w', encoding='utf-8') as out_file:
+            for question in tqdm(data, file=sys.stdout, desc="Cleaning"):
+
+                question_dict = {
+                    'question_id': question['question_id'],
+                    'snippet'    : question['snippet'],
+                    'is_api'     : question['is_api'],
+                    'answer_id'  : question['answer_id'],
+                    'intent'     : question['normal_intent'],
+                    'body'       : cleanBody(question.get('body', None))
+                }
+                if len(sample_data[file.stem]) < 5:
+                    sample_data[file.stem].append(question_dict)
+                out_file.write(json.dumps(question_dict) + '\n')
+    return sample_data

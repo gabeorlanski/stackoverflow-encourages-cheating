@@ -1,4 +1,4 @@
-This is still very much a WIP.
+This is the repository for the paper [Reading StackOverflow Encourages Cheating: Adding Question TextImproves Extractive Code Generation]().
 
 ![Our Approach](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/data/approach_figure.PNG)
 
@@ -6,12 +6,17 @@ This is still very much a WIP.
 
 ## Acknowledgements
 
-This is the repository for the paper **ADD TITLE AND LINK**. Some code has come from the [TranX](https://github.com/pcyin/tranx) 
+Some code has come from the [TranX](https://github.com/pcyin/tranx) 
 and [External Knowledge Codegen](https://github.com/neulab/external-knowledge-codegen) repositories.
 
+We would also like to thank the work that inspired this one:
+
+[TRANX: A Transition-based Neural Abstract Syntax Parser for Semantic Parsing and Code Generation](https://www.aclweb.org/anthology/D18-2002/) by Pengcheng Yin and Graham Neubig
+
+[Incorporating External Knowledge through Pre-training for Natural Language to Code Generation](https://www.aclweb.org/anthology/2020.acl-main.538/) by Frank F. Xu, Zhengbao Jiang, Pengcheng Yin, Bogdan Vasilescu, and Graham Neubig 
+
+
 ## TL;DR For Replication
-
-
 
 Run the Google colab found [Notebook Link](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/BART_CG_Experiments.ipynb) [![Open Replication In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gabeorlanski/stackoverflow-encourages-cheating/blob/main/BART_CG_Experiments.ipynb) for our best performing model.
 
@@ -42,6 +47,8 @@ python experiment.py best "facebook/bart-base" bartBase -combine-mined
 
 [Here](https://www.dropbox.com/s/xv3zcutli07w37w/base_dataset.zip?dl=0) is our dataset that we used.
 
+[This dataset](https://www.dropbox.com/s/imcpjvs2gy31tvf/cleaned_so_data.rar?dl=00) is the _cleaned_ data using the process we describe further down.
+
 You can find a sample schema for this data [here](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/data/base_dataset_sample.json).
 
 For the `body` key, there are unclosed html tags in the text. *Eventually* these will be taken 
@@ -51,9 +58,7 @@ to remove them. Note, you must surround the tag text with `< >`.
 
 ### Parsed StackOverflow Data:
 
-###### Note: Full Parsed SO Data Will be released at a later date.
-
-[Link parsed StackOverflow Questions]()
+[Link to the parsed StackOverflow Questions](https://www.dropbox.com/s/imcpjvs2gy31tvf/cleaned_so_data.rar?dl=0)
 
 For actually working with this data:
 

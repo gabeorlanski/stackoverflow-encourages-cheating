@@ -15,7 +15,7 @@ from datasets import load_dataset
 @plac.annotations(
     action=plac.Annotation("Action to run",
                            choices=['getStats', 'statsToLatex', 'expExample', 'getTestResults',
-                                    'predStats']),
+                                    'predStats', 'cleanSOData']),
     data_path=plac.Annotation("Path to the data directory.", kind='option', abbrev='data',
                               type=str),
     output_path=plac.Annotation("Path to the output directory.", kind='option', abbrev='o',
@@ -40,7 +40,8 @@ def main(action: str,
     data_path = strToPath(data_path or 'data')
     corpus_path = data_path.joinpath('conala-corpus')
     output_path = strToPath(output_path or 'data')
-    preprocessed_path = strToPath(preprocessed_path) if preprocessed_path else None
+    preprocessed_path = strToPath(preprocessed_path) if preprocessed_path \
+        else data_path.joinpath('preprocessed')
 
     # Setup logging
     logger, issue_logger = setupLoggers(action, os.getcwd(), debug, verbose)
@@ -170,6 +171,17 @@ def main(action: str,
             output_path,
             logger
         )
+    elif action == "cleanSOData":
+        with data_path.joinpath('cleaned_sample.json').open('w', encoding='utf-8') as f:
+            json.dump(
+                cleanDataset(
+                    preprocessed_path.joinpath('base_dataset'),
+                    data_path.joinpath('html_tags.txt'),
+                    preprocessed_path.joinpath('clean_soquestion_dataset'),
+                    logger
+                ), f, indent=True
+            )
+        logger.info(f"Sample cleaned written to '{data_path.joinpath('cleaned_sample.json')}'")
     return
 
 
