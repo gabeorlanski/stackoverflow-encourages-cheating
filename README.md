@@ -20,6 +20,7 @@ by Pengcheng Yin and Graham Neubig
 [Incorporating External Knowledge through Pre-training for Natural Language to Code Generation](https://www.aclweb.org/anthology/2020.acl-main.538/)
 by Frank F. Xu, Zhengbao Jiang, Pengcheng Yin, Bogdan Vasilescu, and Graham Neubig
 
+
 ## TL;DR For Replication
 
 Run the Google colab
@@ -61,7 +62,7 @@ python experiment.py best "facebook/bart-base" bartBase -combine-mined
 [Here](https://www.dropbox.com/s/xv3zcutli07w37w/base_dataset.zip?dl=0) is our dataset that we used.
 
 [This dataset](https://www.dropbox.com/s/glioprd0aly4381/cleaned_so_dataset.rar?dl=0) is the _
-cleaned_ data using the process we describe further down.
+cleaned_ data using the process we describe further down. **NOTE** For the time being this only includes 10,000 mined examples. It will be updated to include all cleaned mined examples.
 
 You can find a sample schema for this
 data [here](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/data/base_dataset_sample.json)
@@ -108,3 +109,28 @@ For actually working with this data:
    to remove them. Note, you must surround the tag text with `< >`.
 
 3. Finally, you must match the question ids from CoNaLa to the SO data.
+
+## References
+
+If you use this dataset you MUST cite the [original CoNaLa paper](https://conala-corpus.github.io/) as well:
+
+```
+@misc{orlanski2021reading,
+      title={Reading StackOverflow Encourages Cheating: Adding Question Text Improves Extractive Code Generation}, 
+      author={Gabriel Orlanski and Alex Gittens},
+      year={2021},
+      eprint={2106.04447},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+@inproceedings{yin2018mining,
+  author = {Yin, Pengcheng and Deng, Bowen and Chen, Edgar and Vasilescu, Bogdan and Neubig, Graham},
+  title = {Learning to Mine Aligned Code and Natural Language Pairs from Stack Overflow},
+  booktitle = {International Conference on Mining Software Repositories},
+  series = {MSR},
+  pages = {476--486},
+  year = {2018},
+  publisher = {ACM},
+  doi = {https://doi.org/10.1145/3196398.3196408},
+}
+```
