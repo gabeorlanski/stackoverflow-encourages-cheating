@@ -15,7 +15,7 @@ rm -rf conala-corpus-v1.1.zip
 
 wget https://www.dropbox.com/s/7l42q8foywuqu5y/parsed_so.zip?dl=1
 rm -rf parsed_so.json
-mv -f "parsed_so.zipdl=1" parsed_so.zip
+mv -f "parsed_so.zip?dl=1" parsed_so.zip
 unzip parsed_so.zip
 
 cd $WDIR
