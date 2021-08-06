@@ -61,8 +61,7 @@ python experiment.py best "facebook/bart-base" bartBase -combine-mined
 
 [Here](https://www.dropbox.com/s/xv3zcutli07w37w/base_dataset.zip?dl=0) is our dataset that we used.
 
-[This dataset](https://www.dropbox.com/s/glioprd0aly4381/cleaned_so_dataset.rar?dl=0) is the _
-cleaned_ data using the process we describe further down. **NOTE** For the time being this only includes 10,000 mined examples. It will be updated to include all cleaned mined examples.
+[This dataset](https://www.dropbox.com/s/glioprd0aly4381/cleaned_so_dataset.rar?dl=0) is the _cleaned_ data using the process we describe further down. **NOTE** For the time being this only includes 10,000 mined examples. It will be updated to include all cleaned mined examples.
 
 You can find a sample schema for this
 data [here](https://github.com/gabeorlanski/stackoverflow-encourages-cheating/blob/main/data/base_dataset_sample.json)
